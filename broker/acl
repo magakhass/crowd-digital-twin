@@ -1,0 +1,16 @@
+# Topic access rules: the information firewall.
+user sensor_emulator
+topic read sim/#
+topic write venue/#
+
+user twin
+topic read venue/#
+topic write twin/#
+
+user unity
+topic write sim/#
+topic read twin/#
+
+user evaluator
+topic read sim/#
+topic read twin/#

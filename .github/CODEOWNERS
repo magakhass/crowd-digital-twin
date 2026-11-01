@@ -1,0 +1,8 @@
+# Who must review changes to each folder. Replace the placeholders with GitHub usernames,
+# then remove the leading '#' from each line.
+# /unity/        @gamedev-member-1 @gamedev-member-2
+# /sensors/      @sensing-member
+# /broker/       @sensing-member
+# /twin/         @twin-member
+# /experiments/  @twin-member
+# /shared/       @gamedev-member-1 @sensing-member @twin-member

@@ -1,0 +1,9 @@
+# Pin exact versions once installed (pip freeze), so everyone runs the same code.
+numpy
+pandas
+scipy
+pyarrow
+paho-mqtt
+pedpy
+pyyaml
+pytest
