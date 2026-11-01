@@ -1,0 +1,31 @@
+{
+  "venue_id": "concert_venue",
+  "version": "1.0",
+  "source": "Derived from Inna's ConcertVenue v1.0 (Documentation/zones.csv). Link widths inferred from zone dimensions: confirm against the Unity scene.",
+  "units": "metres",
+  "coordinates": {
+    "x": "Unity X (west to east)",
+    "y": "Unity Z (south to north)",
+    "note": "Unity Y is elevation and is ignored. Walking surfaces are at Unity Y = 0."
+  },
+  "zone_membership_rule": "Half-open intervals: a point belongs to a zone if x_min <= x < x_max and y_min <= y < y_max.",
+  "zones": [
+    { "id": "Z01", "name": "Entrance",           "type": "dynamic", "x_min": -28, "x_max": -18, "y_min": -3,   "y_max": 3,   "area_m2": 60,  "amber_persons_m2": 3, "red_persons_m2": 4 },
+    { "id": "Z02", "name": "Audience west",      "type": "static",  "x_min": -18, "x_max": -6,  "y_min": -12,  "y_max": 12,  "area_m2": 288, "amber_persons_m2": 3, "red_persons_m2": 4.7 },
+    { "id": "Z03", "name": "Audience centre",    "type": "static",  "x_min": -6,  "x_max": 6,   "y_min": -12,  "y_max": 12,  "area_m2": 288, "amber_persons_m2": 3, "red_persons_m2": 4.7 },
+    { "id": "Z04", "name": "Audience east",      "type": "static",  "x_min": 6,   "x_max": 18,  "y_min": -12,  "y_max": 12,  "area_m2": 288, "amber_persons_m2": 3, "red_persons_m2": 4.7 },
+    { "id": "Z05", "name": "Approach",           "type": "dynamic", "x_min": 18,  "x_max": 28,  "y_min": -6,   "y_max": 6,   "area_m2": 120, "amber_persons_m2": 3, "red_persons_m2": 4 },
+    { "id": "Z06", "name": "Bottleneck",         "type": "dynamic", "x_min": 28,  "x_max": 30,  "y_min": -1.5, "y_max": 1.5, "area_m2": 6,   "amber_persons_m2": 3, "red_persons_m2": 4 },
+    { "id": "Z07", "name": "Exit apron",         "type": "dynamic", "x_min": 30,  "x_max": 42,  "y_min": -6,   "y_max": 6,   "area_m2": 144, "amber_persons_m2": 3, "red_persons_m2": 4 }
+  ],
+  "links": [
+    { "from": "Z01", "to": "Z02", "width_m": 6 },
+    { "from": "Z02", "to": "Z03", "width_m": 24 },
+    { "from": "Z03", "to": "Z04", "width_m": 24 },
+    { "from": "Z04", "to": "Z05", "width_m": 12 },
+    { "from": "Z05", "to": "Z06", "width_m": 3 },
+    { "from": "Z06", "to": "Z07", "width_m": 3 }
+  ],
+  "spawn_points": [ { "id": "entrance", "x": -27, "y": 0 } ],
+  "exit_points":  [ { "id": "exit", "x": 41, "y": 0 } ]
+}
