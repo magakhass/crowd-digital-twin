@@ -1,8 +1,0 @@
-zone_id,centre_x_m,centre_z_m,width_m,depth_m,accessible_area_m2,type,amber_persons_m2,red_persons_m2
-Z01,-23,0,10,6,60,dynamic,3,4
-Z02,-12,0,12,24,288,static,3,4.7
-Z03,0,0,12,24,288,static,3,4.7
-Z04,12,0,12,24,288,static,3,4.7
-Z05,23,0,10,12,120,dynamic,3,4
-Z06,29,0,2,3,6,dynamic,3,4
-Z07,36,0,12,12,144,dynamic,3,4
