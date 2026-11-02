@@ -19,7 +19,7 @@ The venue and crowd are simulated in Unity; the sensors, twin and evaluation are
 | `broker/` | Mosquitto configuration and topic access rules |
 | `tests/` | Unit, integration and failure tests |
 | `data/` | Downloaded and generated data (not committed; see `data/README.md`) |
-| `docs/` | Architecture diagrams, evidence log, AI-use log, decisions, paper |
+| `docs/` | Architecture diagrams, development records, decisions, paper |
 
 ## Requirements
 
