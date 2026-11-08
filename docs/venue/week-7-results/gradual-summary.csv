@@ -1,0 +1,9 @@
+scenario,elapsed_seconds,arrived,departed,zone,reference_peak,reference_first_red_s,reference_amber_s,reference_red_s,sensor,sampled_peak,sampled_first_red_s,sampled_red_s
+Gradual,292.10,360,360,Z01,0.617,-1.00,0.00,0.00,S01,0.617,-1.000,0.000
+Gradual,292.10,360,360,Z02,0.278,-1.00,0.00,0.00,,,,
+Gradual,292.10,360,360,Z03,0.247,-1.00,0.00,0.00,,,,
+Gradual,292.10,360,360,Z04,0.243,-1.00,0.00,0.00,,,,
+Gradual,292.10,360,360,Z05,0.444,-1.00,0.00,0.00,,,,
+Gradual,292.10,360,360,Z08,4.438,149.55,45.45,16.90,S02,4.396,155.000,15.000
+Gradual,292.10,360,360,Z06,1.000,-1.00,0.00,0.00,S03,0.667,-1.000,0.000
+Gradual,292.10,360,360,Z07,0.104,-1.00,0.00,0.00,S04,0.090,-1.000,0.000

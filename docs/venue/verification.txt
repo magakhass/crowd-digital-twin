@@ -1,0 +1,14 @@
+The Unity 6000.0.23f1 Editor checks passed on 2 November 2026: import,
+compilation, scene rebuild, zone boundaries and threshold loading.
+All three Unity Play mode scenarios passed on 8 November 2026.
+See week-7-results/play-mode.txt for the run output.
+
+From the project root:
+  python3 evaluation/verify_layout.py
+  python3 -m unittest discover -s tests/evaluation -p 'test_*.py'
+
+Unity Play mode check:
+  -batchmode -nographics -projectPath ConcertVenue -executeMethod ValidateVenueDemo.Begin
+
+Leave out -quit. The check exits when done. Set VENUE_SMOKE_RESULTS to a
+writable folder to save CSV files.
