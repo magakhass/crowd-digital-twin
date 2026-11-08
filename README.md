@@ -11,7 +11,7 @@ The venue and crowd are simulated in Unity; the sensors, twin and evaluation are
 | Folder | Contents |
 | --- | --- |
 | `shared/` | Message formats and MQTT topics shared by all components. Change only through a reviewed PR. |
-| `unity/` | Unity project: venue, crowd, ground-truth logger, dashboard |
+| `ConcertVenue/` | Unity venue project; crowd, ground-truth logging and dashboard integration pending |
 | `sensors/` | Virtual sensor emulator, fault injector, trajectory replayer |
 | `twin/` | Digital twin: ingestion, venue graph, estimator, forecasters, alerts, publisher |
 | `experiments/` | Offline experiment runner, run configs, placement search |
@@ -19,7 +19,7 @@ The venue and crowd are simulated in Unity; the sensors, twin and evaluation are
 | `broker/` | Mosquitto configuration and topic access rules |
 | `tests/` | Unit, integration and failure tests |
 | `data/` | Downloaded and generated data (not committed; see `data/README.md`) |
-| `docs/` | Architecture diagrams, evidence log, AI-use log, decisions, paper |
+| `docs/` | Architecture diagrams, development records, decisions, paper |
 
 ## Requirements
 
@@ -30,3 +30,9 @@ The venue and crowd are simulated in Unity; the sensors, twin and evaluation are
 
 - **Live mode:** TODO
 - **Offline mode:** TODO
+
+## Unity venue
+
+Setup, layout and integration notes: [docs/venue/README.md](docs/venue/README.md).
+The shared venue JSON is the single source for zone geometry and alert thresholds.
+Run `python3 evaluation/verify_layout.py` from the repository root to check the scene snapshot.

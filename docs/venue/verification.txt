@@ -1,0 +1,13 @@
+PASS: shared venue and eight scene zones agree; areas total 1,194 m².
+PASS: 4 m upstream Z08; contiguous links; unique half-open zone footprints.
+PASS: zone floor transforms, serialized IDs and asset references.
+Outside this structural check: Unity compilation, rendering, Play mode, agents and navigation.
+
+Unity 6000.0.23f1 Editor checks (2026-11-02):
+PASS: project import and C# compilation.
+PASS: ValidateVenue.RebuildAndCheck — scene rebuilt from shared JSON.
+PASS: all eight MonitoringZone properties resolve shared geometry/thresholds.
+PASS: half-open membership; external Z08 threshold override read successfully.
+PASS: ValidateVenue.RebuildCheckAndCapture — overview rendered and inspected.
+Python regression checks: 3 passed (matching scene, stale scene, upstream overlap).
+Pending: Play mode, pedestrian behaviour, NavMesh, live sensing and forecasting.
