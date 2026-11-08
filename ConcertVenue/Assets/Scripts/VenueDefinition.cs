@@ -31,7 +31,6 @@ namespace CrowdVenue
 
         public static VenueDefinition Load()
         {
-            // Standalone builds may specify an external, shared venue using -venue <path>.
             string path = Environment.GetEnvironmentVariable("VENUE_FILE");
             string[] args = Environment.GetCommandLineArgs();
             for (int i = 0; i < args.Length; i++)
@@ -71,7 +70,7 @@ namespace CrowdVenue
         public static void Initialize()
         {
             Current = null;
-            Current = VenueDefinition.Load(); // Fail explicitly; no fallback thresholds.
+            Current = VenueDefinition.Load();
         }
     }
 }

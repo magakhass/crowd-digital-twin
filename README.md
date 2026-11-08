@@ -11,7 +11,7 @@ The venue and crowd are simulated in Unity; the sensors, twin and evaluation are
 | Folder | Contents |
 | --- | --- |
 | `shared/` | Message formats and MQTT topics shared by all components. Change only through a reviewed PR. |
-| `ConcertVenue/` | Unity venue project; crowd, ground-truth logging and dashboard integration pending |
+| `ConcertVenue/` | Unity venue and three crowd scenarios with a zone density display |
 | `sensors/` | Virtual sensor emulator, fault injector, trajectory replayer |
 | `twin/` | Digital twin: ingestion, venue graph, estimator, forecasters, alerts, publisher |
 | `experiments/` | Offline experiment runner, run configs, placement search |

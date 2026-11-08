@@ -1,0 +1,4 @@
+VENUE_DEMO_PASS Normal: 360 exited in 313.7s; max watching 25; Z08 peak 0.38 / sampled 0.35; Z08 first red -1.00 / sampled -1.00; Z06 peak 0.83
+VENUE_DEMO_PASS Gradual: 360 exited in 292.1s; max watching 73; Z08 peak 4.44 / sampled 4.40; Z08 first red 149.55 / sampled 155.00; Z06 peak 1.00
+VENUE_DEMO_PASS Surge: 360 exited in 289.0s; max watching 197; Z08 peak 5.17 / sampled 5.17; Z08 first red 70.55 / sampled 75.00; Z06 peak 1.00
+VENUE_PLAY_MODE_SMOKE_PASS: three scenarios, counts conserved, shared thresholds, sparse sampling and stale geometry guard.

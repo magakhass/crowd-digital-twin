@@ -1,0 +1,9 @@
+scenario,elapsed_seconds,arrived,departed,zone,reference_peak,reference_first_red_s,reference_amber_s,reference_red_s,sensor,sampled_peak,sampled_first_red_s,sampled_red_s
+Normal,313.65,360,360,Z01,0.150,-1.00,0.00,0.00,S01,0.150,-1.000,0.000
+Normal,313.65,360,360,Z02,0.083,-1.00,0.00,0.00,,,,
+Normal,313.65,360,360,Z03,0.080,-1.00,0.00,0.00,,,,
+Normal,313.65,360,360,Z04,0.083,-1.00,0.00,0.00,,,,
+Normal,313.65,360,360,Z05,0.125,-1.00,0.00,0.00,,,,
+Normal,313.65,360,360,Z08,0.375,-1.00,0.00,0.00,S02,0.354,-1.000,0.000
+Normal,313.65,360,360,Z06,0.833,-1.00,0.00,0.00,S03,0.667,-1.000,0.000
+Normal,313.65,360,360,Z07,0.104,-1.00,0.00,0.00,S04,0.097,-1.000,0.000

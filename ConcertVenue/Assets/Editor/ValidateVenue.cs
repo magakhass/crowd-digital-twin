@@ -23,7 +23,6 @@ public static class ValidateVenue
             if (!zone.Contains(source.Centre) || zone.Contains(new Vector3(source.x_max, 0, source.Centre.z)))
                 throw new Exception("Half-open membership failed");
         }
-        // Supply a changed threshold through the external file, proving no Unity fallback overrides it.
         string old = Environment.GetEnvironmentVariable("VENUE_FILE");
         string temporary = Path.GetTempFileName();
         try

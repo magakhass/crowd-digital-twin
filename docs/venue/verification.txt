@@ -10,4 +10,24 @@ PASS: all eight MonitoringZone properties resolve shared geometry/thresholds.
 PASS: half-open membership; external Z08 threshold override read successfully.
 PASS: ValidateVenue.RebuildCheckAndCapture — overview rendered and inspected.
 Python regression checks: 3 passed (matching scene, stale scene, upstream overlap).
-Pending: Play mode, pedestrian behaviour, NavMesh, live sensing and forecasting.
+Pending at that point: Play mode, pedestrian behaviour, NavMesh, live sensing and forecasting.
+
+
+Week 7 (2026-11-08): see week-7-results/play-mode.txt for the Unity check.
+The check covers the demo in Play mode. It does not validate real crowd
+behaviour or real sensors.
+
+Repeat the checks
+
+From the project root, run:
+  python3 evaluation/verify_layout.py
+  python3 -m unittest discover -s tests/evaluation -p 'test_*.py' -v
+
+For the Play mode check, start Unity with:
+  -batchmode -nographics -projectPath ConcertVenue -executeMethod ValidateVenueDemo.Begin
+
+Leave out -quit. The check exits on its own. To save the CSV files, set
+VENUE_SMOKE_RESULTS to a writable folder.
+
+For a standalone build, use -venue /absolute/path/to/venue.json or set
+VENUE_FILE to the shared venue file.

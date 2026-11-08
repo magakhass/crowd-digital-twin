@@ -19,7 +19,6 @@ public static class BuildVenue
         var g = GameObject.CreatePrimitive(PrimitiveType.Cube); g.name = name;
         g.transform.SetParent(parent); g.transform.position = pos; g.transform.localScale = scale;
         g.GetComponent<Renderer>().sharedMaterial = m;
-        // Collider geometry is ready for an optional navigation surface.
         g.isStatic = true;
         return g;
     }
