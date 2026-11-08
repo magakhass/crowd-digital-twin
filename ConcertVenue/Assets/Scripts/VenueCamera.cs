@@ -165,16 +165,18 @@ namespace CrowdVenue
             Card(984, 195, 428, 431);
             Label(1004, 208, 386, 30, "Zone density", 19, White, true);
             Label(1004, 240, 386, 24, $"Sample: {model.SampleTime:0.0} s  ·  Density in people/m²", 15, Muted);
-            Label(1005, 273, 196, 21, "ZONE", 13, Muted, true);
-            Label(1191, 273, 96, 21, "REFERENCE", 13, Muted, true, TextAnchor.MiddleRight);
-            Label(1299, 273, 92, 21, "SAMPLED", 13, Muted, true, TextAnchor.MiddleRight);
+            Label(1005, 273, 156, 21, "Zone", 12, Muted, true);
+            Label(1164, 273, 65, 21, "Area (m²)", 12, Muted, true, TextAnchor.MiddleCenter);
+            Label(1229, 273, 79, 21, "Reference", 12, Muted, true, TextAnchor.MiddleRight);
+            Label(1299, 273, 92, 21, "Sampled", 12, Muted, true, TextAnchor.MiddleRight);
             int i = 0;
             foreach (var r in model.Zones.OrderBy(row => row.Zone.id, StringComparer.Ordinal))
             {
                 float y = 301 + i * 33;
                 if (i % 2 == 0) Box(new Rect(997, y, 401, 31), Hex(0xf1f3f5));
-                Label(1005, y, 196, 31, r.Zone.id + "  " + r.Zone.name, 15, White);
-                Label(1191, y, 96, 31, $"{r.Density:0.00}", 17, AlertColor(r.Reference), true, TextAnchor.MiddleRight);
+                Label(1005, y, 156, 31, r.Zone.id + "  " + r.Zone.name, 14, White);
+                Label(1164, y, 65, 31, $"{r.Zone.area_m2:0.##}", 14, White, false, TextAnchor.MiddleCenter);
+                Label(1229, y, 79, 31, $"{r.Density:0.00}", 17, AlertColor(r.Reference), true, TextAnchor.MiddleRight);
                 Label(1294, y, 97, 31, r.Sensor == null ? "—" : $"{r.SampleDensity:0.00}", 17,
                     r.Sensor == null ? Muted : AlertColor(r.Observed), true, TextAnchor.MiddleRight);
                 i++;

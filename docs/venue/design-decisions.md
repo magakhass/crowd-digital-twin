@@ -1,6 +1,7 @@
-# Venue design decisions
+# Venue layout
 
-- **Keep the plan readable.** One Unity unit equals one metre. The 2D view shows the stage, entrance, exit, eight monitoring zones and four virtual sensors.
-- **Measure the queue separately.** Z08 covers the final 4 × 12 m before the bottleneck. Z06 is the 2 × 3 m passage. Keeping them separate shows whether people are building up before the passage or inside it. The total accessible area is still 1,194 m².
-- **Use one shared layout.** Zone geometry and thresholds come from the shared JSON. Unity checks zone positions, floor sizes and route markers on startup and asks for a rebuild if they differ.
-- **Keep the comparison simple.** All three runs use the same layout and visitor count. We compare full counts with five-second samples using the same thresholds. Sensor locations are demo choices, not placement recommendations.
+One Unity unit equals one metre. The eight zones cover 1,194 m² in total.
+
+- Z08 covers the queue before the passage (48 m²). Z06 is the passage itself (6 m²). Separate zones show where the crowd builds up.
+- The shared JSON defines boundaries, areas and thresholds. Amber starts at 3 people/m². Red starts at 4 in moving zones and 4.7 in standing zones.
+- Unity checks that the scene matches the shared layout. After changing the geometry, save your work and use **Crowd Venue → Rebuild venue (replaces current scene)**.
