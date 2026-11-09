@@ -11,7 +11,7 @@ namespace CrowdVenue
         static readonly Color White = Hex(0x222831), Muted = Hex(0x505c6b), Cyan = Hex(0x006b73);
         static readonly Color Amber = Hex(0x805000), Red = Hex(0xa7252a), Green = Hex(0x256447);
         static readonly string[] Names = { "Normal flow", "Gradual rise", "Sudden surge" };
-        static readonly Color SensorBlue = Hex(0x0073ee);
+        static readonly Color SensorBlue = Hex(0x0073ee), AlertOrange = Hex(0xd86b00), AlertRed = Hex(0xc71928);
         const float Width = 1440, Height = 664;
 
         VenueSimulation model;
@@ -19,7 +19,7 @@ namespace CrowdVenue
         ArrivalScenario scenario;
         int speed = 4;
         bool running;
-        float accumulator;
+        float accumulator, pulseUntil;
         string message;
         Texture2D dot;
 
@@ -41,18 +41,21 @@ namespace CrowdVenue
             model = new VenueSimulation(VenueRuntime.Current, scenario);
             running = play;
             accumulator = 0;
+            pulseUntil = 0;
             message = null;
         }
 
         void Update()
         {
             if (!running || model == null) return;
+            float previousSample = model.SampleTime;
             accumulator += Mathf.Min(Time.unscaledDeltaTime, .15f) * speed;
             while (accumulator >= VenueSimulation.StepSeconds && !model.Finished)
             {
                 model.Tick();
                 accumulator -= VenueSimulation.StepSeconds;
             }
+            if (model.SampleTime != previousSample) pulseUntil = Time.unscaledTime + .55f;
             if (model.Finished) running = false;
         }
 
@@ -126,6 +129,8 @@ namespace CrowdVenue
                     Label(top.x + 6, top.y + 7, w - 12, 24, zone.id, 17, White, true, TextAnchor.MiddleCenter);
                     Label(top.x + 2, top.y + 29, w - 4, 18, zone.name, 13, Muted, false, TextAnchor.MiddleCenter);
                 }
+                else if (zone.id == "Z06")
+                    Label(top.x, top.y - 18, w, 16, zone.id, 10, White, true, TextAnchor.MiddleCenter);
                 else if (zone.id == "Z05" || zone.id == "Z08")
                     Label(top.x, top.y + 7, w, 22, zone.id, 14, White, true, TextAnchor.MiddleCenter);
             }
@@ -134,37 +139,41 @@ namespace CrowdVenue
             Label(838, 503, 112, 24, "Exit →", 15, Cyan, true, TextAnchor.MiddleRight);
             Label(230, 546, 380, 22, "Audience area", 14, Muted, true, TextAnchor.MiddleCenter);
 
-            foreach (var person in model.People)
-                if (!person.Exited)
-                {
-                    var p = Map(person.Position);
-                    Circle(p.x, p.y, 4, White);
-                }
             foreach (var reading in model.Zones)
             {
                 if (reading.Sensor == null) continue;
                 var z = reading.Zone;
-                var p = Map(z.Centre.x, z.Centre.z + z.Size.y *
-                    (z.id == "Z01" || z.id == "Z07" ? -.25f : .18f));
-                SensorMarker(p.x, p.y);
+                bool narrow = z.id == "Z06";
+                float offset = z.id == "Z08" ? .18f : -.25f;
+                var p = Map(z.Centre.x, z.Centre.z + z.Size.y * offset);
+                SensorMarker(p.x, p.y, reading.Observed, Time.unscaledTime < pulseUntil, narrow ? .65f : 1f);
                 if (z.id == "Z01" || z.id == "Z07")
                     Label(p.x + 10, p.y - 9, 38, 18, reading.Sensor, 13, Cyan, true);
             }
+
+            foreach (var person in model.People)
+                if (!person.Exited)
+                {
+                    var p = Map(person.Position);
+                    var color = person.ZoneAlert == AlertLevel.Red ? AlertRed :
+                        person.ZoneAlert == AlertLevel.Amber ? AlertOrange : White;
+                    Circle(p.x, p.y, 4, color);
+                }
 
             Box(new Rect(47, 588, 899, 1), Border);
             Circle(60, 605, 5, White);
             Label(72, 594, 115, 24, "Visitor", 14, Muted);
             SensorMarker(169, 605);
             Label(181, 594, 154, 24, "Virtual sensor", 14, Muted);
-            Label(345, 594, 237, 24, "Amber / red: threshold reached", 14, Muted);
-            Label(619, 594, 326, 24, "Enter → watch → queue → exit", 14, White, false, TextAnchor.MiddleRight);
+            Label(345, 594, 237, 24, "Dot colour: zone status", 14, Muted);
+            Label(619, 594, 326, 24, "Sensor border: last reading", 14, White, false, TextAnchor.MiddleRight);
         }
 
         void Readings()
         {
             Card(984, 195, 428, 431);
             Label(1004, 208, 386, 30, "Zone density", 19, White, true);
-            Label(1004, 240, 386, 24, $"Sample: {model.SampleTime:0.0} s  ·  Density in people/m²", 15, Muted);
+            Label(1004, 240, 386, 24, $"Sample at {model.SampleTime:0.0} s  ·  People/m² (count)", 15, Muted);
             Label(1005, 273, 156, 21, "Zone", 12, Muted, true);
             Label(1164, 273, 65, 21, "Area (m²)", 12, Muted, true, TextAnchor.MiddleCenter);
             Label(1229, 273, 79, 21, "Reference", 12, Muted, true, TextAnchor.MiddleRight);
@@ -177,7 +186,7 @@ namespace CrowdVenue
                 Label(1005, y, 156, 31, r.Zone.id + "  " + r.Zone.name, 14, White);
                 Label(1164, y, 65, 31, $"{r.Zone.area_m2:0.##}", 14, White, false, TextAnchor.MiddleCenter);
                 Label(1229, y, 79, 31, $"{r.Density:0.00}", 17, AlertColor(r.Reference), true, TextAnchor.MiddleRight);
-                Label(1294, y, 97, 31, r.Sensor == null ? "—" : $"{r.SampleDensity:0.00}", 17,
+                Label(1294, y, 97, 31, r.Sensor == null ? "—" : $"{r.SampleDensity:0.00} ({r.Sample})", 15,
                     r.Sensor == null ? Muted : AlertColor(r.Observed), true, TextAnchor.MiddleRight);
                 i++;
             }
@@ -202,10 +211,14 @@ namespace CrowdVenue
             GUI.DrawTexture(r, Texture2D.whiteTexture);
             GUI.color = old;
         }
-        static void SensorMarker(float x, float y)
+        static void SensorMarker(float x, float y, AlertLevel level = AlertLevel.Clear, bool pulse = false, float scale = 1f)
         {
-            Box(new Rect(x - 7, y - 7, 14, 14), Panel);
-            Box(new Rect(x - 5, y - 5, 10, 10), SensorBlue);
+            Color rim = level == AlertLevel.Red ? AlertRed : level == AlertLevel.Amber ? AlertOrange : SensorBlue;
+            if (pulse) Outline(x - 11 * scale, y - 11 * scale, 22 * scale, 22 * scale, rim);
+            Box(new Rect(x - 8 * scale, y - 8 * scale, 16 * scale, 16 * scale), Panel);
+            if (level != AlertLevel.Clear)
+                Outline(x - 7 * scale, y - 7 * scale, 14 * scale, 14 * scale, rim);
+            Box(new Rect(x - 5 * scale, y - 5 * scale, 10 * scale, 10 * scale), SensorBlue);
         }
 
         void Circle(float x, float y, float d, Color color)
