@@ -90,6 +90,8 @@ public static class ValidateVenueDemo
             if (!model.Finished || watching == 0) throw new Exception("Scenario did not complete enter/watch/leave.");
             var front = model.Zones.Single(r => r.Zone.id == "Z08");
             var passage = model.Zones.Single(r => r.Zone.id == "Z06");
+            if (passage.Sensor == null || passage.SamplePeak <= 0)
+                throw new Exception("The passage sensor did not record any visitors.");
             if (front.Level(front.Zone.amber_persons_m2) != AlertLevel.Amber ||
                 front.Level(front.Zone.red_persons_m2) != AlertLevel.Red)
                 throw new Exception("Threshold boundary mismatch.");
@@ -97,7 +99,7 @@ public static class ValidateVenueDemo
             var path = Environment.GetEnvironmentVariable("VENUE_SMOKE_RESULTS");
             if (!string.IsNullOrEmpty(path)) model.Export(path);
             Debug.Log(FormattableString.Invariant(
-                $"VENUE_DEMO_PASS {scenario}: {model.Departed} exited in {model.Seconds:0.0}s; max watching {watching}; Z08 peak {front.Peak:0.00} / sampled {front.SamplePeak:0.00}; Z08 first red {front.FirstRed:0.00} / sampled {front.FirstSampleRed:0.00}; Z06 peak {passage.Peak:0.00}"));
+                $"VENUE_DEMO_PASS {scenario}: {model.Departed} exited in {model.Seconds:0.0}s; max watching {watching}; Z08 peak {front.Peak:0.00} / sampled {front.SamplePeak:0.00}; Z08 first red {front.FirstRed:0.00} / sampled {front.FirstSampleRed:0.00}; Z06 peak {passage.Peak:0.00} / sampled {passage.SamplePeak:0.00}"));
         }
         if (!(baseline[0] < baseline[1] && baseline[1] < baseline[2]))
             throw new Exception("Expected progressively higher bottleneck-front peaks.");
