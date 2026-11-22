@@ -1,9 +1,10 @@
-# Pin exact versions once installed (pip freeze), so everyone runs the same code.
-numpy
-pandas
-scipy
-pyarrow
-paho-mqtt
-pedpy
-pyyaml
-pytest
+# Versions used for the paper results
+jupedsim==1.4.2
+pedpy==1.5.1
+shapely>=2.0
+numpy>=2.0
+pandas>=2.2
+scipy>=1.14
+matplotlib>=3.8
+paho-mqtt>=2.0
+pytest>=8.0

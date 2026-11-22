@@ -7,7 +7,7 @@ user twin
 topic read venue/#
 topic write twin/#
 
-user unity
+user simulator
 topic write sim/#
 topic read twin/#
 

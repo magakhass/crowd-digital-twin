@@ -1,0 +1,5 @@
+mode,option,runs,events,pod,late,median_lead_s,fa_per_hour,rmse_sensed,rmse_unsensed
+phones,A,6.0,6.0,0.0,1.0,,0.838,1.173,0.894
+phones,B,6.0,6.0,0.0,0.0,,2.514,1.202,0.989
+tags,A,6.0,6.0,0.0,0.0,,0.0,1.087,0.675
+tags,B,6.0,6.0,0.0,0.0,,0.0,1.149,0.792

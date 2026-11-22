@@ -11,7 +11,7 @@
 
 | ID | Date | Decision | Rationale | Details |
 | --- | --- | --- | --- | --- |
-| D1 | | | | `docs/decisions/` |
+| D1 | 2026-11-21 | JuPedSim replaces Unity for the crowd simulation | Unity queue was scripted; JuPedSim AVM is validated (Xu et al., 2021) | `docs/decisions/001-jupedsim-replaces-unity.md` |
 
 ## Weekly log
 
