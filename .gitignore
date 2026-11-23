@@ -12,8 +12,14 @@ data/trajectories/*
 !data/trajectories/.gitkeep
 data/truth/
 data/sensors/
+data/replays/
 data/raw/
 data/julich/
+# other venues: same layout under data/venues/{venue}/ (results kept, like data/results)
+data/venues/*/trajectories/
+data/venues/*/truth/
+data/venues/*/sensors/
+data/venues/*/replays/
 *.parquet
 *.sqlite
 # results: keep the small CSV/JSON/PNG files used in the paper

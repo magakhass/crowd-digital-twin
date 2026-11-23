@@ -7,4 +7,6 @@ pandas>=2.2
 scipy>=1.14
 matplotlib>=3.8
 paho-mqtt>=2.0
+jsonschema>=4.0  # schema test for the live messages
+amqtt>=0.11  # Python MQTT broker for live mode where Mosquitto can't run
 pytest>=8.0
