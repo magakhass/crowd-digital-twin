@@ -1,5 +1,5 @@
-mode,option,runs,events,pod,late,median_lead_s,fa_per_hour,rmse_sensed,rmse_unsensed
-phones,A,6.0,6.0,0.0,1.0,,0.838,1.173,0.894
-phones,B,6.0,6.0,0.0,0.0,,2.514,1.202,0.989
-tags,A,6.0,6.0,0.0,0.0,,0.0,1.087,0.675
-tags,B,6.0,6.0,0.0,0.0,,0.0,1.149,0.792
+mode,option,runs,events,pod,late,median_lead_s,fa_per_hour,rmse_sensed,rmse_unsensed,far,mae_sensed,mae_unsensed,amber_pod,amber_fa_per_hour,red_alerts_per_hour,median_blind_lead_s
+phones,A,10.0,12.0,1.0,0.0,54.0,0.0,0.918,0.825,0.0,0.511,0.515,0.9,4.426,5.533,82.5
+phones,B,10.0,12.0,1.0,0.0,57.5,0.0,0.947,0.801,0.0,0.526,0.506,0.9,2.767,6.086,82.5
+tags,A,10.0,12.0,0.917,0.0,58.0,0.0,0.891,0.696,0.0,0.474,0.419,0.9,2.213,4.98,82.5
+tags,B,10.0,12.0,1.0,0.0,59.0,0.0,0.901,0.709,0.0,0.489,0.422,0.9,1.66,5.533,82.5

@@ -1,397 +1,661 @@
-run,scenario,group,method,mode,option,strategy,budget,sensors,events,hits,late,leads,false_alarms,hours,rmse_sensed,rmse_unsensed,failed
-counterflow-s03,counterflow,baseline,full,-,-,-,0,,1,1,0,43,0,0.2361,0.1336920260844225,nan,0
-counterflow-s03,counterflow,main,twin,phones,A,random,4,C03 C05 C11 C19,1,1,0,8,0,0.2361,0.6794585975668185,0.0,0
-counterflow-s03,counterflow,main,twin,phones,B,random,4,C03 C05 C11 C19,1,1,0,23,0,0.2361,0.751699807198927,0.0,0
-counterflow-s03,counterflow,baseline,sensor,phones,A,random,4,C03 C05 C11 C19,1,0,0,,5,0.2361,2.6500394719159646,0.0,0
-counterflow-s03,counterflow,baseline,trend,phones,A,random,4,C03 C05 C11 C19,1,1,0,13,8,0.2361,2.6500394719159646,0.0,0
-counterflow-s03,counterflow,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2361,0.40588438757525447,1.1193207561353993,0
-counterflow-s03,counterflow,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,1,0.2361,0.6338106747398243,1.158229960341112,0
-counterflow-s03,counterflow,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2361,0.68456932175952,1.4642472376195592,0
-counterflow-s03,counterflow,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.2361,0.68456932175952,1.4642472376195592,0
-counterflow-s03,counterflow,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,18,1,0.2361,0.8485674573999598,0.364863387283736,0
-counterflow-s03,counterflow,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,23,0,0.2361,0.7588519518075378,0.39072972049952026,0
-counterflow-s03,counterflow,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,3,0.2361,0.9554071745310945,0.6323237298099357,0
-counterflow-s03,counterflow,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,13,10,0.2361,0.9554071745310945,0.6323237298099357,0
-counterflow-s03,counterflow,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,8,0,0.2361,1.1320910243469633,nan,0
-counterflow-s03,counterflow,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,18,0,0.2361,0.5497977346762426,nan,0
-counterflow-s03,counterflow,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,10,0.2361,4.327089109966197,nan,0
-counterflow-s03,counterflow,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,10,0.2361,4.327089109966197,nan,0
-counterflow-s03,counterflow,main,twin,tags,A,random,4,C03 C05 C11 C19,1,1,0,18,0,0.2361,0.8373848549008451,0.0,0
-counterflow-s03,counterflow,main,twin,tags,B,random,4,C03 C05 C11 C19,1,1,0,43,0,0.2361,0.8498340788273081,0.0,0
-counterflow-s03,counterflow,baseline,sensor,tags,A,random,4,C03 C05 C11 C19,1,0,1,,6,0.2361,2.9153560450609546,0.0,0
-counterflow-s03,counterflow,baseline,trend,tags,A,random,4,C03 C05 C11 C19,1,0,1,,8,0.2361,2.9153560450609546,0.0,0
-counterflow-s03,counterflow,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,1,,1,0.2361,0.17818383411579916,2.01320666929412,0
-counterflow-s03,counterflow,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2361,0.646973960029007,2.142587040714574,0
-counterflow-s03,counterflow,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.2361,0.6050064084191717,4.747579169352124,0
-counterflow-s03,counterflow,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2361,0.6050064084191717,4.747579169352124,0
-counterflow-s03,counterflow,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,33,0,0.2361,0.44763288076100444,0.13331418837607723,0
-counterflow-s03,counterflow,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,43,0,0.2361,0.4808978282947036,0.9333729297231985,0
-counterflow-s03,counterflow,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,12,0.2361,1.8861977747765335,9.231949082564,0
-counterflow-s03,counterflow,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,23,24,0.2361,1.8861977747765335,9.231949082564,0
-counterflow-s03,counterflow,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,38,0,0.2361,0.4346925061051517,nan,0
-counterflow-s03,counterflow,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,38,0,0.2361,0.39088578195112955,nan,0
-counterflow-s03,counterflow,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,8,0.2361,1.716836429663599,nan,0
-counterflow-s03,counterflow,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,12,0.2361,1.716836429663599,nan,0
-counterflow-s04,counterflow,baseline,full,-,-,-,0,,1,1,0,39,0,0.2008,0.15801398756312174,nan,0
-counterflow-s04,counterflow,main,twin,phones,A,random,4,C00 C02 C12 C19,1,1,0,9,0,0.2008,0.7915883781853229,0.1283609979148774,0
-counterflow-s04,counterflow,main,twin,phones,B,random,4,C00 C02 C12 C19,1,0,1,,0,0.2008,0.7819434022938296,0.1379421548762834,0
-counterflow-s04,counterflow,baseline,sensor,phones,A,random,4,C00 C02 C12 C19,1,0,0,,4,0.2008,3.193063222593081,0.20703524346188587,0
-counterflow-s04,counterflow,baseline,trend,phones,A,random,4,C00 C02 C12 C19,1,0,0,,7,0.2008,3.193063222593081,0.20703524346188587,0
-counterflow-s04,counterflow,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,19,1,0.2008,0.5440760770951008,1.346484199925613,0
-counterflow-s04,counterflow,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,1,0.2008,0.4918038163801622,1.9063678701056144,0
-counterflow-s04,counterflow,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2008,0.7092378152648133,1.5912718320856047,0
-counterflow-s04,counterflow,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2008,0.7092378152648133,1.5912718320856047,0
-counterflow-s04,counterflow,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,19,0,0.2008,0.7939892112149297,0.5434065059680172,0
-counterflow-s04,counterflow,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,14,0,0.2008,0.7773771560001799,0.4184359960211633,0
-counterflow-s04,counterflow,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,2,0.2008,0.7910564103009083,0.6752532238515748,0
-counterflow-s04,counterflow,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,19,14,0.2008,0.7910564103009083,0.6752532238515748,0
-counterflow-s04,counterflow,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,9,0,0.2008,1.3382715523089703,nan,0
-counterflow-s04,counterflow,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,9,0,0.2008,0.6738617964191256,nan,0
-counterflow-s04,counterflow,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,7,0.2008,4.7070062560739325,nan,0
-counterflow-s04,counterflow,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,8,0.2008,4.7070062560739325,nan,0
-counterflow-s04,counterflow,main,twin,tags,A,random,4,C00 C02 C12 C19,1,1,0,19,0,0.2008,0.7010115348090816,0.13630248034289938,0
-counterflow-s04,counterflow,main,twin,tags,B,random,4,C00 C02 C12 C19,1,1,0,14,0,0.2008,0.6323004064653445,0.12204833027998764,0
-counterflow-s04,counterflow,baseline,sensor,tags,A,random,4,C00 C02 C12 C19,1,0,0,,7,0.2008,5.427158816721791,0.20703524346188587,0
-counterflow-s04,counterflow,baseline,trend,tags,A,random,4,C00 C02 C12 C19,1,0,0,,10,0.2008,5.427158816721791,0.20703524346188587,0
-counterflow-s04,counterflow,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2008,0.2927536701027385,1.5891361534351403,0
-counterflow-s04,counterflow,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,3,0.2008,0.4765826808278872,2.833310539428982,0
-counterflow-s04,counterflow,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2008,0.6516160777319405,4.863563508335737,0
-counterflow-s04,counterflow,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.2008,0.6516160777319405,4.863563508335737,0
-counterflow-s04,counterflow,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,34,0,0.2008,0.6350965130936032,0.31450311590889307,0
-counterflow-s04,counterflow,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,29,0,0.2008,0.4744335222219943,0.4414544146689436,0
-counterflow-s04,counterflow,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,5,0.2008,1.6175125201999196,0.8768222820051111,0
-counterflow-s04,counterflow,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,19,20,0.2008,1.6175125201999196,0.8768222820051111,0
-counterflow-s04,counterflow,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,24,0,0.2008,0.4424079177436553,nan,0
-counterflow-s04,counterflow,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,19,0,0.2008,0.3602130358918579,nan,0
-counterflow-s04,counterflow,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,6,0.2008,2.245995697967844,nan,0
-counterflow-s04,counterflow,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,12,0.2008,2.245995697967844,nan,0
-counterflow-s05,counterflow,baseline,full,-,-,-,0,,1,1,0,66,0,0.2306,0.19723004788219559,nan,0
-counterflow-s05,counterflow,main,twin,phones,A,random,4,C01 C07 C18 C19,1,1,0,51,0,0.2306,0.6125522178065841,0.2708016837481924,0
-counterflow-s05,counterflow,main,twin,phones,B,random,4,C01 C07 C18 C19,1,1,0,36,0,0.2306,0.612204652284118,0.34081175372439165,0
-counterflow-s05,counterflow,baseline,sensor,phones,A,random,4,C01 C07 C18 C19,1,0,0,,6,0.2306,1.2399779309503178,0.4556627758740141,0
-counterflow-s05,counterflow,baseline,trend,phones,A,random,4,C01 C07 C18 C19,1,0,0,,12,0.2306,1.2399779309503178,0.4556627758740141,0
-counterflow-s05,counterflow,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2306,0.41710820539403537,1.0117890351860621,0
-counterflow-s05,counterflow,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,16,2,0.2306,0.634173001469591,2.798959398577363,0
-counterflow-s05,counterflow,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2306,0.6509013679544974,1.3945040473004329,0
-counterflow-s05,counterflow,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.2306,0.6509013679544974,1.3945040473004329,0
-counterflow-s05,counterflow,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,51,2,0.2306,0.7119033435847293,0.38401135375206746,0
-counterflow-s05,counterflow,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,51,0,0.2306,1.4810639900608387,0.5463565282261919,0
-counterflow-s05,counterflow,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,0,,4,0.2306,0.7991748438758873,0.6341508630555048,0
-counterflow-s05,counterflow,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,51,13,0.2306,0.7991748438758873,0.6341508630555048,0
-counterflow-s05,counterflow,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,41,0,0.2306,0.6137011249909207,nan,0
-counterflow-s05,counterflow,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,46,0,0.2306,0.5474890706318299,nan,0
-counterflow-s05,counterflow,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,9,0.2306,4.106335936100629,nan,0
-counterflow-s05,counterflow,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,11,0.2306,4.106335936100629,nan,0
-counterflow-s05,counterflow,main,twin,tags,A,random,4,C01 C07 C18 C19,1,1,0,56,0,0.2306,0.6079845059111002,0.3034739725683764,0
-counterflow-s05,counterflow,main,twin,tags,B,random,4,C01 C07 C18 C19,1,1,0,56,0,0.2306,0.6176449186662584,0.5183474503997367,0
-counterflow-s05,counterflow,baseline,sensor,tags,A,random,4,C01 C07 C18 C19,1,0,0,,7,0.2306,2.429079889157026,0.7648866591926303,0
-counterflow-s05,counterflow,baseline,trend,tags,A,random,4,C01 C07 C18 C19,1,1,0,61,10,0.2306,2.429079889157026,0.7648866591926303,0
-counterflow-s05,counterflow,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,56,2,0.2306,0.5608873000058582,3.2672728286286974,0
-counterflow-s05,counterflow,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,51,0,0.2306,0.20920130852329635,1.490177492470524,0
-counterflow-s05,counterflow,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,6,0.2306,0.5813380750957039,7.647878140138282,0
-counterflow-s05,counterflow,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.2306,0.5813380750957039,7.647878140138282,0
-counterflow-s05,counterflow,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,46,0,0.2306,0.42248692519594727,0.2611912086876256,0
-counterflow-s05,counterflow,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,61,2,0.2306,0.47334599920352616,1.1896981909261821,0
-counterflow-s05,counterflow,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,0,,7,0.2306,2.475155524650116,1.7037027313216415,0
-counterflow-s05,counterflow,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,61,14,0.2306,2.475155524650116,1.7037027313216415,0
-counterflow-s05,counterflow,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,66,0,0.2306,0.4742101825738709,nan,0
-counterflow-s05,counterflow,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,61,0,0.2306,0.46406418440186,nan,0
-counterflow-s05,counterflow,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,6,3,0.2306,1.3099837120786597,nan,0
-counterflow-s05,counterflow,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,6,9,0.2306,1.3099837120786597,nan,0
-counterflow-s06,counterflow,baseline,full,-,-,-,0,,0,0,0,,1,0.2292,0.24371499811637934,nan,0
-counterflow-s06,counterflow,main,twin,phones,A,random,4,C03 C06 C08 C12,0,0,0,,1,0.2292,0.6538047957836357,0.0,0
-counterflow-s06,counterflow,main,twin,phones,B,random,4,C03 C06 C08 C12,0,0,0,,3,0.2292,0.7685740220144885,0.0,0
-counterflow-s06,counterflow,baseline,sensor,phones,A,random,4,C03 C06 C08 C12,0,0,0,,1,0.2292,0.830043947542078,0.0,0
-counterflow-s06,counterflow,baseline,trend,phones,A,random,4,C03 C06 C08 C12,0,0,0,,6,0.2292,0.830043947542078,0.0,0
-counterflow-s06,counterflow,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2292,0.4864498733309017,1.1262072173418383,0
-counterflow-s06,counterflow,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2292,0.44766278429221373,1.058820076139323,0
-counterflow-s06,counterflow,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2292,0.5998776732613116,1.17022658296547,0
-counterflow-s06,counterflow,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,2,0.2292,0.5998776732613116,1.17022658296547,0
-counterflow-s06,counterflow,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,3,0.2292,0.9297904065566627,0.3430861184989829,0
-counterflow-s06,counterflow,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,0,0,0,,3,0.2292,0.9518627132089673,1.5217721161477018,0
-counterflow-s06,counterflow,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2292,0.9664089089212589,0.6399982521058531,0
-counterflow-s06,counterflow,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,7,0.2292,0.9664089089212589,0.6399982521058531,0
-counterflow-s06,counterflow,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,0,0,0,,1,0.2292,0.734712747389108,nan,0
-counterflow-s06,counterflow,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,0,0,0,,1,0.2292,0.7434368996715601,nan,0
-counterflow-s06,counterflow,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,0,0,0,,12,0.2292,4.368131519188529,nan,0
-counterflow-s06,counterflow,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,0,0,0,,13,0.2292,4.368131519188529,nan,0
-counterflow-s06,counterflow,main,twin,tags,A,random,4,C03 C06 C08 C12,0,0,0,,1,0.2292,0.38459977788777855,0.0,0
-counterflow-s06,counterflow,main,twin,tags,B,random,4,C03 C06 C08 C12,0,0,0,,1,0.2292,0.4552868840900053,0.0,0
-counterflow-s06,counterflow,baseline,sensor,tags,A,random,4,C03 C06 C08 C12,0,0,0,,6,0.2292,1.891405834607,0.0,0
-counterflow-s06,counterflow,baseline,trend,tags,A,random,4,C03 C06 C08 C12,0,0,0,,10,0.2292,1.891405834607,0.0,0
-counterflow-s06,counterflow,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,5,0.2292,0.18240465255583332,1.9351447337805137,0
-counterflow-s06,counterflow,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2292,0.533858841157523,1.2173431771178047,0
-counterflow-s06,counterflow,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,3,0.2292,0.5553564507624846,5.536312463784509,0
-counterflow-s06,counterflow,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,8,0.2292,0.5553564507624846,5.536312463784509,0
-counterflow-s06,counterflow,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2292,0.543574860317241,0.3015447144512421,0
-counterflow-s06,counterflow,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2292,0.600486701598508,0.36661915030787146,0
-counterflow-s06,counterflow,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,2,0.2292,1.5036097133144597,0.8690674161946675,0
-counterflow-s06,counterflow,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,11,0.2292,1.5036097133144597,0.8690674161946675,0
-counterflow-s06,counterflow,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,0,0,0,,1,0.2292,0.43595681450278645,nan,0
-counterflow-s06,counterflow,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,0,0,0,,1,0.2292,0.44469593437489174,nan,0
-counterflow-s06,counterflow,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,0,0,0,,3,0.2292,1.1292579505426392,nan,0
-counterflow-s06,counterflow,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,0,0,0,,10,0.2292,1.1292579505426392,nan,0
-counterflow-s07,counterflow,baseline,full,-,-,-,0,,1,1,0,34,0,0.2069,0.15852843892441032,nan,0
-counterflow-s07,counterflow,main,twin,phones,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.2069,0.3831001876450306,1.1067303109387367,0
-counterflow-s07,counterflow,main,twin,phones,B,random,4,C00 C01 C13 C16,1,0,0,,0,0.2069,0.43389633918112663,1.3408579153446758,0
-counterflow-s07,counterflow,baseline,sensor,phones,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.2069,0.33051837068058976,1.4874698370459922,0
-counterflow-s07,counterflow,baseline,trend,phones,A,random,4,C00 C01 C13 C16,1,0,0,,2,0.2069,0.33051837068058976,1.4874698370459922,0
-counterflow-s07,counterflow,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2069,0.5675106522853919,1.1230291141160302,0
-counterflow-s07,counterflow,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2069,0.8223843691154347,1.4498109319845427,0
-counterflow-s07,counterflow,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2069,0.7209683515361479,1.6298089013470112,0
-counterflow-s07,counterflow,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2069,0.7209683515361479,1.6298089013470112,0
-counterflow-s07,counterflow,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,14,0,0.2069,0.8689757733735112,0.5811208463079249,0
-counterflow-s07,counterflow,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,14,0,0.2069,1.021978422824497,0.5118069550983116,0
-counterflow-s07,counterflow,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,1,0.2069,0.7598262637852482,0.678538274699297,0
-counterflow-s07,counterflow,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,19,11,0.2069,0.7598262637852482,0.678538274699297,0
-counterflow-s07,counterflow,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,9,0,0.2069,1.334634053741266,nan,0
-counterflow-s07,counterflow,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,0,1,,0,0.2069,1.4254991958804606,nan,0
-counterflow-s07,counterflow,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,8,0.2069,4.941701731635175,nan,0
-counterflow-s07,counterflow,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,10,0.2069,4.941701731635175,nan,0
-counterflow-s07,counterflow,main,twin,tags,A,random,4,C00 C01 C13 C16,1,1,0,294,2,0.2069,0.20589460145292202,0.8550013732413677,0
-counterflow-s07,counterflow,main,twin,tags,B,random,4,C00 C01 C13 C16,1,1,0,24,0,0.2069,0.23355882094326502,1.3664464234408942,0
-counterflow-s07,counterflow,baseline,sensor,tags,A,random,4,C00 C01 C13 C16,1,1,0,9,1,0.2069,0.357133735336638,4.544399702653869,0
-counterflow-s07,counterflow,baseline,trend,tags,A,random,4,C00 C01 C13 C16,1,1,0,9,7,0.2069,0.357133735336638,4.544399702653869,0
-counterflow-s07,counterflow,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,19,2,0.2069,0.287981774202826,2.1969080687932703,0
-counterflow-s07,counterflow,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,9,4,0.2069,0.2520093641928723,2.4822811070775197,0
-counterflow-s07,counterflow,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.2069,0.6719807945462345,6.975018451543414,0
-counterflow-s07,counterflow,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2069,0.6719807945462345,6.975018451543414,0
-counterflow-s07,counterflow,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,24,0,0.2069,0.4410525998381121,0.24984535715867778,0
-counterflow-s07,counterflow,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,29,1,0.2069,0.49953401886036747,2.394790312876138,0
-counterflow-s07,counterflow,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,8,0.2069,1.5603525006309487,2.5189431468819214,0
-counterflow-s07,counterflow,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,29,16,0.2069,1.5603525006309487,2.5189431468819214,0
-counterflow-s07,counterflow,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,29,0,0.2069,0.47147617113793294,nan,0
-counterflow-s07,counterflow,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,29,0,0.2069,0.850782644285074,nan,0
-counterflow-s07,counterflow,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,6,0.2069,1.6614424084104011,nan,0
-counterflow-s07,counterflow,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,10,0.2069,1.6614424084104011,nan,0
-counterflow-s08,counterflow,baseline,full,-,-,-,0,,0,0,0,,1,0.2281,0.23342073024692778,nan,0
-counterflow-s08,counterflow,main,twin,phones,A,random,4,C03 C06 C09 C16,0,0,0,,2,0.2281,0.633915571475566,0.0,0
-counterflow-s08,counterflow,main,twin,phones,B,random,4,C03 C06 C09 C16,0,0,0,,1,0.2281,0.9266985075991453,0.0,0
-counterflow-s08,counterflow,baseline,sensor,phones,A,random,4,C03 C06 C09 C16,0,0,0,,3,0.2281,0.6578266149116657,0.0,0
-counterflow-s08,counterflow,baseline,trend,phones,A,random,4,C03 C06 C09 C16,0,0,0,,5,0.2281,0.6578266149116657,0.0,0
-counterflow-s08,counterflow,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2281,0.5012818519817581,0.9647505182259943,0
-counterflow-s08,counterflow,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2281,0.586610052327459,0.9310197702313631,0
-counterflow-s08,counterflow,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2281,0.6188112476820973,1.2118592039472607,0
-counterflow-s08,counterflow,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2281,0.6188112476820973,1.2118592039472607,0
-counterflow-s08,counterflow,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2281,1.5441655180952396,0.8435212965759995,0
-counterflow-s08,counterflow,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,0,0,0,,3,0.2281,0.8049072465765909,0.38138486419581563,0
-counterflow-s08,counterflow,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,2,0.2281,0.7669630716073833,0.6334021442938941,0
-counterflow-s08,counterflow,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,10,0.2281,0.7669630716073833,0.6334021442938941,0
-counterflow-s08,counterflow,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,0,0,0,,1,0.2281,0.5860711650876935,nan,0
-counterflow-s08,counterflow,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,0,0,0,,1,0.2281,0.554963861838975,nan,0
-counterflow-s08,counterflow,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,0,0,0,,8,0.2281,4.255886328174444,nan,0
-counterflow-s08,counterflow,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,0,0,0,,7,0.2281,4.255886328174444,nan,0
-counterflow-s08,counterflow,main,twin,tags,A,random,4,C03 C06 C09 C16,0,0,0,,1,0.2281,0.4245143030076123,0.0,0
-counterflow-s08,counterflow,main,twin,tags,B,random,4,C03 C06 C09 C16,0,0,0,,2,0.2281,0.4955112017722195,0.0,0
-counterflow-s08,counterflow,baseline,sensor,tags,A,random,4,C03 C06 C09 C16,0,0,0,,4,0.2281,3.1154614537140644,0.0,0
-counterflow-s08,counterflow,baseline,trend,tags,A,random,4,C03 C06 C09 C16,0,0,0,,12,0.2281,3.1154614537140644,0.0,0
-counterflow-s08,counterflow,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,2,0.2281,0.29412951891830674,2.6248603453098918,0
-counterflow-s08,counterflow,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2281,0.5629853833844365,2.9013349934189985,0
-counterflow-s08,counterflow,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,5,0.2281,0.5503179838871994,4.137546456342091,0
-counterflow-s08,counterflow,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,6,0.2281,0.5503179838871994,4.137546456342091,0
-counterflow-s08,counterflow,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,0,0.2281,0.5218681898461507,0.4072223138544313,0
-counterflow-s08,counterflow,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,0,0,0,,0,0.2281,0.5703414627928823,0.3170321915786859,0
-counterflow-s08,counterflow,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,6,0.2281,1.4530017567395943,1.5382324981598094,0
-counterflow-s08,counterflow,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,11,0.2281,1.4530017567395943,1.5382324981598094,0
-counterflow-s08,counterflow,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,0,0,0,,1,0.2281,0.4638822430087874,nan,0
-counterflow-s08,counterflow,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,0,0,0,,2,0.2281,0.4091534902157793,nan,0
-counterflow-s08,counterflow,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,0,0,0,,2,0.2281,1.035943019077492,nan,0
-counterflow-s08,counterflow,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,0,0,0,,4,0.2281,1.035943019077492,nan,0
-blockage-s03,blockage,baseline,full,-,-,-,0,,1,1,0,45,0,0.2183,0.08921807663788282,nan,0
-blockage-s03,blockage,main,twin,phones,A,random,4,C03 C05 C11 C19,1,1,0,45,0,0.2183,0.45746753339858315,0.0,0
-blockage-s03,blockage,main,twin,phones,B,random,4,C03 C05 C11 C19,1,1,0,35,0,0.2183,0.7108150489635563,0.0,0
-blockage-s03,blockage,baseline,sensor,phones,A,random,4,C03 C05 C11 C19,1,0,1,,6,0.2183,9.21009382932322,0.0,0
-blockage-s03,blockage,baseline,trend,phones,A,random,4,C03 C05 C11 C19,1,1,0,30,8,0.2183,9.21009382932322,0.0,0
-blockage-s03,blockage,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2183,0.1940630185930075,1.0680182778087055,0
-blockage-s03,blockage,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2183,0.27122970702793747,1.0559246336671382,0
-blockage-s03,blockage,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2183,0.44359583209999776,1.3897164390344887,0
-blockage-s03,blockage,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.2183,0.44359583209999776,1.3897164390344887,0
-blockage-s03,blockage,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,45,0,0.2183,0.7699700440608689,0.583154127733151,0
-blockage-s03,blockage,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,45,1,0.2183,0.8154573912085062,0.16575942698203106,0
-blockage-s03,blockage,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,3,0.2183,0.8858177485042834,0.5159928059250076,0
-blockage-s03,blockage,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,50,9,0.2183,0.8858177485042834,0.5159928059250076,0
-blockage-s03,blockage,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,30,0,0.2183,0.5402748997505138,nan,0
-blockage-s03,blockage,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,20,0,0.2183,0.5954461702261581,nan,0
-blockage-s03,blockage,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,8,0.2183,3.9529798695385905,nan,0
-blockage-s03,blockage,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,9,0.2183,3.9529798695385905,nan,0
-blockage-s03,blockage,main,twin,tags,A,random,4,C03 C05 C11 C19,1,1,0,55,0,0.2183,0.29649426832655595,0.0,0
-blockage-s03,blockage,main,twin,tags,B,random,4,C03 C05 C11 C19,1,0,1,,0,0.2183,0.6527124229943898,0.0,0
-blockage-s03,blockage,baseline,sensor,tags,A,random,4,C03 C05 C11 C19,1,0,1,,7,0.2183,2.141561386311272,0.0,0
-blockage-s03,blockage,baseline,trend,tags,A,random,4,C03 C05 C11 C19,1,1,0,20,8,0.2183,2.141561386311272,0.0,0
-blockage-s03,blockage,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,85,0,0.2183,0.1447790621772476,1.5235976234240611,0
-blockage-s03,blockage,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,75,1,0.2183,0.1473936575328648,1.9096380445516603,0
-blockage-s03,blockage,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2183,0.34054091281438525,5.809308799812064,0
-blockage-s03,blockage,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.2183,0.34054091281438525,5.809308799812064,0
-blockage-s03,blockage,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,60,0,0.2183,0.6090280725584951,0.41480988570952965,0
-blockage-s03,blockage,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,65,0,0.2183,0.6113945131900479,0.8434015798924202,0
-blockage-s03,blockage,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,7,0.2183,1.8082218195344368,12.45517944866801,0
-blockage-s03,blockage,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,45,19,0.2183,1.8082218195344368,12.45517944866801,0
-blockage-s03,blockage,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,65,0,0.2183,0.5593438525086054,nan,0
-blockage-s03,blockage,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,65,0,0.2183,0.5343331102552177,nan,0
-blockage-s03,blockage,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,11,0.2183,2.248055075820024,nan,0
-blockage-s03,blockage,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,12,0.2183,2.248055075820024,nan,0
-blockage-s04,blockage,baseline,full,-,-,-,0,,1,1,0,83,0,0.2286,0.11944623607540358,nan,0
-blockage-s04,blockage,main,twin,phones,A,random,4,C00 C02 C12 C19,1,1,0,33,0,0.2286,0.6442999159844203,0.06034195304689308,0
-blockage-s04,blockage,main,twin,phones,B,random,4,C00 C02 C12 C19,1,1,0,28,0,0.2286,0.7614402834795786,0.06423266726565562,0
-blockage-s04,blockage,baseline,sensor,phones,A,random,4,C00 C02 C12 C19,1,0,0,,6,0.2286,3.293781004319881,0.10091322834979127,0
-blockage-s04,blockage,baseline,trend,phones,A,random,4,C00 C02 C12 C19,1,0,0,,8,0.2286,3.293781004319881,0.10091322834979127,0
-blockage-s04,blockage,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2286,0.29531258130898774,0.8818612550364373,0
-blockage-s04,blockage,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2286,0.3049729504321848,1.735927334582511,0
-blockage-s04,blockage,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2286,0.43479245024907764,1.4680152173415333,0
-blockage-s04,blockage,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.2286,0.43479245024907764,1.4680152173415333,0
-blockage-s04,blockage,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,43,0,0.2286,0.8424968103665139,0.23761137455102876,0
-blockage-s04,blockage,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,48,2,0.2286,0.9834717775130113,1.1838940738216142,0
-blockage-s04,blockage,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,3,1,0.2286,0.7638640125051677,0.5276538647371344,0
-blockage-s04,blockage,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,68,9,0.2286,0.7638640125051677,0.5276538647371344,0
-blockage-s04,blockage,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,18,0,0.2286,1.3167413708942581,nan,0
-blockage-s04,blockage,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,18,0,0.2286,1.2464544289561705,nan,0
-blockage-s04,blockage,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,8,0.2286,4.378523881465661,nan,0
-blockage-s04,blockage,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,8,0.2286,4.378523881465661,nan,0
-blockage-s04,blockage,main,twin,tags,A,random,4,C00 C02 C12 C19,1,1,0,43,0,0.2286,0.6434132251302417,0.04832656647135793,0
-blockage-s04,blockage,main,twin,tags,B,random,4,C00 C02 C12 C19,1,1,0,28,0,0.2286,0.7108253600783057,0.06309661151781427,0
-blockage-s04,blockage,baseline,sensor,tags,A,random,4,C00 C02 C12 C19,1,0,0,,7,0.2286,5.285274146054591,0.10091322834979127,0
-blockage-s04,blockage,baseline,trend,tags,A,random,4,C00 C02 C12 C19,1,0,0,,7,0.2286,5.285274146054591,0.10091322834979127,0
-blockage-s04,blockage,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,68,0,0.2286,0.1590562162186884,1.411950456012925,0
-blockage-s04,blockage,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,1,0.2286,0.4998230617069859,2.4327656785858878,0
-blockage-s04,blockage,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2286,0.3051165593580513,3.4236739109973713,0
-blockage-s04,blockage,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,6,0.2286,0.3051165593580513,3.4236739109973713,0
-blockage-s04,blockage,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,73,0,0.2286,0.6120688704116621,0.23112839300565233,0
-blockage-s04,blockage,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,58,0,0.2286,0.6300104844533324,0.28910950668789254,0
-blockage-s04,blockage,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,7,0.2286,1.9362106061261608,1.561829821365255,0
-blockage-s04,blockage,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,58,19,0.2286,1.9362106061261608,1.561829821365255,0
-blockage-s04,blockage,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,38,0,0.2286,0.6726010485844379,nan,0
-blockage-s04,blockage,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,73,0,0.2286,0.5459458957638209,nan,0
-blockage-s04,blockage,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,7,0.2286,1.9725448674757555,nan,0
-blockage-s04,blockage,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,12,0.2286,1.9725448674757555,nan,0
-blockage-s05,blockage,baseline,full,-,-,-,0,,1,1,0,66,0,0.2283,0.1331586629327672,nan,0
-blockage-s05,blockage,main,twin,phones,A,random,4,C01 C07 C18 C19,1,0,1,,1,0.2283,0.7052347849846236,0.23259793161317546,0
-blockage-s05,blockage,main,twin,phones,B,random,4,C01 C07 C18 C19,1,1,0,46,0,0.2283,0.6700172029307465,0.21183171982731058,0
-blockage-s05,blockage,baseline,sensor,phones,A,random,4,C01 C07 C18 C19,1,0,1,,7,0.2283,1.9977130795897122,0.38373525170075334,0
-blockage-s05,blockage,baseline,trend,phones,A,random,4,C01 C07 C18 C19,1,1,0,6,13,0.2283,1.9977130795897122,0.38373525170075334,0
-blockage-s05,blockage,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2283,0.3030419185668409,0.8701369261237432,0
-blockage-s05,blockage,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,46,0,0.2283,0.4102256893422804,0.9679650144455283,0
-blockage-s05,blockage,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2283,0.4567535551862044,1.4804893838893523,0
-blockage-s05,blockage,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2283,0.4567535551862044,1.4804893838893523,0
-blockage-s05,blockage,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,31,1,0.2283,0.7810921972813736,0.38669681483669543,0
-blockage-s05,blockage,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,36,1,0.2283,1.0521822360268593,0.2173345113715084,0
-blockage-s05,blockage,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,3,0.2283,1.1420329465457404,0.5143754020036604,0
-blockage-s05,blockage,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,61,10,0.2283,1.1420329465457404,0.5143754020036604,0
-blockage-s05,blockage,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,41,0,0.2283,0.4902052816662725,nan,0
-blockage-s05,blockage,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,26,0,0.2283,0.538866649969302,nan,0
-blockage-s05,blockage,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,10,0.2283,4.351058810065379,nan,0
-blockage-s05,blockage,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,12,0.2283,4.351058810065379,nan,0
-blockage-s05,blockage,main,twin,tags,A,random,4,C01 C07 C18 C19,1,1,0,16,0,0.2283,0.5888428230433987,0.21697420346214016,0
-blockage-s05,blockage,main,twin,tags,B,random,4,C01 C07 C18 C19,1,0,1,,0,0.2283,0.7496639595077941,0.37117797948647935,0
-blockage-s05,blockage,baseline,sensor,tags,A,random,4,C01 C07 C18 C19,1,0,0,,4,0.2283,2.9694300080469787,0.47621720393692546,0
-blockage-s05,blockage,baseline,trend,tags,A,random,4,C01 C07 C18 C19,1,1,0,76,9,0.2283,2.9694300080469787,0.47621720393692546,0
-blockage-s05,blockage,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,61,1,0.2283,0.23779810003572108,2.839347099934137,0
-blockage-s05,blockage,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,101,0,0.2283,0.20905653924905365,1.9034818204368398,0
-blockage-s05,blockage,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.2283,0.31533548123279564,4.296153875319767,0
-blockage-s05,blockage,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,10,0.2283,0.31533548123279564,4.296153875319767,0
-blockage-s05,blockage,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,6,0,0.2283,0.6887638529488421,0.07759676844085402,0
-blockage-s05,blockage,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,6,0,0.2283,0.7076743181749591,0.1264547252837286,0
-blockage-s05,blockage,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,12,0.2283,3.093476405070542,21.270528720390903,0
-blockage-s05,blockage,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,56,21,0.2283,3.093476405070542,21.270528720390903,0
-blockage-s05,blockage,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,26,0,0.2283,0.587448831345479,nan,0
-blockage-s05,blockage,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,26,0,0.2283,0.5718568822345963,nan,0
-blockage-s05,blockage,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,6,0.2283,1.9128785731440563,nan,0
-blockage-s05,blockage,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,8,0.2283,1.9128785731440563,nan,0
-blockage-s06,blockage,baseline,full,-,-,-,0,,1,1,0,50,0,0.2208,0.0958278998178317,nan,0
-blockage-s06,blockage,main,twin,phones,A,random,4,C03 C06 C08 C12,1,1,0,25,0,0.2208,0.5498281034165584,0.0,0
-blockage-s06,blockage,main,twin,phones,B,random,4,C03 C06 C08 C12,1,0,1,,0,0.2208,0.5529802786137109,0.0,0
-blockage-s06,blockage,baseline,sensor,phones,A,random,4,C03 C06 C08 C12,1,0,1,,0,0.2208,1.0705274946908556,0.0,0
-blockage-s06,blockage,baseline,trend,phones,A,random,4,C03 C06 C08 C12,1,1,0,50,8,0.2208,1.0705274946908556,0.0,0
-blockage-s06,blockage,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,85,0,0.2208,0.5579598150147185,1.3596896273694081,0
-blockage-s06,blockage,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,70,1,0.2208,0.5726758270617548,1.275952528324326,0
-blockage-s06,blockage,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2208,0.4611765078779712,1.4442157101688955,0
-blockage-s06,blockage,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2208,0.4611765078779712,1.4442157101688955,0
-blockage-s06,blockage,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,50,0,0.2208,0.7327962789933393,0.15937031505530985,0
-blockage-s06,blockage,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,65,0,0.2208,0.8326850258764359,0.5763694729346751,0
-blockage-s06,blockage,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,1,0.2208,0.9803314528693523,0.524884158303305,0
-blockage-s06,blockage,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,8,0.2208,0.9803314528693523,0.524884158303305,0
-blockage-s06,blockage,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,25,0,0.2208,0.5514385823936649,nan,0
-blockage-s06,blockage,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,0,1,,1,0.2208,0.5232918132599712,nan,0
-blockage-s06,blockage,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,11,0.2208,4.147783988527797,nan,0
-blockage-s06,blockage,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,12,0.2208,4.147783988527797,nan,0
-blockage-s06,blockage,main,twin,tags,A,random,4,C03 C06 C08 C12,1,1,0,60,0,0.2208,0.5660905330129522,0.0,0
-blockage-s06,blockage,main,twin,tags,B,random,4,C03 C06 C08 C12,1,1,0,50,0,0.2208,0.6047339004247602,0.0,0
-blockage-s06,blockage,baseline,sensor,tags,A,random,4,C03 C06 C08 C12,1,0,1,,7,0.2208,4.288652034939692,0.0,0
-blockage-s06,blockage,baseline,trend,tags,A,random,4,C03 C06 C08 C12,1,0,1,,11,0.2208,4.288652034939692,0.0,0
-blockage-s06,blockage,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,85,1,0.2208,0.24521360812900964,1.6508043449130123,0
-blockage-s06,blockage,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,90,0,0.2208,0.3283765273053916,1.2331532768276494,0
-blockage-s06,blockage,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2208,0.35094397060684157,5.4752980731968135,0
-blockage-s06,blockage,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,10,0.2208,0.35094397060684157,5.4752980731968135,0
-blockage-s06,blockage,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,30,0,0.2208,0.6169285685235981,0.2260082357776108,0
-blockage-s06,blockage,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,1,0,45,0,0.2208,0.652546207421247,0.6874763262447711,0
-blockage-s06,blockage,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,4,0.2208,2.3866052500343384,0.66802728091305,0
-blockage-s06,blockage,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,65,6,0.2208,2.3866052500343384,0.66802728091305,0
-blockage-s06,blockage,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,25,0,0.2208,0.5603514799653064,nan,0
-blockage-s06,blockage,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,25,0,0.2208,0.5619756401171732,nan,0
-blockage-s06,blockage,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,6,0.2208,2.045649053767053,nan,0
-blockage-s06,blockage,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,10,0.2208,2.045649053767053,nan,0
-blockage-s07,blockage,baseline,full,-,-,-,0,,1,1,0,92,0,0.225,0.0920289836019828,nan,0
-blockage-s07,blockage,main,twin,phones,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.225,0.23390118318537917,0.70177737401839,0
-blockage-s07,blockage,main,twin,phones,B,random,4,C00 C01 C13 C16,1,1,0,112,0,0.225,0.25894416170713824,0.8745078496471377,0
-blockage-s07,blockage,baseline,sensor,phones,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.225,0.2614169654652884,1.4036936024437112,0
-blockage-s07,blockage,baseline,trend,phones,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.225,0.2614169654652884,1.4036936024437112,0
-blockage-s07,blockage,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.225,0.31896537313350554,0.9978036494915926,0
-blockage-s07,blockage,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.225,0.33735768465354327,1.2851254493399418,0
-blockage-s07,blockage,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.225,0.3916890389891775,1.4361311564558152,0
-blockage-s07,blockage,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.225,0.3916890389891775,1.4361311564558152,0
-blockage-s07,blockage,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,52,0,0.225,0.8319592025390815,0.2518278288866769,0
-blockage-s07,blockage,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,1,1,0,52,0,0.225,0.864984405822707,0.25944385208110854,0
-blockage-s07,blockage,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.225,0.6422083226200938,0.5215399987065953,0
-blockage-s07,blockage,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,1,1,0,57,13,0.225,0.6422083226200938,0.5215399987065953,0
-blockage-s07,blockage,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,1,1,0,42,0,0.225,0.6176813352265831,nan,0
-blockage-s07,blockage,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,1,1,0,37,0,0.225,1.5416613935120662,nan,0
-blockage-s07,blockage,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,8,0.225,4.383065889207112,nan,0
-blockage-s07,blockage,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,1,0,0,,10,0.225,4.383065889207112,nan,0
-blockage-s07,blockage,main,twin,tags,A,random,4,C00 C01 C13 C16,1,1,0,127,0,0.225,0.12297679175762818,1.0023683692570637,0
-blockage-s07,blockage,main,twin,tags,B,random,4,C00 C01 C13 C16,1,1,0,142,0,0.225,0.12781928158535522,1.1141897357775108,0
-blockage-s07,blockage,baseline,sensor,tags,A,random,4,C00 C01 C13 C16,1,0,1,,3,0.225,0.19136907862152244,2.3916644891977414,0
-blockage-s07,blockage,baseline,trend,tags,A,random,4,C00 C01 C13 C16,1,0,1,,4,0.225,0.19136907862152244,2.3916644891977414,0
-blockage-s07,blockage,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.225,0.2784574514493413,1.387845056415095,0
-blockage-s07,blockage,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.225,0.18963371046998484,2.71047101934094,0
-blockage-s07,blockage,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.225,0.2991797314950657,6.419310307332926,0
-blockage-s07,blockage,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.225,0.2991797314950657,6.419310307332926,0
-blockage-s07,blockage,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,42,0,0.225,0.6385642627783157,0.10611162193683436,0
-blockage-s07,blockage,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.225,0.6595572784060716,0.15849829586266703,0
-blockage-s07,blockage,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,4,0.225,1.6778263557808168,0.9014548573429668,0
-blockage-s07,blockage,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,1,1,0,82,11,0.225,1.6778263557808168,0.9014548573429668,0
-blockage-s07,blockage,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,1,1,0,52,0,0.225,0.6113541652014931,nan,0
-blockage-s07,blockage,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,1,1,0,47,0,0.225,0.6151497216516963,nan,0
-blockage-s07,blockage,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,7,0.225,2.1268931593164537,nan,0
-blockage-s07,blockage,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,1,0,1,,10,0.225,2.1268931593164537,nan,0
-blockage-s08,blockage,baseline,full,-,-,-,0,,2,1,0,89,0,0.1778,0.18887892801480766,nan,0
-blockage-s08,blockage,main,twin,phones,A,random,4,C03 C06 C09 C16,2,0,1,,0,0.1778,0.5293947036608723,0.0,0
-blockage-s08,blockage,main,twin,phones,B,random,4,C03 C06 C09 C16,2,2,0,49 174,0,0.1778,1.001757084345231,0.0,0
-blockage-s08,blockage,baseline,sensor,phones,A,random,4,C03 C06 C09 C16,2,0,1,,0,0.1778,1.0278724334180582,0.0,0
-blockage-s08,blockage,baseline,trend,phones,A,random,4,C03 C06 C09 C16,2,2,0,39 184,2,0.1778,1.0278724334180582,0.0,0
-blockage-s08,blockage,main,twin,phones,A,entrance_exit,4,C00 C01 C10 C11,2,2,0,54 204,0,0.1778,1.155813969075836,1.6606631518004615,0
-blockage-s08,blockage,main,twin,phones,B,entrance_exit,4,C00 C01 C10 C11,2,2,0,59 159,0,0.1778,0.9285662998105414,1.533804689855411,0
-blockage-s08,blockage,baseline,sensor,phones,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,0,0.1778,0.4435686335360788,1.7920604891216418,0
-blockage-s08,blockage,baseline,trend,phones,A,entrance_exit,4,C00 C01 C10 C11,2,1,0,219,1,0.1778,0.4435686335360788,1.7920604891216418,0
-blockage-s08,blockage,main,twin,phones,A,bottleneck,4,C08 C09 C18 C19,2,1,0,59,0,0.1778,1.1358127177713189,0.47320676092233643,0
-blockage-s08,blockage,main,twin,phones,B,bottleneck,4,C08 C09 C18 C19,2,2,0,49 174,0,0.1778,1.318921732237966,0.19092125724239312,0
-blockage-s08,blockage,baseline,sensor,phones,A,bottleneck,4,C08 C09 C18 C19,2,0,1,,3,0.1778,1.2154422334300277,0.5791498808579943,0
-blockage-s08,blockage,baseline,trend,phones,A,bottleneck,4,C08 C09 C18 C19,2,2,0,4 289,9,0.1778,1.2154422334300277,0.5791498808579943,0
-blockage-s08,blockage,main,twin,phones,A,greedy_mi,4,C01 C03 C07 C09,2,1,0,69,1,0.1778,0.841557252982774,nan,0
-blockage-s08,blockage,main,twin,phones,B,greedy_mi,4,C01 C03 C07 C09,2,2,0,54 179,0,0.1778,0.9633996057465515,nan,0
-blockage-s08,blockage,baseline,sensor,phones,A,greedy_mi,4,C01 C03 C07 C09,2,1,0,239,3,0.1778,5.376695020392611,nan,0
-blockage-s08,blockage,baseline,trend,phones,A,greedy_mi,4,C01 C03 C07 C09,2,1,0,289,4,0.1778,5.376695020392611,nan,0
-blockage-s08,blockage,main,twin,tags,A,random,4,C03 C06 C09 C16,2,0,1,,0,0.1778,0.8364835005006602,0.0,0
-blockage-s08,blockage,main,twin,tags,B,random,4,C03 C06 C09 C16,2,0,1,,0,0.1778,0.8252764324324283,0.0,0
-blockage-s08,blockage,baseline,sensor,tags,A,random,4,C03 C06 C09 C16,2,2,0,4 74,4,0.1778,7.68444281219489,0.0,0
-blockage-s08,blockage,baseline,trend,tags,A,random,4,C03 C06 C09 C16,2,2,0,74 269,6,0.1778,7.68444281219489,0.0,0
-blockage-s08,blockage,main,twin,tags,A,entrance_exit,4,C00 C01 C10 C11,2,0,1,,1,0.1778,0.3322632717909944,2.8778003243531143,0
-blockage-s08,blockage,main,twin,tags,B,entrance_exit,4,C00 C01 C10 C11,2,0,1,,1,0.1778,0.6468942965573674,3.3094941684435017,0
-blockage-s08,blockage,baseline,sensor,tags,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,4,0.1778,0.31161358276538187,5.719459949503811,0
-blockage-s08,blockage,baseline,trend,tags,A,entrance_exit,4,C00 C01 C10 C11,2,1,0,254,5,0.1778,0.31161358276538187,5.719459949503811,0
-blockage-s08,blockage,main,twin,tags,A,bottleneck,4,C08 C09 C18 C19,2,1,0,49,0,0.1778,0.8579576683670725,0.2415136549509609,0
-blockage-s08,blockage,main,twin,tags,B,bottleneck,4,C08 C09 C18 C19,2,0,1,,0,0.1778,0.8982729310847024,0.12561190989891202,0
-blockage-s08,blockage,baseline,sensor,tags,A,bottleneck,4,C08 C09 C18 C19,2,1,0,229,8,0.1778,3.4891733187723677,2.037923814294243,0
-blockage-s08,blockage,baseline,trend,tags,A,bottleneck,4,C08 C09 C18 C19,2,2,0,49 294,12,0.1778,3.4891733187723677,2.037923814294243,0
-blockage-s08,blockage,main,twin,tags,A,greedy_mi,4,C01 C05 C07 C09,2,1,0,34,0,0.1778,0.7879309632851679,nan,0
-blockage-s08,blockage,main,twin,tags,B,greedy_mi,4,C01 C05 C07 C09,2,0,1,,0,0.1778,0.821708317525401,nan,0
-blockage-s08,blockage,baseline,sensor,tags,A,greedy_mi,4,C01 C05 C07 C09,2,1,1,274,3,0.1778,1.9757491661675293,nan,0
-blockage-s08,blockage,baseline,trend,tags,A,greedy_mi,4,C01 C05 C07 C09,2,1,1,289,5,0.1778,1.9757491661675293,nan,0
+run,scenario,group,method,mode,noise,option,strategy,budget,sensors,events,hits,late,leads,false_alarms,hours,rmse_sensed,rmse_unsensed,alerts,mae_sensed,mae_unsensed,amber_events,amber_hits,amber_late,amber_false_alarms,failed,blind_alerts,blind_lead
+counterflow-s03,counterflow,baseline,full,-,-,-,-,0,,1,1,0,51,0,0.2031,0.23609159488800927,nan,1,0.07708887462621193,nan,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,A,random,4,C03 C05 C11 C19,1,1,0,36,0,0.2031,0.714343237411862,0.0,1,0.4058818924886176,0.0,1,1,0,1,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,B,random,4,C03 C05 C11 C19,1,1,0,31,0,0.2031,0.6506700688341669,0.0,1,0.35339700772455457,0.0,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,phones,medium,A,random,4,C03 C05 C11 C19,1,0,1,,1,0.2031,0.7774423346697135,0.0,2,0.49825020372780526,0.0,1,0,1,0,0,0,nan
+counterflow-s03,counterflow,baseline,trend,phones,medium,A,random,4,C03 C05 C11 C19,1,1,0,41,4,0.2031,0.7774423346697135,0.0,5,0.49825020372780526,0.0,1,1,0,4,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,101,1,0.2031,0.5462354089277484,1.4541930828439686,3,0.2872855024220096,0.8668147846211184,1,1,0,3,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,111,2,0.2031,0.5445275902667822,1.2464281450716774,4,0.29840105889078516,0.7611875211590438,1,1,0,3,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2031,0.7835717817405138,1.634948484689224,0,0.4360824017969359,1.099671803652968,1,0,0,3,0,0,nan
+counterflow-s03,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2031,0.7835717817405138,1.634948484689224,3,0.4360824017969359,1.099671803652968,1,0,0,5,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,36,0,0.2031,0.7152239187029248,0.34898683365701855,1,0.4467861278507002,0.15605455129623513,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,41,0,0.2031,0.714231419955543,0.46305232592942824,1,0.4428719345904285,0.20396401662009353,1,1,0,2,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,1,0.2031,0.9702985125002936,0.9689947047292335,3,0.6409899965454613,0.5373037105640934,1,0,1,14,0,0,nan
+counterflow-s03,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,41,21,0.2031,0.9702985125002936,0.9689947047292335,23,0.6409899965454613,0.5373037105640934,1,1,0,28,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,31,0,0.2031,0.6797824985000042,0.10117515891692666,1,0.3906531901387369,0.08633065511069693,1,0,1,0,0,0,nan
+counterflow-s03,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,31,0,0.2031,0.6956254300965788,0.0998739324399579,1,0.39927230845391065,0.0778790074184827,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,1,0.2031,0.6863183335646051,0.24017784365715006,2,0.40642916812676405,0.19444444444444442,1,0,1,0,0,0,nan
+counterflow-s03,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,41,5,0.2031,0.6863183335646051,0.24017784365715006,6,0.40642916812676405,0.19444444444444442,1,1,0,6,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,A,random,4,C03 C05 C11 C19,1,1,0,36,0,0.2031,0.5274361935534242,0.0,1,0.2763380514710944,0.0,1,1,0,1,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,B,random,4,C03 C05 C11 C19,1,1,0,36,0,0.2031,0.5348741947816495,0.0,1,0.2834115131027129,0.0,1,1,0,1,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,tags,medium,A,random,4,C03 C05 C11 C19,1,0,1,,0,0.2031,1.0674392378918935,0.0,1,0.6670830150874489,0.0,1,0,1,7,0,0,nan
+counterflow-s03,counterflow,baseline,trend,tags,medium,A,random,4,C03 C05 C11 C19,1,1,0,46,6,0.2031,1.0674392378918935,0.0,7,0.6670830150874489,0.0,1,1,0,13,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,31,0,0.2031,0.5346696824867041,1.4389208365609871,1,0.2642136760202634,0.9263792277155871,1,1,0,1,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,211,0,0.2031,0.5313889309375006,1.46044368380343,4,0.2654421437089455,0.9313605611823293,1,1,0,2,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2031,0.610014480388079,1.6448129808353078,0,0.3044444263256857,1.105786417418457,1,0,0,4,0,0,nan
+counterflow-s03,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,9,0.2031,0.610014480388079,1.6448129808353078,9,0.3044444263256857,1.105786417418457,1,0,0,14,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,51,0,0.2031,0.6838530262454646,0.3980882413715565,1,0.4137490828323968,0.1877003066141955,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,51,1,0.2031,0.6625938284219887,0.1875421487649215,2,0.42099884743294685,0.08527032761748334,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,16,1,0.2031,0.7743288002981419,0.7765422471855399,3,0.4994404848574182,0.42360131499361725,1,0,1,9,0,0,nan
+counterflow-s03,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,46,15,0.2031,0.7743288002981419,0.7765422471855399,17,0.4994404848574182,0.42360131499361725,1,1,0,22,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,51,0,0.2031,0.6309674138664197,0.0,1,0.35411048128003286,0.0,1,1,0,2,0,0,nan
+counterflow-s03,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,51,0,0.2031,0.6345522426846935,0.0,1,0.3526373244903226,0.0,1,1,0,0,0,0,nan
+counterflow-s03,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,6,0,0.2031,1.0064469896068533,0.0,3,0.5391005475557343,0.0,1,0,1,5,0,0,nan
+counterflow-s03,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,41,5,0.2031,1.0064469896068533,0.0,8,0.5391005475557343,0.0,1,1,0,10,0,0,nan
+counterflow-s04,counterflow,baseline,full,-,-,-,-,0,,2,2,0,57 171,0,0.2483,0.2738860925115146,nan,1,0.11182724276016484,nan,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,A,random,4,C00 C02 C12 C19,2,2,0,37 151,0,0.2483,0.541045759973496,0.06771946999483797,2,0.32492309057308927,0.052285640994695605,1,1,0,1,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,B,random,4,C00 C02 C12 C19,2,2,0,62 176,0,0.2483,0.5922286774699299,0.0631785375709919,1,0.35735549186096127,0.04600043283661967,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,phones,medium,A,random,4,C00 C02 C12 C19,2,2,0,22 136,1,0.2483,0.938419580297756,0.16707256545553997,3,0.6154854669883861,0.12921348314606743,1,0,1,2,0,0,nan
+counterflow-s04,counterflow,baseline,trend,phones,medium,A,random,4,C00 C02 C12 C19,2,2,0,37 151,6,0.2483,0.938419580297756,0.16707256545553997,8,0.6154854669883861,0.12921348314606743,1,1,0,7,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,2,2,0,97 211,0,0.2483,0.759745528422014,1.5898455456231413,2,0.3880478498535828,0.9360085857962678,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,2,2,0,112 226,0,0.2483,0.40627430533071385,0.6107269752440343,2,0.21853748637690762,0.3592908950292989,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,0,0.2483,0.745254843058051,1.5753427975926386,0,0.4003089057893845,0.9729049625468165,1,0,0,3,0,0,nan
+counterflow-s04,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,4,0.2483,0.745254843058051,1.5753427975926386,4,0.4003089057893845,0.9729049625468165,1,0,0,5,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,67 181,2,0.2483,1.4408786319413465,0.30365256986320344,3,0.7624776668596924,0.14351066288138295,1,1,0,5,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,2,2,0,17 131,0,0.2483,0.6882313475001839,0.16649399994105302,1,0.4039171453586264,0.07122618921179065,1,0,1,0,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,17 131,1,0.2483,1.1109837771571018,0.9099081685670837,2,0.6982802508012345,0.4575659794917928,1,0,1,16,0,0,nan
+counterflow-s04,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,42 156,28,0.2483,1.1109837771571018,0.9099081685670837,29,0.6982802508012345,0.4575659794917928,1,1,0,36,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,2,2,0,47 161,1,0.2483,0.5461292073978032,0.06737929640993352,2,0.30914695782760104,0.051817747397339985,1,1,0,1,0,0,nan
+counterflow-s04,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,2,2,0,202 151,0,0.2483,0.5648315703172194,0.08316027614168015,2,0.3183160545766779,0.05995258647315629,1,1,0,1,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,2,1,1,111,1,0.2483,0.7895970086967519,0.16707256545553997,3,0.43008688374081694,0.12921348314606743,1,0,1,1,0,0,nan
+counterflow-s04,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,2,2,0,37 151,4,0.2483,0.7895970086967519,0.16707256545553997,6,0.43008688374081694,0.12921348314606743,1,0,1,7,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,A,random,4,C00 C02 C12 C19,2,2,0,52 166,0,0.2483,0.48966419346009227,0.0812660479115226,1,0.276379346392776,0.06481858086443296,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,B,random,4,C00 C02 C12 C19,2,2,0,47 161,0,0.2483,0.5666107785924517,0.08143638280039707,1,0.32530465200758435,0.06006993916817897,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,tags,medium,A,random,4,C00 C02 C12 C19,2,0,0,,0,0.2483,1.2048695972503998,0.16707256545553997,0,0.6901451799644179,0.12921348314606743,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,baseline,trend,tags,medium,A,random,4,C00 C02 C12 C19,2,2,0,227 246,4,0.2483,1.2048695972503998,0.16707256545553997,7,0.6901451799644179,0.12921348314606743,1,1,0,6,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,2,2,0,32 146,0,0.2483,0.40431555275450576,1.339665360005416,1,0.19636290350515062,0.826295747182759,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,2,2,0,52 166,1,0.2483,0.450338810655049,1.3502733492547374,2,0.21110418353551783,0.7152784071659116,1,1,0,2,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,0,0.2483,0.6941074462993857,1.5620555502340712,0,0.34333852013143407,0.9499966037180778,1,0,0,6,0,0,nan
+counterflow-s04,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,12,0.2483,0.6941074462993857,1.5620555502340712,12,0.34333852013143407,0.9499966037180778,1,0,0,14,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,47 161,0,0.2483,0.4672571933731649,0.4291718427010822,1,0.284227547055252,0.1813202722589187,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,2,2,0,112 226,1,0.2483,0.49076614600821056,0.2189938235609402,3,0.30401781926123583,0.10434798301850642,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,27 141,0,0.2483,0.7981168505146891,0.734222113763909,2,0.496797012944847,0.36545560855409054,1,0,1,9,0,0,nan
+counterflow-s04,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,47 161,20,0.2483,0.7981168505146891,0.734222113763909,23,0.496797012944847,0.36545560855409054,1,1,0,28,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,2,2,0,52 166,0,0.2483,0.5596815717960099,0.0,1,0.321440941379701,0.0,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,2,2,0,47 161,0,0.2483,0.5389547389611238,0.0,1,0.3004604090186637,0.0,1,1,0,0,0,0,nan
+counterflow-s04,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,2,2,0,17 131,0,0.2483,0.9758637340522459,0.0,2,0.4872358970206536,0.0,1,0,1,8,0,0,nan
+counterflow-s04,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,2,2,0,37 151,9,0.2483,0.9758637340522459,0.0,11,0.4872358970206536,0.0,1,0,1,16,0,0,nan
+counterflow-s05,counterflow,baseline,full,-,-,-,-,0,,1,1,0,67,0,0.2344,0.38883191531833383,nan,1,0.1440564272569495,nan,1,1,0,3,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,A,random,4,C01 C07 C18 C19,1,1,0,52,0,0.2344,0.6642113673379918,0.3705138774928009,1,0.38844920453063786,0.19803849075022348,1,1,0,1,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,B,random,4,C01 C07 C18 C19,1,1,0,47,0,0.2344,0.7030763713298042,0.3707112487661191,1,0.4141950966057258,0.19654084150880427,1,1,0,0,0,0,nan
+counterflow-s05,counterflow,baseline,sensor,phones,medium,A,random,4,C01 C07 C18 C19,1,0,1,,1,0.2344,0.8349196965130647,0.6736813945889052,4,0.4818484889603728,0.3953889715608466,1,0,1,0,0,0,nan
+counterflow-s05,counterflow,baseline,trend,phones,medium,A,random,4,C01 C07 C18 C19,1,1,0,42,9,0.2344,0.8349196965130647,0.6736813945889052,13,0.4818484889603728,0.3953889715608466,1,1,0,12,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2344,0.34303906837393594,1.3357137386248652,0,0.1754140596518413,0.8009617386024582,1,0,0,0,0,1,212.0
+counterflow-s05,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,37,0,0.2344,0.4454946904123338,1.118970608826271,1,0.22059252191154916,0.7352814189462578,1,0,1,1,0,1,212.0
+counterflow-s05,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2344,0.7095607696519929,1.4890612827801497,0,0.34954299523676724,0.9713472773368608,1,0,0,3,0,0,nan
+counterflow-s05,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2344,0.7095607696519929,1.4890612827801497,3,0.34954299523676724,0.9713472773368608,1,0,0,5,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,52,0,0.2344,0.642857552043872,0.5242630455158196,1,0.3827977105661446,0.24957342000802615,1,1,0,2,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,42,0,0.2344,0.7602685314271409,0.5941026623840289,1,0.4659713705755067,0.24219864166992697,1,0,1,2,0,0,nan
+counterflow-s05,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,22,0,0.2344,1.002096788146826,0.9574889702383419,2,0.6301433589986514,0.5091037750687138,1,0,1,14,0,0,nan
+counterflow-s05,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,52,20,0.2344,1.002096788146826,0.9574889702383419,21,0.6301433589986514,0.5091037750687138,1,1,0,27,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,287,0,0.2344,0.5819326900296985,0.13491024620437828,2,0.326120541296369,0.10299651847777724,1,1,0,0,0,0,nan
+counterflow-s05,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,207,0,0.2344,0.8183739710636531,0.08661770368255083,2,0.4654813236750408,0.059437457276439024,1,1,0,1,0,0,nan
+counterflow-s05,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,1,0.2344,0.6172203095291734,0.22328408667598282,3,0.34131896821664487,0.16509589947089945,1,0,1,0,0,0,nan
+counterflow-s05,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,212,4,0.2344,0.6172203095291734,0.22328408667598282,8,0.34131896821664487,0.16509589947089945,1,1,0,6,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,A,random,4,C01 C07 C18 C19,1,1,0,117,0,0.2344,0.5853313665843731,0.3762018977148316,3,0.30890774395191134,0.2040561274616648,1,1,0,0,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,B,random,4,C01 C07 C18 C19,1,1,0,62,0,0.2344,0.6285257239507686,0.7726129586066053,1,0.33537657859004,0.4299475617143025,1,1,0,1,0,0,nan
+counterflow-s05,counterflow,baseline,sensor,tags,medium,A,random,4,C01 C07 C18 C19,1,0,1,,0,0.2344,0.9847524150698124,0.6736813945889052,1,0.6051367953193157,0.3953889715608466,1,0,1,3,0,0,nan
+counterflow-s05,counterflow,baseline,trend,tags,medium,A,random,4,C01 C07 C18 C19,1,0,1,,7,0.2344,0.9847524150698124,0.6736813945889052,9,0.6051367953193157,0.3953889715608466,1,0,1,12,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,122,0,0.2344,0.5115650339813542,1.2542471914776605,2,0.23474494822771347,0.8258420308387896,1,1,0,1,0,1,212.0
+counterflow-s05,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2344,0.42229268500182615,1.4144945437252818,0,0.18705962944420063,0.9168186434344207,1,0,0,0,0,1,212.0
+counterflow-s05,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2344,0.5758472712299469,1.4788001319294126,0,0.2685110011096344,0.9497681950084613,1,0,0,8,0,0,nan
+counterflow-s05,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,10,0.2344,0.5758472712299469,1.4788001319294126,10,0.2685110011096344,0.9497681950084613,1,0,0,13,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,67,0,0.2344,0.7536037449070538,0.45593428225245913,2,0.46945664993299085,0.23266396653362292,1,1,0,1,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,72,0,0.2344,0.6774361179262378,0.452263156671598,1,0.3942454786032008,0.2154972393483363,1,1,0,1,0,0,nan
+counterflow-s05,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,42,0,0.2344,0.8454390221170579,0.768302315796792,1,0.4792731373675036,0.4245394451955817,1,0,1,13,0,0,nan
+counterflow-s05,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,67,12,0.2344,0.8454390221170579,0.768302315796792,13,0.4792731373675036,0.4245394451955817,1,1,0,31,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,62,1,0.2344,0.6030027039277064,0.0,2,0.3243932810087457,0.0,1,1,0,1,0,0,nan
+counterflow-s05,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,62,1,0.2344,0.6965951222622518,0.0,2,0.36795788826457887,0.0,1,1,0,3,0,0,nan
+counterflow-s05,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,0,1,,0,0.2344,0.8978722412244247,0.0,2,0.4547585012130036,0.0,1,0,1,6,0,0,nan
+counterflow-s05,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,57,5,0.2344,0.8978722412244247,0.0,8,0.4547585012130036,0.0,1,1,0,12,0,0,nan
+counterflow-s06,counterflow,baseline,full,-,-,-,-,0,,3,3,0,115 134 199,0,0.2053,0.11847134375852132,nan,1,0.045460783155385244,nan,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,A,random,4,C03 C06 C08 C12,3,3,0,100 119 184,0,0.2053,0.7861098377106275,0.0,2,0.4475794555573848,0.0,1,1,0,1,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,B,random,4,C03 C06 C08 C12,3,3,0,100 119 184,0,0.2053,0.6083723340940875,0.0,1,0.3572145025874383,0.0,1,0,1,0,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,phones,medium,A,random,4,C03 C06 C08 C12,3,3,0,70 89 154,0,0.2053,0.7690503648567865,0.0,1,0.45530522572029747,0.0,1,0,1,3,0,0,nan
+counterflow-s06,counterflow,baseline,trend,phones,medium,A,random,4,C03 C06 C08 C12,3,3,0,100 119 184,7,0.2053,0.7690503648567865,0.0,8,0.45530522572029747,0.0,1,1,0,8,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,3,3,0,25 44 109,1,0.2053,0.6296805983462811,2.830247509291979,2,0.3526052859074652,1.3039517561782095,1,0,1,1,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,3,3,0,80 99 164,0,0.2053,0.6900656117907419,1.2215090744835866,3,0.3779519632265246,0.7262585074164777,1,0,1,0,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,3,0,0,,0,0.2053,0.7680160947296935,1.6841883331083616,0,0.42153501123042175,1.1286848072562359,1,0,0,6,0,0,nan
+counterflow-s06,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,3,0,0,,3,0.2053,0.7680160947296935,1.6841883331083616,3,0.42153501123042175,1.1286848072562359,1,0,0,7,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,3,3,0,110 129 194,1,0.2053,0.7139368800370265,1.3330711479440913,2,0.4840324416721737,0.6107626839052962,1,1,0,2,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,3,3,0,105 124 189,1,0.2053,0.9062699387720675,0.3667879777272941,3,0.5320985008786674,0.1756246721894556,1,1,0,1,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,3,3,0,75 94 159,0,0.2053,1.1005034748519422,1.0154026657660697,1,0.7099334922783739,0.5677497738114569,1,0,1,16,0,0,nan
+counterflow-s06,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,3,3,0,85 104 169,20,0.2053,1.1005034748519422,1.0154026657660697,21,0.7099334922783739,0.5677497738114569,1,0,1,30,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,3,3,0,100 119 184,0,0.2053,0.7130126320745962,0.1419029479799487,1,0.4363337438202159,0.10919248400357251,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,3,3,0,100 119 184,0,0.2053,0.6726699930560551,0.1250334609638024,1,0.4034779815341607,0.10169498676518478,1,0,1,0,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,3,3,0,55 74 139,1,0.2053,0.7240813522593217,0.24739671392279397,4,0.4088633034070351,0.19968820861678008,1,0,1,0,0,0,nan
+counterflow-s06,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,3,3,0,90 109 174,5,0.2053,0.7240813522593217,0.24739671392279397,8,0.4088633034070351,0.19968820861678008,1,1,0,6,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,A,random,4,C03 C06 C08 C12,3,3,0,110 129 194,0,0.2053,0.48447231330243196,0.0,1,0.2619492073450936,0.0,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,B,random,4,C03 C06 C08 C12,3,3,0,115 134 199,1,0.2053,0.5063022090146442,0.0,2,0.2802264557172494,0.0,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,tags,medium,A,random,4,C03 C06 C08 C12,3,3,0,90 109 174,0,0.2053,1.0278546979900263,0.0,1,0.5219898499470338,0.0,1,0,1,5,0,0,nan
+counterflow-s06,counterflow,baseline,trend,tags,medium,A,random,4,C03 C06 C08 C12,3,3,0,115 134 199,6,0.2053,1.0278546979900263,0.0,7,0.5219898499470338,0.0,1,1,0,9,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,3,3,0,100 119 184,0,0.2053,0.593514828507579,1.2162554961715772,1,0.3001422728487703,0.7640596511315314,1,1,0,3,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,3,3,0,175 194 259,0,0.2053,0.4646972056596401,1.4493778229909102,4,0.23144414657847204,0.9184341311765098,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,3,0,0,,0,0.2053,0.6233355243956664,1.6795555904353563,0,0.32071925111580973,1.1236214892627165,1,0,0,2,0,0,nan
+counterflow-s06,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,3,0,0,,11,0.2053,0.6233355243956664,1.6795555904353563,11,0.32071925111580973,1.1236214892627165,1,0,0,12,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,3,3,0,115 134 199,0,0.2053,0.5965479073907958,0.3255618203021726,1,0.3683875545848375,0.15660676512476546,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,3,3,0,130 149 214,0,0.2053,0.696796610911332,0.32909156590879546,3,0.45050019785884265,0.1620489579697213,1,1,0,0,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,3,3,0,85 104 169,0,0.2053,0.8772803004441708,0.7851185698067774,3,0.5696716871347137,0.42951409867767437,1,0,1,9,0,0,nan
+counterflow-s06,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,3,3,0,115 134 199,14,0.2053,0.8772803004441708,0.7851185698067774,18,0.5696716871347137,0.42951409867767437,1,1,0,21,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,3,3,0,105 124 189,0,0.2053,0.6890402408516827,0.0,1,0.3893885825334367,0.0,1,1,0,1,0,0,nan
+counterflow-s06,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,3,3,0,110 129 194,0,0.2053,0.5611932171307533,0.0,1,0.33243171978679287,0.0,1,1,0,1,0,0,nan
+counterflow-s06,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,3,3,0,75 94 159,0,0.2053,1.0678445218664452,0.0,1,0.5867840401586414,0.0,1,0,1,7,0,0,nan
+counterflow-s06,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,3,3,0,110 129 194,4,0.2053,1.0678445218664452,0.0,6,0.5867840401586414,0.0,1,1,0,11,0,0,nan
+counterflow-s07,counterflow,baseline,full,-,-,-,-,0,,1,1,0,45,0,0.2364,0.15396950328415848,nan,1,0.05587775613718649,nan,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,A,random,4,C00 C01 C13 C16,1,1,0,165,0,0.2364,0.33586695811525863,0.8934753320264961,2,0.18086215040134687,0.5205197006543607,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,B,random,4,C00 C01 C13 C16,1,1,0,125,2,0.2364,0.802934235796605,1.3597354941350484,4,0.4506568357344888,0.8809990083977598,1,1,0,4,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,phones,medium,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.2364,0.3690564898102699,1.2392834029106325,0,0.1982681804127777,0.6753302042146181,1,0,0,3,0,0,nan
+counterflow-s07,counterflow,baseline,trend,phones,medium,A,random,4,C00 C01 C13 C16,1,0,0,,4,0.2364,0.3690564898102699,1.2392834029106325,4,0.1982681804127777,0.6753302042146181,1,0,0,8,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,5,3,0.2364,0.47828604441966827,1.93462491712238,4,0.24918744719454186,1.1751347312998885,1,0,1,3,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2364,0.4581817879196999,1.3676092876714019,0,0.242156380890481,0.7557056113646923,1,0,1,1,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2364,0.7647383966212149,1.5793623072372551,0,0.39572442279858316,0.9784177559912854,1,0,0,2,0,0,nan
+counterflow-s07,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2364,0.7647383966212149,1.5793623072372551,1,0.39572442279858316,0.9784177559912854,1,0,0,5,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,20,0,0.2364,0.7932102346231512,0.26814918395697,2,0.43315380580963203,0.11332801187725954,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,15,0,0.2364,0.6468636981636059,0.3728688953499347,1,0.39601124092300416,0.1773417539861868,1,1,0,1,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2364,0.9957845994303022,0.9785221711767035,1,0.6224474228662412,0.5078293655019013,1,0,1,19,0,0,nan
+counterflow-s07,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,30,16,0.2364,0.9957845994303022,0.9785221711767035,17,0.6224474228662412,0.5078293655019013,1,1,0,27,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,20,1,0.2364,0.6300599404983714,0.08952383522495756,2,0.3481101435305211,0.07057280419563641,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,25,0,0.2364,0.6275760102767225,0.1279899285518852,1,0.3562441002549548,0.08938662841874903,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,1,0.2364,0.6036912733550783,0.20941034248474644,3,0.3282506231572342,0.1576797385620915,1,0,1,0,0,0,nan
+counterflow-s07,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,25,3,0.2364,0.6036912733550783,0.20941034248474644,5,0.3282506231572342,0.1576797385620915,1,1,0,8,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,A,random,4,C00 C01 C13 C16,1,1,0,270,1,0.2364,0.12791499212908927,0.6132066707940578,3,0.0457119489916634,0.3751537979322563,1,1,0,1,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,B,random,4,C00 C01 C13 C16,1,1,0,30,0,0.2364,0.14059537383410184,0.6633050298269862,2,0.056151761872255346,0.3979637561182539,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,tags,medium,A,random,4,C00 C01 C13 C16,1,0,0,,0,0.2364,0.30133709152604926,1.2204399209549281,0,0.15433957629389908,0.6511416285620599,1,0,0,0,0,0,nan
+counterflow-s07,counterflow,baseline,trend,tags,medium,A,random,4,C00 C01 C13 C16,1,0,0,,2,0.2364,0.30133709152604926,1.2204399209549281,2,0.15433957629389908,0.6511416285620599,1,0,0,8,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,100,0,0.2364,0.38802171397825597,1.4387076338976028,3,0.17695868835863404,0.9273895514018125,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,30,0,0.2364,0.4611370957415219,1.4583703440534512,2,0.21522215911464787,1.0006900231217393,1,1,0,1,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2364,0.5622838581989351,1.5866495632853228,0,0.28028867656200834,0.9874498686508039,1,0,0,2,0,0,nan
+counterflow-s07,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,6,0.2364,0.5622838581989351,1.5866495632853228,6,0.28028867656200834,0.9874498686508039,1,0,0,9,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,40,0,0.2364,0.614603479820068,0.2472468428341938,1,0.33923224711130245,0.10448197519425323,1,1,0,0,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,40,0,0.2364,0.7316029711770891,0.36070957243993057,2,0.4424461120720441,0.15552477794355135,1,1,0,1,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,15,0,0.2364,0.7470955225907602,0.7307543829474268,3,0.4466351889857728,0.3833445545033021,1,1,0,10,0,0,nan
+counterflow-s07,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,40,18,0.2364,0.7470955225907602,0.7307543829474268,22,0.4466351889857728,0.3833445545033021,1,1,0,30,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,35,1,0.2364,0.5204699496933872,0.0,2,0.27973642065788246,0.0,1,1,0,1,0,0,nan
+counterflow-s07,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,40,0,0.2364,0.5338030986037772,0.0,1,0.2730191874295083,0.0,1,1,0,1,0,0,nan
+counterflow-s07,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,5,0,0.2364,1.0134386680059682,0.0,1,0.5074462422459912,0.0,1,0,1,6,0,0,nan
+counterflow-s07,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,30,4,0.2364,1.0134386680059682,0.0,5,0.5074462422459912,0.0,1,1,0,10,0,0,nan
+counterflow-s08,counterflow,baseline,full,-,-,-,-,0,,1,1,0,37,0,0.2444,0.18006218931170864,nan,1,0.06356023849067707,nan,1,1,0,0,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,A,random,4,C03 C06 C09 C16,1,1,0,12,0,0.2444,0.6335947538447295,0.0,1,0.3238239079521172,0.0,1,1,0,1,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,B,random,4,C03 C06 C09 C16,1,1,0,12,0,0.2444,0.585578573942594,0.0,1,0.3113088026272902,0.0,1,0,1,1,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,phones,medium,A,random,4,C03 C06 C09 C16,1,0,1,,1,0.2444,0.7550373017785521,0.0,2,0.4659650796493358,0.0,1,0,1,0,0,0,nan
+counterflow-s08,counterflow,baseline,trend,phones,medium,A,random,4,C03 C06 C09 C16,1,1,0,12,3,0.2444,0.7550373017785521,0.0,4,0.4659650796493358,0.0,1,0,1,6,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2444,0.4113151669857799,1.1830561312795391,2,0.20735280978587797,0.6553441967641904,1,0,1,1,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,12,0,0.2444,0.48641795811543376,1.3054639352463253,1,0.25000491433851163,0.7527540980657436,1,0,1,4,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2444,0.7797282299659044,1.6251563979252948,0,0.40778240577966357,1.0001785714285714,1,0,0,3,0,0,nan
+counterflow-s08,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2444,0.7797282299659044,1.6251563979252948,1,0.40778240577966357,1.0001785714285714,1,0,0,4,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,32,0,0.2444,0.6280539386976963,0.4297162434181802,2,0.36307370986824045,0.20115569681326634,1,1,0,2,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,22,0,0.2444,0.8156789783712848,0.20635705339273502,2,0.4611589531389674,0.08415419054170829,1,1,0,1,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2444,1.1143675758485565,0.945742256806127,1,0.6689482060112989,0.4880488755307516,1,0,1,17,0,0,nan
+counterflow-s08,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,27,0.2444,1.1143675758485565,0.945742256806127,28,0.6689482060112989,0.4880488755307516,1,0,1,34,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,7,0,0.2444,0.5553092660466896,0.08442924559954083,1,0.28515059917976443,0.056716686888908366,1,0,1,0,0,0,nan
+counterflow-s08,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,17,0,0.2444,0.6357662303536319,0.08832873608946813,1,0.3407052194865802,0.06687763415076331,1,1,0,0,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2444,0.6909501573331951,0.20034141934046235,2,0.37196832751679687,0.15388888888888888,1,0,1,1,0,0,nan
+counterflow-s08,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,17,2,0.2444,0.6909501573331951,0.20034141934046235,4,0.37196832751679687,0.15388888888888888,1,0,1,6,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,A,random,4,C03 C06 C09 C16,1,1,0,32,0,0.2444,0.47453742118312936,0.0,1,0.25374676422350945,0.0,1,1,0,2,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,B,random,4,C03 C06 C09 C16,1,1,0,32,0,0.2444,0.4684281170507819,0.0,1,0.24484661102307287,0.0,1,1,0,1,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,tags,medium,A,random,4,C03 C06 C09 C16,1,1,0,12,0,0.2444,0.8975166042112322,0.0,3,0.4879021559022994,0.0,1,0,1,5,0,0,nan
+counterflow-s08,counterflow,baseline,trend,tags,medium,A,random,4,C03 C06 C09 C16,1,1,0,27,7,0.2444,0.8975166042112322,0.0,9,0.4879021559022994,0.0,1,1,0,11,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,22,0,0.2444,0.4102201565705592,1.2906618771771292,2,0.194092809279121,0.7876088143348536,1,1,0,0,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,17,0,0.2444,0.3663373603305504,1.4603118081207704,1,0.16931103118513602,0.9446776716356665,1,1,0,1,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2444,0.6154254495848506,1.6131093470354092,0,0.30043409080617756,0.97653314840155,1,0,0,4,0,0,nan
+counterflow-s08,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,11,0.2444,0.6154254495848506,1.6131093470354092,11,0.30043409080617756,0.97653314840155,1,0,0,16,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,37,0,0.2444,0.5659696845519062,0.38656338209873553,1,0.3184835586883226,0.1702753663346129,1,1,0,1,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,37,1,0.2444,0.5589594886944738,0.3347846267058571,4,0.34586241741258317,0.15729900929626903,1,1,0,0,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,7,0,0.2444,0.9172012500053356,0.7247072006223388,1,0.5055425066236603,0.37442669926104827,1,0,1,11,0,0,nan
+counterflow-s08,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,27,17,0.2444,0.9172012500053356,0.7247072006223388,18,0.5055425066236603,0.37442669926104827,1,1,0,20,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,12,0,0.2444,0.4845141827455579,0.0,1,0.25426897231713413,0.0,1,0,1,0,0,0,nan
+counterflow-s08,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,22,0,0.2444,0.5437009982860596,0.0,1,0.2948545067544826,0.0,1,1,0,1,0,0,nan
+counterflow-s08,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,0,1,,0,0.2444,0.9658106092981703,0.0,1,0.48117030913050146,0.0,1,0,1,6,0,0,nan
+counterflow-s08,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,22,4,0.2444,0.9658106092981703,0.0,5,0.48117030913050146,0.0,1,1,0,11,0,0,nan
+counterflow-s09,counterflow,baseline,full,-,-,-,-,0,,0,0,0,,1,0.2056,0.16124139026927933,nan,1,0.05525479812155045,nan,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,A,random,4,C01 C06 C11 C12,0,0,0,,1,0.2056,0.49879161503158004,0.7151318097671303,1,0.26814822464069227,0.4521506450757622,1,0,1,0,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,B,random,4,C01 C06 C11 C12,0,0,0,,1,0.2056,0.6392305963165242,0.517673035988847,1,0.34844801494383865,0.3054899113099142,1,0,1,1,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,phones,medium,A,random,4,C01 C06 C11 C12,0,0,0,,8,0.2056,1.2597018127485482,0.7608432102011877,8,0.6947307303567312,0.5103414967646597,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,baseline,trend,phones,medium,A,random,4,C01 C06 C11 C12,0,0,0,,10,0.2056,1.2597018127485482,0.7608432102011877,10,0.6947307303567312,0.5103414967646597,1,1,0,5,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2056,0.4674171886647145,0.6714273396692279,1,0.25609805491754356,0.3986005825949693,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,0,0,0,,2,0.2056,0.5116655517748542,0.7271913889923748,2,0.2876370318807392,0.4235619382007659,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2056,0.805119100920676,1.641440899944888,0,0.4346674927876995,1.1126779415469892,1,0,0,4,0,0,nan
+counterflow-s09,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2056,0.805119100920676,1.641440899944888,1,0.4346674927876995,1.1126779415469892,1,0,0,5,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2056,1.163466666891783,0.5864763957183118,1,0.7434458514702366,0.31355521291454697,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,0,0,0,,2,0.2056,0.7893571483857313,0.3007611013295613,2,0.48834128296484064,0.15558462175731783,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2056,1.1266012295766143,1.0233423967939317,1,0.7359981869543102,0.5625955366909423,1,0,1,16,0,0,nan
+counterflow-s09,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,27,0.2056,1.1266012295766143,1.0233423967939317,27,0.7359981869543102,0.5625955366909423,1,1,0,33,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,0,0,0,,1,0.2056,0.7709530927548617,0.09395505425165698,1,0.4511604916865712,0.07877829822172853,1,1,0,2,0,0,nan
+counterflow-s09,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,0,0,0,,1,0.2056,0.773734251682963,0.12841884236059617,1,0.44825593018277465,0.09658939843881255,1,0,1,1,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,0,0,0,,2,0.2056,0.6485739383492367,0.23298711964696844,2,0.3812059309487213,0.19023998488284202,1,0,1,1,0,0,nan
+counterflow-s09,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,0,0,0,,7,0.2056,0.6485739383492367,0.23298711964696844,7,0.3812059309487213,0.19023998488284202,1,1,0,8,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,A,random,4,C01 C06 C11 C12,0,0,0,,3,0.2056,0.47591431493443054,0.770722925082537,3,0.2501066551225603,0.5083251870510974,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,B,random,4,C01 C06 C11 C12,0,0,0,,1,0.2056,0.7207419997559881,0.6517845655382004,1,0.29858480133959875,0.4168000518637649,1,0,1,0,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,tags,medium,A,random,4,C01 C06 C11 C12,0,0,0,,5,0.2056,1.5960242011605472,0.7004497356004584,5,0.9337536235166471,0.42863436557140655,1,0,1,6,0,0,nan
+counterflow-s09,counterflow,baseline,trend,tags,medium,A,random,4,C01 C06 C11 C12,0,0,0,,9,0.2056,1.5960242011605472,0.7004497356004584,9,0.9337536235166471,0.42863436557140655,1,0,1,9,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2056,0.4784539562614848,1.4517137255346115,1,0.2425386181531948,0.9395476706050391,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,0,0,0,,1,0.2056,0.5096702661738394,1.3967577545550776,1,0.25575996950052027,0.8804106076691826,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,0,0.2056,0.5687698740279045,1.650076986160808,0,0.29896919111539805,1.1230740298370332,1,0,0,0,0,0,nan
+counterflow-s09,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,0,0,0,,2,0.2056,0.5687698740279045,1.650076986160808,2,0.29896919111539805,1.1230740298370332,1,0,0,6,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,2,0.2056,0.7998456472147092,0.4707237746511576,2,0.5301430596402551,0.21550920454535505,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,0,0,0,,1,0.2056,0.7820087346161589,0.3693450635690703,1,0.5090832615220268,0.18184241380515234,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,3,0.2056,0.8150708210852197,0.8023150757874411,3,0.521071431402162,0.4368071620067029,1,0,1,11,0,0,nan
+counterflow-s09,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,0,0,0,,21,0.2056,0.8150708210852197,0.8023150757874411,21,0.521071431402162,0.4368071620067029,1,1,0,28,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,0,0,0,,3,0.2056,0.6294878603152352,0.0,3,0.36760749409685095,0.0,1,1,0,0,0,0,nan
+counterflow-s09,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,0,0,0,,2,0.2056,0.7189830623120094,0.0,2,0.41432924185643494,0.0,1,1,0,1,0,0,nan
+counterflow-s09,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,0,0,0,,1,0.2056,1.0585996796097472,0.0,1,0.5642473224529261,0.0,1,0,1,6,0,0,nan
+counterflow-s09,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,0,0,0,,5,0.2056,1.0585996796097472,0.0,5,0.5642473224529261,0.0,1,1,0,14,0,0,nan
+counterflow-s10,counterflow,baseline,full,-,-,-,-,0,,1,1,0,30,0,0.2408,0.2064971315574918,nan,1,0.07365678879301055,nan,1,1,0,0,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,A,random,4,C01 C10 C11 C12,1,1,0,125,0,0.2408,0.4161014090775499,0.6499297926064266,2,0.20915797637808833,0.35882116110629075,1,1,0,0,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,B,random,4,C01 C10 C11 C12,1,1,0,0,0,0.2408,0.49202712785152897,0.8832196647213715,1,0.2592214735681151,0.45874533504000636,1,0,1,0,0,0,nan
+counterflow-s10,counterflow,baseline,sensor,phones,medium,A,random,4,C01 C10 C11 C12,1,0,0,,0,0.2408,0.7187204839413176,1.5419451249192708,0,0.36033249017765234,0.8544624009383897,1,0,0,5,0,0,nan
+counterflow-s10,counterflow,baseline,trend,phones,medium,A,random,4,C01 C10 C11 C12,1,0,0,,5,0.2408,0.7187204839413176,1.5419451249192708,5,0.36033249017765234,0.8544624009383897,1,0,0,11,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,5,0,0.2408,0.5550704819430556,1.122079831986963,2,0.28769708848100756,0.678650871222187,1,0,1,0,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,1,0.2408,0.5695975836771078,1.7711367694474793,4,0.287601255064511,1.1552993907277627,1,0,1,2,0,0,nan
+counterflow-s10,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2408,0.7343643265824074,1.6058772119074514,0,0.3806672189901726,0.9779289766645257,1,0,0,5,0,0,nan
+counterflow-s10,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2408,0.7343643265824074,1.6058772119074514,3,0.3806672189901726,0.9779289766645257,1,0,0,8,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,20,0,0.2408,0.7866502341947561,0.35890672836193255,1,0.4950217486768813,0.18046017895065863,1,1,0,0,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,25,0,0.2408,0.6728436763033738,0.37412354267643866,1,0.39218050915515157,0.17741729525021402,1,1,0,1,0,0,nan
+counterflow-s10,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2408,0.9074146777698107,0.9493058532015666,3,0.5722625348058872,0.48507585896641786,1,0,1,21,0,0,nan
+counterflow-s10,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,15,26,0.2408,0.9074146777698107,0.9493058532015666,28,0.5722625348058872,0.48507585896641786,1,0,1,35,0,0,nan
+counterflow-s10,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,170,0,0.2408,0.6324070426950105,0.10918002115617209,3,0.3597653258832663,0.09274113321274653,1,1,0,0,0,3,155.0
+counterflow-s10,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,110,0,0.2408,0.6014764573184653,0.10986601122756014,2,0.33808639055890455,0.09039931817791896,1,1,0,1,0,3,155.0
+counterflow-s10,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2408,0.7619803201198783,0.22348995628802057,5,0.3959633381304047,0.1736111111111111,1,0,1,2,0,0,nan
+counterflow-s10,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,20,5,0.2408,0.7619803201198783,0.22348995628802057,11,0.3959633381304047,0.1736111111111111,1,1,0,9,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,A,random,4,C01 C10 C11 C12,1,1,0,10,0,0.2408,0.45569401914558677,1.3311866372092374,1,0.2048880706940066,0.7167989640735505,1,0,1,0,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,B,random,4,C01 C10 C11 C12,1,1,0,5,0,0.2408,0.489285581218981,1.2984020028264043,1,0.23292204434776514,0.7098308145459135,1,0,1,0,0,0,nan
+counterflow-s10,counterflow,baseline,sensor,tags,medium,A,random,4,C01 C10 C11 C12,1,0,0,,0,0.2408,0.6281018705529632,1.534629196405841,0,0.2926287030611988,0.8415844944421897,1,0,0,1,0,0,nan
+counterflow-s10,counterflow,baseline,trend,tags,medium,A,random,4,C01 C10 C11 C12,1,0,0,,7,0.2408,0.6281018705529632,1.534629196405841,7,0.2926287030611988,0.8415844944421897,1,0,0,13,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,25,0,0.2408,0.3837425874650564,1.327003720149689,1,0.17493998370667518,0.761785867749957,1,1,0,0,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,95,0,0.2408,0.38176702367408916,1.4318118286448263,1,0.17328931950076415,0.9020724934981739,1,1,0,1,0,0,nan
+counterflow-s10,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2408,0.6142553200279001,1.5983269506394637,0,0.28872414373485716,0.9630049675423713,1,0,0,5,0,0,nan
+counterflow-s10,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,10,0.2408,0.6142553200279001,1.5983269506394637,10,0.28872414373485716,0.9630049675423713,1,0,0,14,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,30,0,0.2408,0.5555210562011939,0.263026230557763,3,0.31133576261874,0.12551635809148595,1,1,0,0,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,30,0,0.2408,0.5307572397295612,0.31413525410926846,1,0.30154841110454306,0.15365122659443056,1,1,0,0,0,0,nan
+counterflow-s10,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,0,0,0.2408,0.7422171908305112,0.7793538407133791,3,0.4383556765934116,0.40761250007613575,1,0,1,14,0,0,nan
+counterflow-s10,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,20,22,0.2408,0.7422171908305112,0.7793538407133791,25,0.4383556765934116,0.40761250007613575,1,1,0,34,0,0,nan
+counterflow-s10,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,15,0,0.2408,0.5381433490154779,0.0,1,0.2818142179105524,0.0,1,1,0,1,0,1,155.0
+counterflow-s10,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,25,0,0.2408,0.5412884273237436,0.0,1,0.27871140199946987,0.0,1,1,0,1,0,1,155.0
+counterflow-s10,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,0,0,0.2408,0.9979291569691875,0.0,2,0.5031480390442796,0.0,1,0,1,8,0,0,nan
+counterflow-s10,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,20,3,0.2408,0.9979291569691875,0.0,5,0.5031480390442796,0.0,1,1,0,14,0,0,nan
+counterflow-s11,counterflow,baseline,full,-,-,-,-,0,,1,1,0,47,0,0.2386,0.17630168384612271,nan,1,0.06584748820095036,nan,1,1,0,0,0,0,nan
+counterflow-s11,counterflow,main,twin,phones,medium,A,random,4,C01 C04 C05 C11,1,1,0,272,1,0.2386,0.3241219852259187,1.269230970689806,4,0.16873224750142543,0.9315171087498787,1,1,0,0,0,1,87.0
+counterflow-s11,counterflow,main,twin,phones,medium,B,random,4,C01 C04 C05 C11,1,1,0,37,3,0.2386,0.5741837564343613,1.2479573810409512,4,0.26252487451486595,0.8495174701558028,1,1,0,1,0,1,87.0
+counterflow-s11,counterflow,baseline,sensor,phones,medium,A,random,4,C01 C04 C05 C11,1,0,0,,3,0.2386,0.5027030016776187,1.5778287765716477,3,0.2431800833707744,0.9283521385938525,1,0,1,1,0,0,nan
+counterflow-s11,counterflow,baseline,trend,phones,medium,A,random,4,C01 C04 C05 C11,1,0,0,,5,0.2386,0.5027030016776187,1.5778287765716477,5,0.2431800833707744,0.9283521385938525,1,0,1,8,0,0,nan
+counterflow-s11,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,17,0,0.2386,0.427521328530026,1.4442274436801563,1,0.22686188480089703,0.7543076363657203,1,1,0,0,0,0,nan
+counterflow-s11,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2386,0.7754498883402475,1.2867061914942113,1,0.3872278432414103,0.7011417904982925,1,0,1,0,0,0,nan
+counterflow-s11,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2386,0.7404386570396484,1.582844124882829,0,0.3794472295852009,0.9920199805068227,1,0,0,6,0,0,nan
+counterflow-s11,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.2386,0.7404386570396484,1.582844124882829,4,0.3794472295852009,0.9920199805068227,1,0,0,9,0,0,nan
+counterflow-s11,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,32,0,0.2386,0.6748619182733264,0.32248034657859276,2,0.3786029141749764,0.13018528858079756,1,1,0,2,0,0,nan
+counterflow-s11,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,22,0,0.2386,0.632356475609125,0.22857254721930126,2,0.38205789005148266,0.0932232068682512,1,0,1,0,0,0,nan
+counterflow-s11,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,2,0,0.2386,1.0877308159794874,0.916736297601877,1,0.675804822244881,0.46756098784965766,1,0,1,18,0,0,nan
+counterflow-s11,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,32,22,0.2386,1.0877308159794874,0.916736297601877,23,0.675804822244881,0.46756098784965766,1,0,1,35,0,0,nan
+counterflow-s11,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,277,1,0.2386,0.7115382134663899,0.12530336045395044,3,0.4013722303969938,0.10671950646957035,1,1,0,1,0,3,87.0
+counterflow-s11,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,32,0,0.2386,0.6293465923531236,0.08857694059781544,1,0.3534578216003837,0.06780197142372688,1,1,0,0,0,3,87.0
+counterflow-s11,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2386,0.6386120397909966,0.22667649466201298,2,0.3550628750091315,0.1705653021442495,1,0,1,1,0,0,nan
+counterflow-s11,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,27,3,0.2386,0.6386120397909966,0.22667649466201298,6,0.3550628750091315,0.1705653021442495,1,0,1,9,0,0,nan
+counterflow-s11,counterflow,main,twin,tags,medium,A,random,4,C01 C04 C05 C11,1,1,0,42,1,0.2386,0.37985547265726843,1.3973825959046382,2,0.15280059276808494,0.8273227157237721,1,1,0,2,0,1,87.0
+counterflow-s11,counterflow,main,twin,tags,medium,B,random,4,C01 C04 C05 C11,1,1,0,37,0,0.2386,0.29151046217909526,1.5080067590863584,1,0.1189363549131448,0.8202184549076408,1,1,0,0,0,1,87.0
+counterflow-s11,counterflow,baseline,sensor,tags,medium,A,random,4,C01 C04 C05 C11,1,0,0,,3,0.2386,0.9151153290321165,1.3966668155844641,3,0.5110855188451638,0.8022224166650752,1,0,1,6,0,0,nan
+counterflow-s11,counterflow,baseline,trend,tags,medium,A,random,4,C01 C04 C05 C11,1,0,1,,9,0.2386,0.9151153290321165,1.3966668155844641,11,0.5110855188451638,0.8022224166650752,1,0,1,12,0,0,nan
+counterflow-s11,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,222,0,0.2386,0.4208904807258982,1.4594177376073407,6,0.18940379572691515,0.7665372506534863,1,1,0,1,0,0,nan
+counterflow-s11,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,67,0,0.2386,0.518684521073074,1.331469785882697,2,0.24399444759098904,0.7875683019167725,1,1,0,1,0,0,nan
+counterflow-s11,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2386,0.5976102490097098,1.577752666585901,0,0.287496404635019,0.9821768876548044,1,0,0,9,0,0,nan
+counterflow-s11,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,11,0.2386,0.5976102490097098,1.577752666585901,11,0.287496404635019,0.9821768876548044,1,0,0,19,0,0,nan
+counterflow-s11,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,47,0,0.2386,0.631171821120277,0.3876577192644485,2,0.36807297415719814,0.1726468150829776,1,1,0,0,0,0,nan
+counterflow-s11,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,47,1,0.2386,0.6405025198584535,0.32822203531891636,2,0.3854667504743969,0.12251791546857231,1,1,0,0,0,0,nan
+counterflow-s11,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,12,0,0.2386,0.8121920167248142,0.7206013440344368,4,0.4706615730490504,0.3704216785433054,1,0,1,8,0,0,nan
+counterflow-s11,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,47,21,0.2386,0.8121920167248142,0.7206013440344368,24,0.4706615730490504,0.3704216785433054,1,1,0,23,0,0,nan
+counterflow-s11,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,117,0,0.2386,0.5565393731085894,0.0,1,0.32370778495526625,0.0,1,1,0,0,0,1,87.0
+counterflow-s11,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,42,0,0.2386,0.5236210168777616,0.0,1,0.2892498118950462,0.0,1,1,0,0,0,1,87.0
+counterflow-s11,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,2,1,0.2386,0.895934201857165,0.0,5,0.45752547181483166,0.0,1,0,1,8,0,0,nan
+counterflow-s11,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,37,15,0.2386,0.895934201857165,0.0,19,0.45752547181483166,0.0,1,1,0,21,0,0,nan
+counterflow-s12,counterflow,baseline,full,-,-,-,-,0,,2,2,0,69 148,0,0.2333,0.15833008812523933,nan,1,0.052493969578713946,nan,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,A,random,4,C02 C05 C12 C15,2,2,0,9 88,0,0.2333,0.36063502700341205,0.6384507900172696,1,0.2075094108203329,0.3469238152983244,1,0,1,1,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,B,random,4,C02 C05 C12 C15,2,0,0,,0,0.2333,0.403406173686181,1.074145046309529,0,0.24832877487628838,0.5342633685081112,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,phones,medium,A,random,4,C02 C05 C12 C15,2,0,0,,0,0.2333,0.37045275187526555,1.179696715115383,0,0.21196255118537113,0.5924817032601463,1,0,0,0,0,0,nan
+counterflow-s12,counterflow,baseline,trend,phones,medium,A,random,4,C02 C05 C12 C15,2,0,0,,1,0.2333,0.37045275187526555,1.179696715115383,1,0.21196255118537113,0.5924817032601463,1,0,0,5,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,2,2,0,119 198,0,0.2333,0.5091739543011083,0.6710294351945321,2,0.2633841698818737,0.3782644764898037,1,1,0,2,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,2,2,0,124 203,0,0.2333,0.8138072246510224,1.6791327428614227,2,0.4088929095360987,1.1328741414189982,1,1,0,1,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,0,0.2333,0.7588233338017635,1.5202589358452876,0,0.3925830154443996,0.9490740740740742,1,0,0,4,0,0,nan
+counterflow-s12,counterflow,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,3,0.2333,0.7588233338017635,1.5202589358452876,3,0.3925830154443996,0.9490740740740742,1,0,0,5,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,54 133,0,0.2333,0.6323886044863645,0.3163470482428088,2,0.37976094371254404,0.126286722821895,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,2,2,0,34 113,4,0.2333,1.7436332413877045,0.1770776083505811,5,0.9856593992685078,0.07864896712423582,1,1,0,5,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,29 108,0,0.2333,1.097867007526309,0.8936310825181115,2,0.664435156019443,0.46587599296495225,1,0,1,15,0,0,nan
+counterflow-s12,counterflow,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,49 128,24,0.2333,1.097867007526309,0.8936310825181115,26,0.664435156019443,0.46587599296495225,1,0,1,33,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,2,2,0,44 123,0,0.2333,0.5933700644550894,0.1021526702051248,1,0.3127553521719869,0.07885969503053128,1,0,1,1,0,0,nan
+counterflow-s12,counterflow,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,2,2,0,49 128,0,0.2333,0.5915245623552114,0.10962192152646122,1,0.32626592970195817,0.08393832721873146,1,0,1,1,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,2,2,0,4 83,1,0.2333,0.6635814857846853,0.23069824801399455,3,0.3613060032283442,0.17415169660678642,1,0,1,1,0,0,nan
+counterflow-s12,counterflow,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,2,2,0,54 133,4,0.2333,0.6635814857846853,0.23069824801399455,6,0.3613060032283442,0.17415169660678642,1,1,0,11,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,A,random,4,C02 C05 C12 C15,2,2,0,54 133,0,0.2333,0.15707049016999036,0.5910676907528609,1,0.04898377614175883,0.31299746746076423,1,0,1,0,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,B,random,4,C02 C05 C12 C15,2,2,0,59 138,0,0.2333,0.1514574850357684,0.5608707091965929,1,0.0474006757402236,0.29673084194735033,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,tags,medium,A,random,4,C02 C05 C12 C15,2,1,0,58,2,0.2333,0.30260874929427545,0.8739101658759193,3,0.11729477852666256,0.47147444120920706,1,0,1,1,0,0,nan
+counterflow-s12,counterflow,baseline,trend,tags,medium,A,random,4,C02 C05 C12 C15,2,1,0,58,3,0.2333,0.30260874929427545,0.8739101658759193,4,0.11729477852666256,0.47147444120920706,1,0,1,4,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,2,2,0,54 133,0,0.2333,0.4421177763761014,1.283081596455538,1,0.20734980783101992,0.672184208299188,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,2,2,0,59 138,0,0.2333,0.39093636578130625,1.3424095917251708,1,0.18036002846647775,0.7244198616586431,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,0,0.2333,0.6386160044591576,1.5313880896353544,0,0.3203213025913124,0.9626435904340866,1,0,0,2,0,0,nan
+counterflow-s12,counterflow,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,2,0,0,,11,0.2333,0.6386160044591576,1.5313880896353544,11,0.3203213025913124,0.9626435904340866,1,0,0,13,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,69 148,0,0.2333,0.6347512737646634,0.3546240287698786,3,0.36659904025332385,0.16622745319862967,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,2,2,0,69 148,1,0.2333,0.8634790716656469,0.9292014991311369,3,0.5282035819546628,0.54051258211977,1,1,0,2,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,39 118,0,0.2333,0.7832303268078451,0.7185923486813353,2,0.4709670533418839,0.36668985387933767,1,0,1,15,0,0,nan
+counterflow-s12,counterflow,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,2,2,0,64 143,23,0.2333,0.7832303268078451,0.7185923486813353,25,0.4709670533418839,0.36668985387933767,1,1,0,29,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,2,2,0,69 148,0,0.2333,0.5941735649255891,0.0,1,0.3270348451637387,0.0,1,1,0,0,0,0,nan
+counterflow-s12,counterflow,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,2,2,0,69 148,1,0.2333,0.606080461632117,0.0,3,0.32020053687975114,0.0,1,1,0,1,0,0,nan
+counterflow-s12,counterflow,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,2,2,0,34 113,0,0.2333,0.991178521637386,0.0,1,0.5012282178744317,0.0,1,0,1,8,0,0,nan
+counterflow-s12,counterflow,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,2,2,0,59 138,4,0.2333,0.991178521637386,0.0,5,0.5012282178744317,0.0,1,1,0,14,0,0,nan
+blockage-s03,blockage,baseline,full,-,-,-,-,0,,1,1,0,99,0,0.2317,0.13676026349279075,nan,2,0.04689607703900468,nan,2,1,0,0,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,A,random,4,C03 C05 C11 C19,1,0,1,,0,0.2317,0.5791744659261387,0.0,1,0.3168485391160992,0.0,2,0,1,1,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,B,random,4,C03 C05 C11 C19,1,1,0,69,0,0.2317,0.40134181932220664,0.0,2,0.22453917601802648,0.0,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,phones,medium,A,random,4,C03 C05 C11 C19,1,1,0,4,0,0.2317,0.8603708724842263,0.0,1,0.4604365588592629,0.0,2,0,1,0,0,0,nan
+blockage-s03,blockage,baseline,trend,phones,medium,A,random,4,C03 C05 C11 C19,1,1,0,104,3,0.2317,0.8603708724842263,0.0,4,0.4604365588592629,0.0,2,1,0,6,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2317,0.7007865782832696,0.6386103692095821,1,0.3399919518201207,0.2927990687545369,2,1,0,0,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2317,0.6555959516516553,0.5021270551923632,1,0.31725449461720545,0.26102946178799025,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2317,1.3195005933785144,1.3797715023082562,0,0.7368993193687015,0.7398064480142793,2,0,0,7,0,0,nan
+blockage-s03,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2317,1.3195005933785144,1.3797715023082562,1,0.7368993193687015,0.7398064480142793,2,0,0,9,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,1,0.2317,0.5700138977543842,0.19541173543891302,2,0.31748077729175667,0.09174006785842487,2,1,0,0,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,69,1,0.2317,0.6622784624680703,0.23093378421443617,3,0.354936126184023,0.09318713877896057,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,2,0.2317,0.9680578710921802,0.5847679651937432,3,0.5904616961118151,0.2679009816224812,2,0,1,4,0,0,nan
+blockage-s03,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,119,15,0.2317,0.9680578710921802,0.5847679651937432,19,0.5904616961118151,0.2679009816224812,2,1,1,22,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2317,0.4218524684774855,0.0903856184455887,1,0.22318159990640665,0.07975279576130663,2,1,0,0,0,0,nan
+blockage-s03,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2317,0.4453964225284937,0.08777875560777734,1,0.23988485780090604,0.07904343614962336,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,4,0,0.2317,0.8186541447898729,0.09387928638030185,1,0.4000480207053755,0.08304049531459169,2,0,1,0,0,0,nan
+blockage-s03,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,104,3,0.2317,0.8186541447898729,0.09387928638030185,4,0.4000480207053755,0.08304049531459169,2,1,0,6,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,A,random,4,C03 C05 C11 C19,1,1,0,44,0,0.2317,0.28341354562268545,0.0,1,0.16313849865648436,0.0,2,1,0,0,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,B,random,4,C03 C05 C11 C19,1,1,0,44,0,0.2317,0.3491182993198864,0.0,1,0.20347698789177357,0.0,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,tags,medium,A,random,4,C03 C05 C11 C19,1,1,0,19,1,0.2317,0.9908820307630741,0.0,3,0.5548274001964641,0.0,2,0,1,7,0,0,nan
+blockage-s03,blockage,baseline,trend,tags,medium,A,random,4,C03 C05 C11 C19,1,1,0,124,12,0.2317,0.9908820307630741,0.0,15,0.5548274001964641,0.0,2,2,0,11,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,19,0,0.2317,0.3699675085954031,0.5364714258720549,1,0.17743894581665082,0.2938676096072245,2,0,1,0,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,144,0,0.2317,0.2966944650167156,0.6096337000308566,2,0.14627888308293002,0.3959221143850686,2,1,0,1,0,0,nan
+blockage-s03,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2317,0.473830271407471,1.3909637783132407,0,0.23756980593907395,0.7486446689591243,2,0,0,1,0,0,nan
+blockage-s03,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.2317,0.473830271407471,1.3909637783132407,7,0.23756980593907395,0.7486446689591243,2,1,0,5,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,79,0,0.2317,0.6141754702633865,0.21216302315186986,1,0.32644307912326764,0.10853909450225252,2,1,0,0,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2317,0.3593626811682889,0.1408840527353297,1,0.21361756397697362,0.0574543934051936,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,4,2,0.2317,0.7546326455112493,0.5367151335293847,6,0.4231229220919661,0.24864836360689596,2,0,1,5,0,0,nan
+blockage-s03,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,69,18,0.2317,0.7546326455112493,0.5367151335293847,23,0.4231229220919661,0.24864836360689596,2,2,0,18,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,49,0,0.2317,0.37989406409779003,0.0,1,0.19054187719125373,0.0,2,1,0,1,0,0,nan
+blockage-s03,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,49,0,0.2317,0.4621878623411418,0.0,1,0.21861979193492778,0.0,2,1,0,0,0,0,nan
+blockage-s03,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,24,1,0.2317,1.020573065409577,0.0,4,0.5157790889265559,0.0,2,0,1,7,0,0,nan
+blockage-s03,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,114,13,0.2317,1.020573065409577,0.0,17,0.5157790889265559,0.0,2,2,0,14,0,0,nan
+blockage-s04,blockage,baseline,full,-,-,-,-,0,,1,1,0,71,0,0.2433,0.19170901568240187,nan,2,0.07190398023102737,nan,3,1,0,0,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,A,random,4,C00 C02 C12 C19,1,1,0,26,0,0.2433,0.37776313941466844,0.07072734830536032,1,0.22701291268219245,0.05903186695136261,3,1,0,0,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,B,random,4,C00 C02 C12 C19,1,0,1,,0,0.2433,0.5530871535473043,0.10158022350026048,1,0.29332464038093586,0.08622527216956975,3,0,1,0,0,0,nan
+blockage-s04,blockage,baseline,sensor,phones,medium,A,random,4,C00 C02 C12 C19,1,1,0,1,0,0.2433,0.9929030222488914,0.09175831157178302,4,0.5579549446078423,0.07892857142857143,3,0,1,1,0,0,nan
+blockage-s04,blockage,baseline,trend,phones,medium,A,random,4,C00 C02 C12 C19,1,1,0,66,2,0.2433,0.9929030222488914,0.09175831157178302,7,0.5579549446078423,0.07892857142857143,3,1,0,7,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,1,,2,0.2433,0.7374683843234286,0.5155963184453087,3,0.37583525875076573,0.23620543070060507,3,1,0,2,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2433,0.772766546194573,0.8675975798105162,1,0.40235149753049393,0.4203398088472109,3,0,1,1,0,0,nan
+blockage-s04,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2433,1.3636941411481143,1.4390107370881662,0,0.7560253018701844,0.7631878306878307,3,0,0,4,0,0,nan
+blockage-s04,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2433,1.3636941411481143,1.4390107370881662,3,0.7560253018701844,0.7631878306878307,3,0,0,7,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,1,0.2433,0.495329387814024,0.13249080379577408,2,0.27497272487961977,0.06488125300442302,3,1,0,1,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,66,1,0.2433,0.4922532001276287,0.21987749005918164,3,0.27794510941558837,0.09242548723235083,3,1,0,0,0,0,nan
+blockage-s04,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,1,1,0.2433,1.100810513281822,0.7456841598444177,5,0.6767449838655674,0.3308390294018962,3,0,1,7,0,0,nan
+blockage-s04,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,91,14,0.2433,1.100810513281822,0.7456841598444177,19,0.6767449838655674,0.3308390294018962,3,1,0,19,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2433,0.4497533819212462,0.08665103751838998,1,0.2388669012389751,0.07195318476976803,3,1,0,0,0,0,nan
+blockage-s04,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,121,0,0.2433,0.4790751879388088,0.08134865555494582,2,0.26561401901722465,0.06905322155223954,3,1,0,0,0,0,nan
+blockage-s04,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2433,0.8572760212734841,0.09175831157178302,4,0.3947656889645456,0.07892857142857143,3,0,1,1,0,0,nan
+blockage-s04,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,71,1,0.2433,0.8572760212734841,0.09175831157178302,6,0.3947656889645456,0.07892857142857143,3,1,0,5,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,A,random,4,C00 C02 C12 C19,1,1,0,26,0,0.2433,0.401414940457106,0.08520964429528213,1,0.21129197922408374,0.07188610663071889,3,1,0,0,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,B,random,4,C00 C02 C12 C19,1,1,0,36,0,0.2433,0.4670810448028456,0.1275367448382047,1,0.23926468456414562,0.1059713884026857,3,1,0,0,0,0,nan
+blockage-s04,blockage,baseline,sensor,tags,medium,A,random,4,C00 C02 C12 C19,1,1,0,21,0,0.2433,1.0284210854994034,0.09175831157178302,2,0.4931809694715269,0.07892857142857143,3,1,0,0,0,0,nan
+blockage-s04,blockage,baseline,trend,tags,medium,A,random,4,C00 C02 C12 C19,1,1,0,241,3,0.2433,1.0284210854994034,0.09175831157178302,7,0.4931809694715269,0.07892857142857143,3,3,0,1,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,21,0,0.2433,0.46309645236853064,0.5580413028536074,1,0.1979800957310001,0.3285499479263423,3,1,0,1,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,71,0,0.2433,0.3376454216567283,0.5144348995725008,2,0.1708054916391176,0.2942605773135785,3,1,0,0,0,0,nan
+blockage-s04,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2433,0.42613538801571416,1.4471479185813612,0,0.21998117848465115,0.7671968264167867,3,0,0,2,0,0,nan
+blockage-s04,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,6,0.2433,0.42613538801571416,1.4471479185813612,6,0.21998117848465115,0.7671968264167867,3,2,0,8,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,26,0,0.2433,0.3813252054983459,0.16761164061320669,1,0.21412068634792034,0.07402082464218998,3,1,0,0,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,31,0,0.2433,0.321190500366803,0.1563410418753023,1,0.1912079074258416,0.06983480124635696,3,1,0,0,0,0,nan
+blockage-s04,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,1,0.2433,0.7570454730906846,0.5256328075587003,2,0.40984160188906027,0.23759075546111366,3,0,1,8,0,0,nan
+blockage-s04,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,71,14,0.2433,0.7570454730906846,0.5256328075587003,17,0.40984160188906027,0.23759075546111366,3,3,0,17,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,26,0,0.2433,0.3351681690030397,0.0,1,0.18175960419655887,0.0,3,1,0,0,0,0,nan
+blockage-s04,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,16,0,0.2433,0.4358312455418867,0.0,1,0.20794937245669307,0.0,3,1,0,1,0,0,nan
+blockage-s04,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,0,1,,0,0.2433,1.0764461266472722,0.0,2,0.5178008436292143,0.0,3,0,1,7,0,0,nan
+blockage-s04,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,91,8,0.2433,1.0764461266472722,0.0,11,0.5178008436292143,0.0,3,3,0,11,0,0,nan
+blockage-s05,blockage,baseline,full,-,-,-,-,0,,1,1,0,98,0,0.23,0.14482931575116736,nan,3,0.0571477636230318,nan,4,1,0,0,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,A,random,4,C01 C07 C18 C19,1,1,0,48,1,0.23,0.566248353990164,0.22028442962567543,3,0.31005554490907716,0.14541182371439748,4,1,0,1,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,B,random,4,C01 C07 C18 C19,1,1,0,143,0,0.23,0.7162831479502808,0.1696484162366553,2,0.3832650030896704,0.09426186237075633,4,1,0,0,0,0,nan
+blockage-s05,blockage,baseline,sensor,phones,medium,A,random,4,C01 C07 C18 C19,1,1,0,3,0,0.23,0.5957917475460784,0.4386008659801241,3,0.34212655317601526,0.21232112794612795,4,0,1,1,0,0,nan
+blockage-s05,blockage,baseline,trend,phones,medium,A,random,4,C01 C07 C18 C19,1,1,0,78,6,0.23,0.5957917475460784,0.4386008659801241,8,0.34212655317601526,0.21232112794612795,4,3,1,7,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,128,0,0.23,0.6841198139870306,0.5155682642072761,2,0.34093262126777285,0.27605583383968957,4,1,0,0,0,1,143.0
+blockage-s05,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,138,0,0.23,0.658974752929824,0.7903934170746452,2,0.32269041175111124,0.3726055708239442,4,1,0,0,0,1,143.0
+blockage-s05,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.23,1.3276162676022365,1.3757671308183361,0,0.745169105943394,0.7328493265993266,4,0,0,5,0,0,nan
+blockage-s05,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.23,1.3276162676022365,1.3757671308183361,2,0.745169105943394,0.7328493265993266,4,0,0,7,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,53,0,0.23,0.9587661819929829,0.2816319802253277,2,0.5431569643885689,0.09733923688437231,4,1,0,2,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,73,2,0.23,1.1990995505945763,2.3609561280911087,3,0.6878702614264949,0.9281860986973808,4,1,0,1,0,0,nan
+blockage-s05,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,18,1,0.23,0.9828720301275989,0.607708340708891,4,0.6038158684936181,0.279623648515792,4,0,1,8,0,0,nan
+blockage-s05,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,98,16,0.23,0.9828720301275989,0.607708340708891,20,0.6038158684936181,0.279623648515792,4,2,0,22,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,128,0,0.23,0.4891178625775905,0.07113447658277422,2,0.25004174415173813,0.05896295209663678,4,1,0,1,0,0,nan
+blockage-s05,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,138,0,0.23,0.5537749733976876,0.12214650687481189,2,0.2715136798076089,0.10235627722582209,4,1,0,1,0,0,nan
+blockage-s05,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,13,0,0.23,0.8152599557227881,0.09461388049510461,4,0.3897717523420956,0.08282828282828282,4,0,1,0,0,0,nan
+blockage-s05,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,143,1,0.23,0.8152599557227881,0.09461388049510461,7,0.3897717523420956,0.08282828282828282,4,1,0,4,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,A,random,4,C01 C07 C18 C19,1,1,0,113,0,0.23,0.3738521638065439,0.7111692752789684,1,0.20968292915702172,0.415288006997061,4,1,0,0,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,B,random,4,C01 C07 C18 C19,1,1,0,138,0,0.23,0.340188846322778,0.8721835084441806,1,0.19031357950871464,0.5535248896335103,4,1,0,0,0,0,nan
+blockage-s05,blockage,baseline,sensor,tags,medium,A,random,4,C01 C07 C18 C19,1,1,0,8,0,0.23,1.0168971508136913,0.4386008659801241,1,0.6028796794633731,0.21232112794612795,4,1,0,0,0,0,nan
+blockage-s05,blockage,baseline,trend,tags,medium,A,random,4,C01 C07 C18 C19,1,1,0,143,9,0.23,1.0168971508136913,0.4386008659801241,14,0.6028796794633731,0.21232112794612795,4,4,0,5,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,158,0,0.23,0.289721628025216,0.7766685596280251,2,0.14514699456145425,0.5316458251421443,4,1,0,0,0,1,143.0
+blockage-s05,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,18,0,0.23,0.2527817885980824,0.6932951913965294,1,0.12156749266593914,0.39871409974586947,4,0,1,0,0,1,143.0
+blockage-s05,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.23,0.46773175515003645,1.3885991883478348,0,0.2295123213004824,0.7442881067628901,4,0,0,4,0,0,nan
+blockage-s05,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,6,0.23,0.46773175515003645,1.3885991883478348,6,0.2295123213004824,0.7442881067628901,4,3,0,10,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,18,0,0.23,0.5829701932943819,0.2367732121311841,1,0.31257424687523044,0.1126159161472167,4,1,0,0,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,23,0,0.23,0.5731905211908254,0.24319656707227782,2,0.31305289832664157,0.09901123563275549,4,1,0,0,0,0,nan
+blockage-s05,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,13,0,0.23,0.7689692993307355,0.5590355318549151,3,0.42573275447642117,0.2573720176671181,4,0,1,8,0,0,nan
+blockage-s05,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,148,9,0.23,0.7689692993307355,0.5590355318549151,14,0.42573275447642117,0.2573720176671181,4,4,0,13,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,278,0,0.23,0.38440516210250975,0.0,2,0.19078650176841347,0.0,4,1,0,0,0,0,nan
+blockage-s05,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,0,1,,0,0.23,0.572583209936353,0.0,1,0.2693585494265174,0.0,4,0,1,1,0,0,nan
+blockage-s05,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,23,0,0.23,1.0416460003211576,0.0,2,0.5105021700770312,0.0,4,0,1,6,0,0,nan
+blockage-s05,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,73,6,0.23,1.0416460003211576,0.0,8,0.5105021700770312,0.0,4,4,0,9,0,0,nan
+blockage-s06,blockage,baseline,full,-,-,-,-,0,,1,1,0,100,0,0.245,0.22154293969952135,nan,2,0.0840143830195443,nan,2,1,0,0,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,A,random,4,C03 C06 C08 C12,1,1,0,25,0,0.245,0.429576611026311,0.0,1,0.21989015942418183,0.0,2,0,1,0,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,B,random,4,C03 C06 C08 C12,1,1,0,50,1,0.245,0.39113836339310737,0.0,2,0.21908642506482084,0.0,2,1,0,0,0,0,nan
+blockage-s06,blockage,baseline,sensor,phones,medium,A,random,4,C03 C06 C08 C12,1,1,0,25,0,0.245,1.1083037379291976,0.0,1,0.5909246014473067,0.0,2,0,1,5,0,0,nan
+blockage-s06,blockage,baseline,trend,phones,medium,A,random,4,C03 C06 C08 C12,1,1,0,85,4,0.245,1.1083037379291976,0.0,6,0.5909246014473067,0.0,2,1,0,10,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,25,0,0.245,0.68831041735609,0.7087234281717512,1,0.3480607639961346,0.34402352553072935,2,1,0,0,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,75,0,0.245,0.6390034561892053,0.5845334709465894,2,0.31767524138636655,0.27404245365049895,2,1,0,1,0,0,nan
+blockage-s06,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.245,1.3712349838145033,1.5474834536162072,0,0.7578477425475045,0.8320509785353536,2,0,0,7,0,0,nan
+blockage-s06,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.245,1.3712349838145033,1.5474834536162072,1,0.7578477425475045,0.8320509785353536,2,0,0,8,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,35,0,0.245,0.48469538154062597,0.2053934608784442,1,0.2875665414994937,0.07446082932789547,2,0,1,0,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,80,0,0.245,0.7349865535925456,0.2721838776438628,3,0.4358176276983347,0.10270745073687106,2,1,0,0,0,0,nan
+blockage-s06,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,20,3,0.245,1.0774558852156857,0.6834795607334372,7,0.6595748240003139,0.3007740998777858,2,0,1,6,0,0,nan
+blockage-s06,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,130,14,0.245,1.0774558852156857,0.6834795607334372,19,0.6595748240003139,0.3007740998777858,2,1,1,17,0,0,nan
+blockage-s06,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,90,1,0.245,0.48827125157093243,0.16601986545503114,3,0.26700106154355446,0.14173440487567948,2,1,0,0,0,3,-445.0
+blockage-s06,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.245,0.47333680776445897,0.17467197989885538,1,0.25236519064808305,0.1501919965548761,2,1,0,0,0,3,-445.0
+blockage-s06,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,20,3,0.245,0.8840754433764352,0.09182161395489466,5,0.4066936408578702,0.07733585858585858,2,0,1,0,0,0,nan
+blockage-s06,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,70,6,0.245,0.8840754433764352,0.09182161395489466,8,0.4066936408578702,0.07733585858585858,2,1,0,7,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,A,random,4,C03 C06 C08 C12,1,1,0,25,0,0.245,0.7035419414339886,0.0,1,0.351016658531778,0.0,2,0,1,0,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,B,random,4,C03 C06 C08 C12,1,1,0,65,0,0.245,0.2615322949811799,0.0,1,0.14137244703843369,0.0,2,1,0,0,0,0,nan
+blockage-s06,blockage,baseline,sensor,tags,medium,A,random,4,C03 C06 C08 C12,1,1,0,20,0,0.245,1.1537845597899117,0.0,1,0.5352241796608433,0.0,2,1,0,9,0,0,nan
+blockage-s06,blockage,baseline,trend,tags,medium,A,random,4,C03 C06 C08 C12,1,1,0,95,5,0.245,1.1537845597899117,0.0,7,0.5352241796608433,0.0,2,1,1,9,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,10,0,0.245,0.25175277983694583,0.662189087993568,2,0.1212799357765374,0.39122911485775597,2,0,1,0,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,145,0,0.245,0.3122184575837038,0.7518020621438992,5,0.15168795431513485,0.4721103758667168,2,1,0,0,0,0,nan
+blockage-s06,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.245,0.48095037853045897,1.555674964785858,0,0.22998378427032817,0.8393355524892887,2,0,0,2,0,0,nan
+blockage-s06,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.245,0.48095037853045897,1.555674964785858,4,0.22998378427032817,0.8393355524892887,2,1,0,4,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,95,0,0.245,0.6492734594154886,0.35151826615747067,4,0.34256617811271817,0.18170652780932076,2,1,0,1,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,145,0,0.245,0.6241932745172879,0.29402515543032803,3,0.36258641515523166,0.1331586063877376,2,1,0,0,0,0,nan
+blockage-s06,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,0,0,0.245,0.7615024568009461,0.5382886675526377,2,0.4266978586973353,0.24403876183645012,2,0,1,9,0,0,nan
+blockage-s06,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,90,16,0.245,0.7615024568009461,0.5382886675526377,23,0.4266978586973353,0.24403876183645012,2,2,0,17,0,0,nan
+blockage-s06,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,35,0,0.245,0.48834657848806373,0.0,1,0.24065211737822043,0.0,2,0,1,0,0,1,-445.0
+blockage-s06,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,30,0,0.245,0.638281892131624,0.0,2,0.3022752248354869,0.0,2,0,1,3,0,1,-445.0
+blockage-s06,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,15,0,0.245,1.1334692958203874,0.0,1,0.5556042585953551,0.0,2,0,1,13,0,0,nan
+blockage-s06,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,105,7,0.245,1.1334692958203874,0.0,9,0.5556042585953551,0.0,2,2,0,16,0,0,nan
+blockage-s08,blockage,baseline,full,-,-,-,-,0,,1,1,0,93,0,0.1842,0.16534951238448023,nan,2,0.0569303977926049,nan,1,1,0,0,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,A,random,4,C03 C06 C09 C16,1,1,0,33,0,0.1842,0.4718563731574698,0.0,1,0.269293855595004,0.0,1,1,0,0,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,B,random,4,C03 C06 C09 C16,1,1,0,43,0,0.1842,0.6330612638373979,0.0,2,0.377738606024888,0.0,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,phones,medium,A,random,4,C03 C06 C09 C16,1,0,1,,0,0.1842,0.6849396740545982,0.0,1,0.4232806493198119,0.0,1,0,1,0,0,0,nan
+blockage-s08,blockage,baseline,trend,phones,medium,A,random,4,C03 C06 C09 C16,1,1,0,73,3,0.1842,0.6849396740545982,0.0,5,0.4232806493198119,0.0,1,1,0,5,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,93,0,0.1842,0.8291643608950797,1.1445448706950077,1,0.4469927337380173,0.5573112466542919,1,1,0,1,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,108,0,0.1842,0.6205127019661124,0.4914693674336716,1,0.32401012631287185,0.3008396487873639,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.1842,1.344232683192613,1.4849355178704864,0,0.7940690478666959,0.8582000561167228,1,0,0,3,0,0,nan
+blockage-s08,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.1842,1.344232683192613,1.4849355178704864,2,0.7940690478666959,0.8582000561167228,1,0,0,6,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,63,0,0.1842,0.5768355381900172,0.21221998111897128,2,0.32507675697782795,0.1019414584940991,1,1,0,1,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,68,0,0.1842,0.7964897705230187,0.19711074005646792,2,0.482843228639635,0.09348368820085473,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,13,2,0.1842,1.0157151744491293,0.7100302890668332,4,0.6707178612974167,0.3627692639599075,1,0,1,8,0,0,nan
+blockage-s08,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,48,14,0.1842,1.0157151744491293,0.7100302890668332,16,0.6707178612974167,0.3627692639599075,1,1,0,18,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,33,0,0.1842,0.43435181358969854,0.06366356196941655,1,0.25024016668514926,0.05808956616495202,1,1,0,0,0,0,nan
+blockage-s08,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,103,0,0.1842,0.7466508728137481,0.08405943862813504,2,0.40813829522179496,0.07555429829994913,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,1,0.1842,0.8298449626268957,0.11159177650616094,3,0.44576678355345645,0.10527146464646464,1,0,1,0,0,0,nan
+blockage-s08,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,73,2,0.1842,0.8298449626268957,0.11159177650616094,6,0.44576678355345645,0.10527146464646464,1,1,0,4,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,A,random,4,C03 C06 C09 C16,1,1,0,33,0,0.1842,0.4379623128852756,0.0,1,0.23684912319332635,0.0,1,1,0,1,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,B,random,4,C03 C06 C09 C16,1,1,0,48,0,0.1842,0.30159706861569285,0.0,1,0.18062461649411948,0.0,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,tags,medium,A,random,4,C03 C06 C09 C16,1,0,1,,0,0.1842,0.950570462105716,0.0,1,0.4986837918312942,0.0,1,0,1,1,0,0,nan
+blockage-s08,blockage,baseline,trend,tags,medium,A,random,4,C03 C06 C09 C16,1,1,0,113,3,0.1842,0.950570462105716,0.0,6,0.4986837918312942,0.0,1,1,0,5,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,63,2,0.1842,0.2671487843356183,0.6550307005709541,3,0.1330263992492722,0.4843001753634959,1,1,0,0,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,53,0,0.1842,0.3095344150954916,0.5353507506734378,1,0.14458568467037666,0.35107753923919516,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.1842,0.46855897482097764,1.4990456837117916,0,0.24580403026340208,0.8675817937468792,1,0,0,3,0,0,nan
+blockage-s08,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.1842,0.46855897482097764,1.4990456837117916,5,0.24580403026340208,0.8675817937468792,1,0,0,7,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,93,0,0.1842,0.5275910090776206,0.3304160733325273,2,0.2879760527244371,0.1695155749829419,1,1,0,0,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,98,0,0.1842,0.33593657950132344,0.32775614936154684,2,0.20647277135475914,0.15521970408171323,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,8,0,0.1842,0.8171339291856287,0.6153656136356744,3,0.47778859029115056,0.3144672335081776,1,0,1,9,0,0,nan
+blockage-s08,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,73,16,0.1842,0.8171339291856287,0.6153656136356744,20,0.47778859029115056,0.3144672335081776,1,1,0,18,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,43,0,0.1842,0.33575001776842445,0.0,1,0.19446109466095754,0.0,1,1,0,0,0,0,nan
+blockage-s08,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,63,0,0.1842,0.40557970949699074,0.0,2,0.1944397274948572,0.0,1,1,0,0,0,0,nan
+blockage-s08,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,23,0,0.1842,1.0874846187419123,0.0,2,0.5685897007541083,0.0,1,0,1,4,0,0,nan
+blockage-s08,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,98,4,0.1842,1.0874846187419123,0.0,8,0.5685897007541083,0.0,1,1,0,7,0,0,nan
+blockage-s09,blockage,baseline,full,-,-,-,-,0,,1,1,0,100,0,0.2253,0.12056325074760066,nan,3,0.043595706605364125,nan,1,1,0,0,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,A,random,4,C01 C06 C11 C12,1,1,0,0,0,0.2253,0.34275338877429035,0.1925291816417721,1,0.1736072990574761,0.1160576884121808,1,0,1,0,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,B,random,4,C01 C06 C11 C12,1,1,0,0,0,0.2253,0.4082890598041001,0.1697075582226647,1,0.19524778362662482,0.10403384012463393,1,0,1,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,phones,medium,A,random,4,C01 C06 C11 C12,1,1,0,10,0,0.2253,0.7419442995855455,1.4225463024481781,3,0.3563026182292321,0.882038630876895,1,1,0,1,0,0,nan
+blockage-s09,blockage,baseline,trend,phones,medium,A,random,4,C01 C06 C11 C12,1,1,0,260,0,0.2253,0.7419442995855455,1.4225463024481781,4,0.3563026182292321,0.882038630876895,1,1,0,2,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,110,0,0.2253,0.5699907692858338,0.8079755690294755,2,0.2729139158657695,0.3982747528683525,1,1,0,0,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,55,0,0.2253,0.7092769583171431,0.4465208196114164,2,0.35111303358091234,0.246475872966837,1,1,0,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2253,1.2770468079058668,1.3711972736330018,0,0.7084942331011496,0.7237725765889345,1,0,0,2,0,0,nan
+blockage-s09,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2253,1.2770468079058668,1.3711972736330018,1,0.7084942331011496,0.7237725765889345,1,0,0,3,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,40,1,0.2253,0.45432160015689577,0.79417528278213,3,0.25242980064110443,0.3755222406449016,1,1,0,3,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,75,1,0.2253,0.6368634326509144,0.6967798497217487,3,0.3089747290918719,0.30513090093823153,1,1,0,3,0,0,nan
+blockage-s09,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,5,1,0.2253,0.9646228690305833,0.6466245187011309,3,0.5924679804735385,0.287979374392779,1,0,1,7,0,0,nan
+blockage-s09,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,100,19,0.2253,0.9646228690305833,0.6466245187011309,22,0.5924679804735385,0.287979374392779,1,1,0,20,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,95,1,0.2253,0.4833098509747672,0.09293994230038069,3,0.22443001838764592,0.07261319443710956,1,1,0,0,0,0,nan
+blockage-s09,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,10,0,0.2253,0.38515542033081374,0.11026951968144505,1,0.19374049707614255,0.09297432571659053,1,0,1,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,0,0,0.2253,0.7285091937125852,0.09719619238062084,2,0.35255963012607744,0.08440500685871057,1,0,1,0,0,0,nan
+blockage-s09,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,100,2,0.2253,0.7285091937125852,0.09719619238062084,4,0.35255963012607744,0.08440500685871057,1,1,0,4,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,A,random,4,C01 C06 C11 C12,1,1,0,45,0,0.2253,0.3512063292947779,0.3224279829837959,1,0.1506287849360878,0.1790125479609884,1,1,0,0,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,B,random,4,C01 C06 C11 C12,1,1,0,30,0,0.2253,0.2339821133108538,0.3565728728743491,1,0.10879799619023749,0.19843273026227856,1,1,0,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,tags,medium,A,random,4,C01 C06 C11 C12,1,1,0,290,0,0.2253,1.2966032372248892,1.4250701694395673,4,0.6894264858590706,0.8671111393054853,1,1,0,5,0,0,nan
+blockage-s09,blockage,baseline,trend,tags,medium,A,random,4,C01 C06 C11 C12,1,1,0,290,3,0.2253,1.2966032372248892,1.4250701694395673,7,0.6894264858590706,0.8671111393054853,1,1,0,7,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,90,1,0.2253,0.24669876788881112,0.8259007435043986,4,0.11161293048169625,0.5354882418718933,1,1,0,0,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,70,0,0.2253,0.2637985061965423,0.7584068286893463,1,0.11563031146110028,0.47074017046418987,1,1,0,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2253,0.3946531047302414,1.3844757760915907,0,0.19933116618797406,0.7286627167080196,1,0,0,2,0,0,nan
+blockage-s09,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.2253,0.3946531047302414,1.3844757760915907,7,0.19933116618797406,0.7286627167080196,1,0,0,10,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,95,0,0.2253,0.5525786948541702,0.6631198529608185,2,0.2833977343083819,0.355145574819271,1,1,0,0,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,95,0,0.2253,0.4987830393558052,0.21136617664544136,1,0.26908730701906797,0.09211295423651608,1,1,0,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2253,0.7566745711216586,0.5646174066452309,1,0.41516721564512393,0.2626228238361344,1,0,1,8,0,0,nan
+blockage-s09,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,65,10,0.2253,0.7566745711216586,0.5646174066452309,12,0.41516721564512393,0.2626228238361344,1,1,0,20,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,30,0,0.2253,0.45196714512779673,0.0,1,0.2053077597597715,0.0,1,1,0,1,0,0,nan
+blockage-s09,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,35,0,0.2253,0.4717212622685528,0.0,1,0.22083542085251054,0.0,1,1,0,0,0,0,nan
+blockage-s09,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,15,0,0.2253,1.0262582570060645,0.0,2,0.49104439905688063,0.0,1,0,1,5,0,0,nan
+blockage-s09,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,110,6,0.2253,1.0262582570060645,0.0,9,0.49104439905688063,0.0,1,1,0,11,0,0,nan
+blockage-s11,blockage,baseline,full,-,-,-,-,0,,1,1,0,71,0,0.2206,0.20922360190692396,nan,1,0.07274754719319848,nan,3,1,0,0,0,0,nan
+blockage-s11,blockage,main,twin,phones,medium,A,random,4,C01 C04 C05 C11,1,0,0,,0,0.2206,0.46334801333308223,1.4487134637346448,0,0.2069952367097674,0.9688789889637177,3,0,0,0,0,1,26.0
+blockage-s11,blockage,main,twin,phones,medium,B,random,4,C01 C04 C05 C11,1,0,0,,0,0.2206,0.5142899314525297,1.267550374862099,0,0.22538039659158954,0.8175846672575671,3,0,1,0,0,1,26.0
+blockage-s11,blockage,baseline,sensor,phones,medium,A,random,4,C01 C04 C05 C11,1,0,1,,3,0.2206,0.32052924128041854,1.7919319759358712,4,0.16761452230814014,1.2644206924526442,3,0,1,1,0,0,nan
+blockage-s11,blockage,baseline,trend,phones,medium,A,random,4,C01 C04 C05 C11,1,0,1,,4,0.2206,0.32052924128041854,1.7919319759358712,5,0.16761452230814014,1.2644206924526442,3,0,1,6,0,0,nan
+blockage-s11,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,86,0,0.2206,0.6414341033950152,0.5276280865569197,2,0.3077703411618007,0.28646600714692255,3,1,0,0,0,0,nan
+blockage-s11,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2206,0.6965453420699325,0.5243451439512523,1,0.33365987606131803,0.2312367170743977,3,1,0,0,0,0,nan
+blockage-s11,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2206,1.2696088916433415,1.3537231465915498,0,0.7136724034235109,0.7280385607126113,3,0,0,6,0,0,nan
+blockage-s11,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,4,0.2206,1.2696088916433415,1.3537231465915498,4,0.7136724034235109,0.7280385607126113,3,0,0,10,0,0,nan
+blockage-s11,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,51,0,0.2206,0.7896375202440165,0.21523512326314032,2,0.44900255924510124,0.0837486794807277,3,1,0,1,0,0,nan
+blockage-s11,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,76,0,0.2206,0.9250541352466229,0.22628940201831993,2,0.5039771137752884,0.10182568567280562,3,1,0,1,0,0,nan
+blockage-s11,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,6,0,0.2206,0.9601709988427077,0.5874099082186021,3,0.5893184755473108,0.28006413050405254,3,1,0,8,0,0,nan
+blockage-s11,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,96,18,0.2206,0.9601709988427077,0.5874099082186021,23,0.5893184755473108,0.28006413050405254,3,3,0,28,0,0,nan
+blockage-s11,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,36,0,0.2206,0.4879774214892492,0.0701933325529608,1,0.26288070240858347,0.05830047357645076,3,1,0,0,0,3,26.0
+blockage-s11,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,21,0,0.2206,0.49781687203989733,0.07110619887162764,1,0.26426610994689126,0.05918810443500054,3,1,0,0,0,3,26.0
+blockage-s11,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,6,1,0.2206,0.7961982160824231,0.09915572849570826,3,0.3949111630033336,0.08676160337552742,3,1,0,0,0,0,nan
+blockage-s11,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,96,2,0.2206,0.7961982160824231,0.09915572849570826,6,0.3949111630033336,0.08676160337552742,3,1,0,6,0,0,nan
+blockage-s11,blockage,main,twin,tags,medium,A,random,4,C01 C04 C05 C11,1,1,0,56,0,0.2206,0.3422037604765825,0.45490137846837164,2,0.11664430273069587,0.305268498953935,3,1,0,0,0,1,26.0
+blockage-s11,blockage,main,twin,tags,medium,B,random,4,C01 C04 C05 C11,1,1,0,26,0,0.2206,0.20320820183883934,0.5614477573982963,1,0.07239791631409706,0.3673148561024859,3,1,0,0,0,1,26.0
+blockage-s11,blockage,baseline,sensor,tags,medium,A,random,4,C01 C04 C05 C11,1,0,1,,2,0.2206,1.0437011295211085,1.7097219953002614,3,0.5553446954785173,1.20859617408185,3,0,1,7,0,0,nan
+blockage-s11,blockage,baseline,trend,tags,medium,A,random,4,C01 C04 C05 C11,1,0,1,,6,0.2206,1.0437011295211085,1.7097219953002614,7,0.5553446954785173,1.20859617408185,3,0,1,9,0,0,nan
+blockage-s11,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,81,0,0.2206,0.2798023487553006,0.7889182941764123,1,0.13379401990566578,0.5377763717808499,3,1,0,1,0,0,nan
+blockage-s11,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,46,1,0.2206,0.22539253184855257,0.9991481782229306,2,0.11058497523247326,0.6614014966197644,3,1,0,1,0,0,nan
+blockage-s11,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2206,0.4863822590864922,1.4170362623158401,0,0.2372420381953062,0.7866602267602517,3,0,0,7,0,0,nan
+blockage-s11,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2206,0.4863822590864922,1.4170362623158401,5,0.2372420381953062,0.7866602267602517,3,2,0,10,0,0,nan
+blockage-s11,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,86,0,0.2206,0.5549187206258904,0.2851282488319227,3,0.2935055516303778,0.1446489750965102,3,1,0,0,0,0,nan
+blockage-s11,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,86,0,0.2206,0.5652324980611032,0.20922875577176317,5,0.31304978234577485,0.08835700338220621,3,1,0,0,0,0,nan
+blockage-s11,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,1,0,0.2206,0.7087210292351056,0.5347861799570779,3,0.391612631340085,0.25191559921005885,3,0,1,6,0,0,nan
+blockage-s11,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,106,19,0.2206,0.7087210292351056,0.5347861799570779,23,0.391612631340085,0.25191559921005885,3,3,0,16,0,0,nan
+blockage-s11,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,36,0,0.2206,0.37835150563589104,0.0,1,0.17887963219093334,0.0,3,1,0,1,0,1,26.0
+blockage-s11,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,26,0,0.2206,0.5111065019178149,0.0,1,0.25597666184758777,0.0,3,0,1,0,0,1,26.0
+blockage-s11,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,16,0,0.2206,0.9974640634038933,0.0,1,0.5018129450782262,0.0,3,0,1,9,0,0,nan
+blockage-s11,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,206,6,0.2206,0.9974640634038933,0.0,10,0.5018129450782262,0.0,3,3,0,12,0,0,nan
+blockage-s12,blockage,baseline,full,-,-,-,-,0,,1,1,0,89,0,0.2281,0.1462589370121247,nan,2,0.05538117285055349,nan,3,1,0,0,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,A,random,4,C02 C05 C12 C15,1,0,1,,0,0.2281,0.31651155488594995,0.6800257832606209,1,0.17342610095425093,0.3314353842149407,3,0,1,0,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,B,random,4,C02 C05 C12 C15,1,0,1,,0,0.2281,0.294842781302241,0.6955391328524628,1,0.1520228884174356,0.37308422902189325,3,0,1,0,0,0,nan
+blockage-s12,blockage,baseline,sensor,phones,medium,A,random,4,C02 C05 C12 C15,1,0,0,,0,0.2281,0.24971029859606264,1.3576751029624152,0,0.15227230404747755,0.7302760840108401,3,0,0,0,0,0,nan
+blockage-s12,blockage,baseline,trend,phones,medium,A,random,4,C02 C05 C12 C15,1,0,0,,0,0.2281,0.24971029859606264,1.3576751029624152,0,0.15227230404747755,0.7302760840108401,3,0,0,3,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,89,0,0.2281,0.6314150189657716,0.7124075574777615,2,0.32999350301415964,0.3741282222047703,3,1,0,0,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,109,0,0.2281,0.7147984248718358,0.6994366607239001,1,0.36338620060448645,0.3297386516878017,3,1,0,1,0,0,nan
+blockage-s12,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2281,1.3170065007540175,1.336766015411438,0,0.7535693861205717,0.7081074977416442,3,0,0,3,0,0,nan
+blockage-s12,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,2,0.2281,1.3170065007540175,1.336766015411438,2,0.7535693861205717,0.7081074977416442,3,0,0,6,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2281,0.39446590705608353,0.15967839422902597,1,0.21602355162462814,0.0672801542586929,3,1,0,0,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,74,1,0.2281,0.9380514339484834,2.7887901380505595,3,0.5123603223382998,1.1532492577262796,3,1,0,1,0,0,nan
+blockage-s12,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,2,0.2281,0.9098408032743999,0.6419540137624119,4,0.5408797715041707,0.2922625765591133,3,0,1,5,0,0,nan
+blockage-s12,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,134,19,0.2281,0.9098408032743999,0.6419540137624119,24,0.5408797715041707,0.2922625765591133,3,3,0,20,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2281,0.627565052083087,0.10742933035721225,1,0.3277022401378973,0.09401125995087338,3,0,1,0,0,0,nan
+blockage-s12,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,4,0,0.2281,0.5292621117507263,0.10288106141939836,1,0.27007439667335165,0.08803757969322644,3,1,0,1,0,0,nan
+blockage-s12,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,4,0,0.2281,0.7834634681915464,0.09405063209740971,2,0.3815267414269726,0.08278285907859079,3,0,1,0,0,0,nan
+blockage-s12,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,89,1,0.2281,0.7834634681915464,0.09405063209740971,4,0.3815267414269726,0.08278285907859079,3,1,0,7,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,A,random,4,C02 C05 C12 C15,1,0,1,,0,0.2281,0.1485330057879551,0.9309506696875949,1,0.047501239609146144,0.5191331018265277,3,0,1,0,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,B,random,4,C02 C05 C12 C15,1,1,0,44,0,0.2281,0.12183178088712786,0.34433623365265753,1,0.030833572816303594,0.18637901809132496,3,1,0,0,0,0,nan
+blockage-s12,blockage,baseline,sensor,tags,medium,A,random,4,C02 C05 C12 C15,1,0,1,,0,0.2281,0.21207118413170373,1.1179970706164488,3,0.057416088189028415,0.5955700049916111,3,0,1,0,0,0,nan
+blockage-s12,blockage,baseline,trend,tags,medium,A,random,4,C02 C05 C12 C15,1,0,1,,0,0.2281,0.21207118413170373,1.1179970706164488,3,0.057416088189028415,0.5955700049916111,3,0,1,2,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,1,,0,0.2281,0.3130336280923555,0.6243575047450792,1,0.15195255109171457,0.36437566288823703,3,0,1,0,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,24,0,0.2281,0.2967824065334597,0.5788175165311059,1,0.14432218639622985,0.33064110726958346,3,0,1,0,0,0,nan
+blockage-s12,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2281,0.4525028417009906,1.3447158985983034,0,0.23269008768232768,0.7142809454279274,3,0,0,1,0,0,nan
+blockage-s12,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,7,0.2281,0.4525028417009906,1.3447158985983034,7,0.23269008768232768,0.7142809454279274,3,2,0,9,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,74,0,0.2281,0.5924907629688762,0.322621388188556,2,0.3089386098089122,0.15173570147292686,3,1,0,0,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,79,0,0.2281,0.5539246410159377,0.2249294917336889,2,0.2946492465683918,0.09691395167837419,3,1,0,1,0,0,nan
+blockage-s12,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2281,0.7942342582269366,0.5602437221395618,3,0.425821952695859,0.26149483223282455,3,0,1,8,0,0,nan
+blockage-s12,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,114,14,0.2281,0.7942342582269366,0.5602437221395618,22,0.425821952695859,0.26149483223282455,3,3,0,15,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,49,0,0.2281,0.45575304877009354,0.0,1,0.2341179225248511,0.0,3,1,0,0,0,0,nan
+blockage-s12,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,34,0,0.2281,0.56325158241047,0.0,1,0.2642726747570213,0.0,3,1,0,1,0,0,nan
+blockage-s12,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,14,0,0.2281,1.0101572049270047,0.0,1,0.48688421045145686,0.0,3,0,1,10,0,0,nan
+blockage-s12,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,124,5,0.2281,1.0101572049270047,0.0,10,0.48688421045145686,0.0,3,3,0,14,0,0,nan
+blockage-s13,blockage,baseline,full,-,-,-,-,0,,1,1,0,93,0,0.2225,0.25888943500226397,nan,2,0.08035858895003302,nan,2,1,0,0,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,A,random,4,C01 C02 C08 C14,1,1,0,83,0,0.2225,0.6281349710605385,0.7949926481976286,2,0.2918646897794259,0.44872948314962047,2,1,0,0,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,B,random,4,C01 C02 C08 C14,1,1,0,108,0,0.2225,0.7521901830200258,0.8561693404445232,2,0.3656203195843352,0.5909010025488264,2,1,0,0,0,0,nan
+blockage-s13,blockage,baseline,sensor,phones,medium,A,random,4,C01 C02 C08 C14,1,0,0,,0,0.2225,1.4079115727370006,0.5474942068766249,0,0.7774013605696456,0.3443793402777778,2,0,0,6,0,0,nan
+blockage-s13,blockage,baseline,trend,phones,medium,A,random,4,C01 C02 C08 C14,1,0,0,,1,0.2225,1.4079115727370006,0.5474942068766249,1,0.7774013605696456,0.3443793402777778,2,0,0,8,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,103,0,0.2225,0.6257699195987844,0.5783976009815985,2,0.307447564637026,0.24364270311900152,2,1,0,0,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,118,0,0.2225,0.4675801105043714,0.829493580489966,1,0.23002668270998078,0.4476222449557049,2,1,0,0,0,0,nan
+blockage-s13,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2225,1.2363367296613588,1.3489508295289172,0,0.687126750332099,0.7212094907407407,2,0,0,6,0,0,nan
+blockage-s13,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2225,1.2363367296613588,1.3489508295289172,1,0.687126750332099,0.7212094907407407,2,0,0,7,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,18,0,0.2225,0.8166339268480115,0.19652728973082023,1,0.4609529123691442,0.08715243809319219,2,1,0,2,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,63,1,0.2225,0.6348099637943793,0.8401434715487482,3,0.34680080771505717,0.36523446455594794,2,1,0,2,0,0,nan
+blockage-s13,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,18,2,0.2225,0.9315868077417937,0.6755503178214052,4,0.5621494087996282,0.31483097554347084,2,1,0,5,0,0,nan
+blockage-s13,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,108,21,0.2225,0.9315868077417937,0.6755503178214052,25,0.5621494087996282,0.31483097554347084,2,1,1,22,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,8,0,0.2225,0.44971608612707004,0.07689928912706263,1,0.23456368072717723,0.06576287774678245,2,1,0,1,0,0,nan
+blockage-s13,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,0,1,,0,0.2225,0.3488614915864345,0.07281163197550447,1,0.18400126052100818,0.060325142021735764,2,1,0,0,0,0,nan
+blockage-s13,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,13,2,0.2225,0.7752757800462102,0.09666725285183062,3,0.3786836396861597,0.08415798611111111,2,1,0,0,0,0,nan
+blockage-s13,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,88,4,0.2225,0.7752757800462102,0.09666725285183062,6,0.3786836396861597,0.08415798611111111,2,1,0,5,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,A,random,4,C01 C02 C08 C14,1,1,0,93,0,0.2225,0.5824150562077748,0.7082024753952603,1,0.26811481401697296,0.4507280507675647,2,1,0,0,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,B,random,4,C01 C02 C08 C14,1,1,0,78,0,0.2225,0.5542699853382319,0.3529715606317164,1,0.2425249022903319,0.22376184532428703,2,1,0,1,0,0,nan
+blockage-s13,blockage,baseline,sensor,tags,medium,A,random,4,C01 C02 C08 C14,1,0,1,,0,0.2225,1.32802592322873,0.5444694407463078,1,0.6999947526132135,0.3402628062648946,2,0,1,10,0,0,nan
+blockage-s13,blockage,baseline,trend,tags,medium,A,random,4,C01 C02 C08 C14,1,1,0,93,4,0.2225,1.32802592322873,0.5444694407463078,6,0.6999947526132135,0.3402628062648946,2,1,0,10,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,38,0,0.2225,0.2208141398891127,0.5970899609113954,1,0.11194421968787632,0.3134579728357354,2,1,0,0,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,33,0,0.2225,0.20226805709586362,0.6940771781153671,2,0.10290421955406398,0.39961169440286776,2,0,1,0,0,0,nan
+blockage-s13,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2225,0.4870778710774715,1.3584469707326476,0,0.23230186648639597,0.7261139383885655,2,0,0,1,0,0,nan
+blockage-s13,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,3,0.2225,0.4870778710774715,1.3584469707326476,3,0.23230186648639597,0.7261139383885655,2,1,0,4,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,68,0,0.2225,0.5782526282111335,0.33841178826528784,2,0.29986734669680165,0.1487776295906521,2,1,0,0,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,78,0,0.2225,0.451401771314329,0.14322348724636436,3,0.24233927355784568,0.06120745129324924,2,1,0,0,0,0,nan
+blockage-s13,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,0,1,,0,0.2225,0.6896912660790768,0.5916903156531856,2,0.3727794738082037,0.2739005174824388,2,0,1,6,0,0,nan
+blockage-s13,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,73,20,0.2225,0.6896912660790768,0.5916903156531856,24,0.3727794738082037,0.2739005174824388,2,2,0,16,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,38,0,0.2225,0.4492589104736755,0.0,1,0.22209960434991374,0.0,2,0,1,1,0,0,nan
+blockage-s13,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,33,0,0.2225,0.4652980296397358,0.0,1,0.21259450584948653,0.0,2,0,1,1,0,0,nan
+blockage-s13,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,23,0,0.2225,0.968828646829282,0.0,1,0.46100190764004295,0.0,2,0,1,7,0,0,nan
+blockage-s13,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,63,5,0.2225,0.968828646829282,0.0,6,0.46100190764004295,0.0,2,2,0,8,0,0,nan
+blockage-s15,blockage,baseline,full,-,-,-,-,0,,1,1,0,113,0,0.2203,0.13621308157278453,nan,2,0.048425232888089365,nan,2,1,0,0,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,A,random,4,C06 C09 C12 C18,1,1,0,103,0,0.2203,0.6835537407925577,0.16554099112779272,3,0.3580816074425141,0.0672007192065381,2,1,0,0,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,B,random,4,C06 C09 C12 C18,1,1,0,113,0,0.2203,0.7416646741663283,0.3685744846388438,2,0.3701628208688569,0.13366765443199494,2,1,0,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,phones,medium,A,random,4,C06 C09 C12 C18,1,1,0,43,1,0.2203,0.7897065431338625,0.43290360932566524,2,0.45586365151814884,0.1727769878129745,2,0,1,0,0,0,nan
+blockage-s15,blockage,baseline,trend,phones,medium,A,random,4,C06 C09 C12 C18,1,1,0,123,6,0.2203,0.7897065431338625,0.43290360932566524,8,0.45586365151814884,0.1727769878129745,2,1,0,4,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,1,0,138,0,0.2203,0.6472305235484499,1.7827209290256605,2,0.35466052978446533,1.0997493240457301,2,1,0,1,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,148,0,0.2203,0.562009308065448,0.6578591183698534,2,0.284682907166131,0.4155033559337765,2,1,0,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2203,1.239001954901255,1.3484169727458843,0,0.6686066754202207,0.7189258087201126,2,0,0,6,0,0,nan
+blockage-s15,blockage,baseline,trend,phones,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,1,0.2203,1.239001954901255,1.3484169727458843,1,0.6686066754202207,0.7189258087201126,2,0,0,8,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,123,0,0.2203,0.5445519144935677,0.19243611803044103,2,0.30093753639689796,0.09303595894161132,2,1,0,0,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,128,0,0.2203,0.9306705413510614,0.44971835121622106,2,0.49250330072557424,0.1763759956718398,2,1,0,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,43,1,0.2203,0.9748938719956128,0.7397784846158821,3,0.588058932815176,0.33879544503687803,2,1,0,8,0,0,nan
+blockage-s15,blockage,baseline,trend,phones,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,128,11,0.2203,0.9748938719956128,0.7397784846158821,14,0.588058932815176,0.33879544503687803,2,1,0,17,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,43,0,0.2203,0.5240322276256326,0.08641697647055613,1,0.2589420156008344,0.07434875845541224,2,0,1,0,0,0,nan
+blockage-s15,blockage,main,twin,phones,medium,B,greedy_mi,4,C01 C03 C05 C19,1,1,0,43,0,0.2203,0.427293884479875,0.062318360796834324,1,0.21990202428868513,0.050175226835859274,2,0,1,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,43,0,0.2203,0.7389602269102125,0.1011186744671252,1,0.36699272978058317,0.08790436005625879,2,0,1,0,0,0,nan
+blockage-s15,blockage,baseline,trend,phones,medium,A,greedy_mi,4,C01 C03 C05 C19,1,1,0,118,1,0.2203,0.7389602269102125,0.1011186744671252,2,0.36699272978058317,0.08790436005625879,2,1,0,4,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,A,random,4,C06 C09 C12 C18,1,1,0,78,0,0.2203,0.6334726505120521,0.29502589471764995,1,0.3079586925506577,0.11624941299640051,2,1,0,0,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,B,random,4,C06 C09 C12 C18,1,1,0,108,0,0.2203,0.210686205832607,0.4166181922991784,3,0.11741434822153508,0.16660305622036314,2,1,0,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,tags,medium,A,random,4,C06 C09 C12 C18,1,1,0,48,0,0.2203,0.9041644438035993,0.5411554128912353,1,0.5126357312711772,0.21390362593344175,2,1,0,2,0,0,nan
+blockage-s15,blockage,baseline,trend,tags,medium,A,random,4,C06 C09 C12 C18,1,1,0,143,5,0.2203,0.9041644438035993,0.5411554128912353,7,0.5126357312711772,0.21390362593344175,2,1,0,6,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2203,0.20330990271910732,0.7385971481633334,0,0.1006570230781055,0.42144126277657795,2,0,1,0,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,B,entrance_exit,4,C00 C01 C10 C11,1,1,0,138,0,0.2203,0.23156632033887467,0.7894565354353473,2,0.11317272635120489,0.5095767135740883,2,1,0,1,0,0,nan
+blockage-s15,blockage,baseline,sensor,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,0,0.2203,0.461281668443201,1.3535876765979589,0,0.2222065445766559,0.7196503258436925,2,0,0,1,0,0,nan
+blockage-s15,blockage,baseline,trend,tags,medium,A,entrance_exit,4,C00 C01 C10 C11,1,0,0,,5,0.2203,0.461281668443201,1.3535876765979589,5,0.2222065445766559,0.7196503258436925,2,1,0,6,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,38,0,0.2203,0.5800126736974245,0.12847644803993563,1,0.29096172060391867,0.061835124688986026,2,1,0,0,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,B,bottleneck,4,C08 C09 C18 C19,1,1,0,63,0,0.2203,0.46924630810714413,0.15272740497169635,2,0.25461612629295816,0.0650813109595132,2,1,0,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,38,0,0.2203,0.7074024905612436,0.5461052526255703,2,0.3842477305278888,0.25913625563676934,2,0,1,7,0,0,nan
+blockage-s15,blockage,baseline,trend,tags,medium,A,bottleneck,4,C08 C09 C18 C19,1,1,0,78,17,0.2203,0.7074024905612436,0.5461052526255703,19,0.3842477305278888,0.25913625563676934,2,2,0,17,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,63,0,0.2203,0.4694382882715417,0.0,1,0.2343144104354525,0.0,2,0,1,1,0,0,nan
+blockage-s15,blockage,main,twin,tags,medium,B,greedy_mi,4,C02 C05 C10 C19,1,1,0,63,0,0.2203,0.6223575784912897,0.0,1,0.3443395504847424,0.0,2,1,0,0,0,0,nan
+blockage-s15,blockage,baseline,sensor,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,48,0,0.2203,0.9857161375018718,0.0,1,0.46992982651318677,0.0,2,0,1,6,0,0,nan
+blockage-s15,blockage,baseline,trend,tags,medium,A,greedy_mi,4,C02 C05 C10 C19,1,1,0,123,4,0.2203,0.9857161375018718,0.0,6,0.46992982651318677,0.0,2,2,0,8,0,0,nan

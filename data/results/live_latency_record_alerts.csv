@@ -1,0 +1,6 @@
+ts,zone_id,level,p,delay_ms
+255.0,Z05,blind,,
+255.0,Z08,blind,,
+255.0,Z06,blind,,
+275.0,Z05,red,0.32,
+275.0,Z05,amber,0.39,
