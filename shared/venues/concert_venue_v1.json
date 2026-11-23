@@ -1,7 +1,7 @@
 {
   "venue_id": "concert_venue",
-  "version": "1.1",
-  "source": "Concert venue revision 1.1: split the last 4 m of Z05 into Z08 (bottleneck front); original zone IDs retained.",
+  "version": "1.3",
+  "source": "Concert venue revision 1.3: adds the simulation and sensing details that used to be in the code (exit area, gate, entrance, points of interest, sensor spots, placement presets, risk zones); zones unchanged. 1.2 (audience bands) was tried and archived in docs/archive. 1.1: split the last 4 m of Z05 into Z08.",
   "units": "metres",
   "coordinates": {
     "x": "Unity X (west to east)",
@@ -10,24 +10,344 @@
   },
   "zone_membership_rule": "Half-open intervals: a point belongs to a zone if x_min <= x < x_max and y_min <= y < y_max.",
   "zones": [
-    { "id": "Z01", "name": "Entrance",           "type": "dynamic", "x_min": -28, "x_max": -18, "y_min": -3,   "y_max": 3,   "area_m2": 60,  "amber_persons_m2": 3, "red_persons_m2": 4 },
-    { "id": "Z02", "name": "Audience west",      "type": "static",  "x_min": -18, "x_max": -6,  "y_min": -12,  "y_max": 12,  "area_m2": 288, "amber_persons_m2": 3, "red_persons_m2": 4.7 },
-    { "id": "Z03", "name": "Audience centre",    "type": "static",  "x_min": -6,  "x_max": 6,   "y_min": -12,  "y_max": 12,  "area_m2": 288, "amber_persons_m2": 3, "red_persons_m2": 4.7 },
-    { "id": "Z04", "name": "Audience east",      "type": "static",  "x_min": 6,   "x_max": 18,  "y_min": -12,  "y_max": 12,  "area_m2": 288, "amber_persons_m2": 3, "red_persons_m2": 4.7 },
-    { "id": "Z05", "name": "Approach",           "type": "dynamic", "x_min": 18,  "x_max": 24,  "y_min": -6,   "y_max": 6,   "area_m2": 72, "amber_persons_m2": 3, "red_persons_m2": 4 },
-    { "id": "Z08", "name": "Bottleneck front",   "type": "dynamic", "x_min": 24,  "x_max": 28,  "y_min": -6,   "y_max": 6,   "area_m2": 48,  "amber_persons_m2": 3, "red_persons_m2": 4 },
-    { "id": "Z06", "name": "Bottleneck",         "type": "dynamic", "x_min": 28,  "x_max": 30,  "y_min": -1.5, "y_max": 1.5, "area_m2": 6,   "amber_persons_m2": 3, "red_persons_m2": 4 },
-    { "id": "Z07", "name": "Exit apron",         "type": "dynamic", "x_min": 30,  "x_max": 42,  "y_min": -6,   "y_max": 6,   "area_m2": 144, "amber_persons_m2": 3, "red_persons_m2": 4 }
+    {
+      "id": "Z01",
+      "name": "Entrance",
+      "type": "dynamic",
+      "x_min": -28,
+      "x_max": -18,
+      "y_min": -3,
+      "y_max": 3,
+      "area_m2": 60,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4
+    },
+    {
+      "id": "Z02",
+      "name": "Audience west",
+      "type": "static",
+      "x_min": -18,
+      "x_max": -6,
+      "y_min": -12,
+      "y_max": 12,
+      "area_m2": 288,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4.7
+    },
+    {
+      "id": "Z03",
+      "name": "Audience centre",
+      "type": "static",
+      "x_min": -6,
+      "x_max": 6,
+      "y_min": -12,
+      "y_max": 12,
+      "area_m2": 288,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4.7
+    },
+    {
+      "id": "Z04",
+      "name": "Audience east",
+      "type": "static",
+      "x_min": 6,
+      "x_max": 18,
+      "y_min": -12,
+      "y_max": 12,
+      "area_m2": 288,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4.7
+    },
+    {
+      "id": "Z05",
+      "name": "Approach",
+      "type": "dynamic",
+      "x_min": 18,
+      "x_max": 24,
+      "y_min": -6,
+      "y_max": 6,
+      "area_m2": 72,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4
+    },
+    {
+      "id": "Z08",
+      "name": "Bottleneck front",
+      "type": "dynamic",
+      "x_min": 24,
+      "x_max": 28,
+      "y_min": -6,
+      "y_max": 6,
+      "area_m2": 48,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4
+    },
+    {
+      "id": "Z06",
+      "name": "Bottleneck",
+      "type": "dynamic",
+      "x_min": 28,
+      "x_max": 30,
+      "y_min": -1.5,
+      "y_max": 1.5,
+      "area_m2": 6,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4
+    },
+    {
+      "id": "Z07",
+      "name": "Exit apron",
+      "type": "dynamic",
+      "x_min": 30,
+      "x_max": 42,
+      "y_min": -6,
+      "y_max": 6,
+      "area_m2": 144,
+      "amber_persons_m2": 3,
+      "red_persons_m2": 4
+    }
   ],
   "links": [
-    { "from": "Z01", "to": "Z02", "width_m": 6 },
-    { "from": "Z02", "to": "Z03", "width_m": 24 },
-    { "from": "Z03", "to": "Z04", "width_m": 24 },
-    { "from": "Z04", "to": "Z05", "width_m": 12 },
-    { "from": "Z05", "to": "Z08", "width_m": 12 },
-    { "from": "Z08", "to": "Z06", "width_m": 3 },
-    { "from": "Z06", "to": "Z07", "width_m": 3 }
+    {
+      "from": "Z01",
+      "to": "Z02",
+      "width_m": 6
+    },
+    {
+      "from": "Z02",
+      "to": "Z03",
+      "width_m": 24
+    },
+    {
+      "from": "Z03",
+      "to": "Z04",
+      "width_m": 24
+    },
+    {
+      "from": "Z04",
+      "to": "Z05",
+      "width_m": 12
+    },
+    {
+      "from": "Z05",
+      "to": "Z08",
+      "width_m": 12
+    },
+    {
+      "from": "Z08",
+      "to": "Z06",
+      "width_m": 3
+    },
+    {
+      "from": "Z06",
+      "to": "Z07",
+      "width_m": 3
+    }
   ],
-  "spawn_points": [ { "id": "entrance", "x": -27, "y": 0 } ],
-  "exit_points":  [ { "id": "exit", "x": 41, "y": 0 } ]
+  "spawn_points": [
+    {
+      "id": "entrance",
+      "x": -27,
+      "y": 0
+    }
+  ],
+  "exit_points": [
+    {
+      "id": "exit",
+      "x": 41,
+      "y": 0
+    }
+  ],
+  "exit_areas": [
+    {
+      "id": "exit",
+      "x_min": 41,
+      "x_max": 42,
+      "y_min": -1.5,
+      "y_max": 1.5
+    }
+  ],
+  "gates": [
+    {
+      "id": "bottleneck",
+      "zone": "Z06",
+      "x": 29.0,
+      "y_min": -1.5,
+      "y_max": 1.5,
+      "direction": "+x",
+      "note": "people leave through it in +x; they aim at points across it at x",
+      "approach_corners": [
+        [
+          18,
+          6
+        ],
+        [
+          18,
+          -6
+        ]
+      ]
+    }
+  ],
+  "entrances": [
+    {
+      "id": "entrance",
+      "spawn": {
+        "x_min": -27.7,
+        "x_max": -27.2,
+        "y_min": -2.6,
+        "y_max": 2.6
+      },
+      "opens_at": {
+        "x": -18,
+        "y": 0,
+        "half_width": 3.0
+      }
+    }
+  ],
+  "points_of_interest": [
+    {
+      "id": "bar",
+      "x_min": -17,
+      "x_max": -15,
+      "y_min": 10,
+      "y_max": 12
+    },
+    {
+      "id": "outside_exit",
+      "x_min": 37,
+      "x_max": 40.5,
+      "y_min": -5.5,
+      "y_max": 5.5,
+      "note": "where people walking in against the leaving crowd appear (counterflow)"
+    }
+  ],
+  "sensor_candidates": [
+    {
+      "id": "C00",
+      "x": -23,
+      "y": 0
+    },
+    {
+      "id": "C01",
+      "x": -15,
+      "y": 0
+    },
+    {
+      "id": "C02",
+      "x": -9,
+      "y": 0
+    },
+    {
+      "id": "C03",
+      "x": -3,
+      "y": 0
+    },
+    {
+      "id": "C04",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "id": "C05",
+      "x": 9,
+      "y": 0
+    },
+    {
+      "id": "C06",
+      "x": 15,
+      "y": 0
+    },
+    {
+      "id": "C07",
+      "x": 21,
+      "y": 0
+    },
+    {
+      "id": "C08",
+      "x": 26,
+      "y": 0
+    },
+    {
+      "id": "C09",
+      "x": 29,
+      "y": 2.5
+    },
+    {
+      "id": "C10",
+      "x": 33,
+      "y": 0
+    },
+    {
+      "id": "C11",
+      "x": 38,
+      "y": 0
+    },
+    {
+      "id": "C12",
+      "x": -12,
+      "y": 8
+    },
+    {
+      "id": "C13",
+      "x": -12,
+      "y": -8
+    },
+    {
+      "id": "C14",
+      "x": 0,
+      "y": 8
+    },
+    {
+      "id": "C15",
+      "x": 0,
+      "y": -8
+    },
+    {
+      "id": "C16",
+      "x": 12,
+      "y": 8
+    },
+    {
+      "id": "C17",
+      "x": 12,
+      "y": -8
+    },
+    {
+      "id": "C18",
+      "x": 22,
+      "y": 5
+    },
+    {
+      "id": "C19",
+      "x": 22,
+      "y": -5
+    }
+  ],
+  "placement_presets": {
+    "entrance_exit": [
+      "C11",
+      "C00",
+      "C10",
+      "C01",
+      "C07",
+      "C02",
+      "C06",
+      "C03"
+    ],
+    "bottleneck": [
+      "C08",
+      "C09",
+      "C18",
+      "C19",
+      "C07",
+      "C10",
+      "C06",
+      "C11"
+    ]
+  },
+  "risk_zones": [
+    "Z05",
+    "Z08",
+    "Z06"
+  ]
 }

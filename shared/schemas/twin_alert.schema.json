@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Twin alert message",
+  "description": "Published (QoS 1) on twin/{venue_id}/alerts when an alert starts. blind = a risk zone lost its last working sensor.",
+  "type": "object",
+  "required": [
+    "ts",
+    "zone_id",
+    "level",
+    "p",
+    "last_sent_at",
+    "published_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ts": {
+      "type": "number"
+    },
+    "zone_id": {
+      "type": "string",
+      "pattern": "^Z[0-9]{2}$"
+    },
+    "level": {
+      "enum": [
+        "amber",
+        "red",
+        "blind"
+      ]
+    },
+    "p": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Forecast probability (null for blind)"
+    },
+    "last_sent_at": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "published_at": {
+      "type": "number"
+    }
+  }
+}

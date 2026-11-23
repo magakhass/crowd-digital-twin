@@ -1,38 +1,50 @@
-"""Count-only sensor emulator (v2).
+"""Count-only sensor emulator (v3, with noise levels).
 
 Sensors have a position and an effective range. Phones send probe bursts at random
 times; tags advertise every second. A sensor reports, every 5 s, how many distinct
 devices it heard in its last window. Detections for all candidate spots are computed
-once per run; a placement is then just a subset of candidates.
+once per run and noise level; a placement is then just a subset of candidates.
 
-Noise model (labelled assumptions are ours, the rest is sourced):
-  phones: 85 % carry a detectable phone (ours); Poisson probe bursts at 0.0258 /s and
-          90 % reception (ours), tuned so a person standing in range for 60 s is counted
-          with p ~ 0.67, matching Determe et al. (2022). Window 60 s.
+Device model (labelled assumptions are ours, the rest is sourced):
+  phones: 85 % carry a detectable phone (ours); Poisson probe bursts at 0.0258 /s (ours),
+          window 60 s. At medium noise a person standing in range for 60 s is counted
+          with p ~ 0.64, close to the 0.67 of Determe et al. (2022).
   tags:   80 % participation (ours); one advertisement per second (Kontakt.io default
-          interval); 50 % reception per advertisement (ours). Window 10 s.
-  both:   effective range 10 m after a signal-strength cut-off (~1 sensor / 400 m^2,
-          Determe et al., 2022); 5 % of messages lost; sensors can be failed.
+          interval); window 10 s.
+  both:   nominal range 10 m after a signal-strength cut-off (~1 sensor / 400 m^2,
+          Determe et al., 2022).
+
+Noise levels (all ours): chance a single burst/advert is heard, wobble of the range
+cut-off (signal strength fluctuates, so people just outside are sometimes counted and
+people just inside missed), and share of report messages lost.
+  low     clear line of sight, quiet network
+  medium  typical conditions
+  high    dense crowd shadowing the signal, congested network
 """
 from pathlib import Path
 
 import numpy as np
 
 from sensors import sketch
-from shared.venue import Venue
+from shared.venue import Venue, data_dir
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 REPORT_EVERY = 5
 MODES = {
-    "phones": {"window": 60, "carry": 0.85, "rate": 0.0258, "receive": 0.9, "epoch": 60},
-    "tags":   {"window": 10, "carry": 0.80, "rate": 1.0, "receive": 0.5, "epoch": 10 ** 6},
+    "phones": {"window": 60, "carry": 0.85, "rate": 0.0258, "epoch": 60},
+    "tags":   {"window": 10, "carry": 0.80, "rate": 1.0, "epoch": 10 ** 6},
 }
+NOISE = {
+    "low":    {"receive": {"phones": 1.0, "tags": 0.8}, "range_sd": 0.5, "loss": 0.01},
+    "medium": {"receive": {"phones": 0.9, "tags": 0.5}, "range_sd": 1.5, "loss": 0.05},
+    "high":   {"receive": {"phones": 0.5, "tags": 0.1}, "range_sd": 3.0, "loss": 0.15},
+}
+NOISE_LEVELS = list(NOISE)
 RANGE = 10.0
 
-# candidate mounting spots (x, y): centre line plus the audience sides
-CANDIDATES = [(-23, 0), (-15, 0), (-9, 0), (-3, 0), (3, 0), (9, 0), (15, 0), (21, 0), (26, 0), (29, 2.5),
-              (33, 0), (38, 0), (-12, 8), (-12, -8), (0, 8), (0, -8), (12, 8), (12, -8), (22, 5), (22, -5)]
-CAND_IDS = [f"C{i:02d}" for i in range(len(CANDIDATES))]
+# candidate mounting spots (x, y) come from the venue file
+CANDIDATES = Venue().candidates
+CAND_IDS = Venue().candidate_ids
 
 
 def load_seconds(run_id):
@@ -42,12 +54,14 @@ def load_seconds(run_id):
     return t  # id, second, x, y
 
 
-def observe(run_id, mode, seed=0):
-    """Which person each candidate spot would count in every report (cached)."""
-    out = DATA / "sensors" / f"{run_id}_{mode}.npz"
-    if out.exists():
+def observe(run_id, mode, noise="medium", seed=0):
+    """Which person each candidate spot would count in every report (cached per noise level)."""
+    out = DATA / "sensors" / f"{run_id}_{mode}_{noise}.npz"
+    src = DATA / "trajectories" / f"{run_id}.csv"
+    if out.exists() and out.stat().st_mtime >= src.stat().st_mtime:  # rebuilt when the run is simulated again
         return dict(np.load(out))
     cfg, rng = MODES[mode], np.random.default_rng(seed)
+    receive, range_sd = NOISE[noise]["receive"][mode], NOISE[noise]["range_sd"]
     traj = load_seconds(run_id)
     pids = np.unique(traj[:, 0]).astype(int)
     pidx = {p: i for i, p in enumerate(pids)}
@@ -68,27 +82,31 @@ def observe(run_id, mode, seed=0):
             # bursts this second (phones: Poisson; tags: one advert)
             bursts = rng.poisson(cfg["rate"], len(who)) if mode == "phones" else np.ones(len(who), int)
             d = np.hypot(xy[:, 0][None] - cand[:, 0][:, None], xy[:, 1][None] - cand[:, 1][:, None])
-            p_heard = 1 - (1 - cfg["receive"]) ** bursts[None, :]
-            heard = (d <= RANGE) & (rng.random(d.shape) < p_heard)
+            p_heard = 1 - (1 - receive) ** bursts[None, :]
+            in_range = d <= RANGE + range_sd * rng.standard_normal(d.shape)
+            heard = in_range & (rng.random(d.shape) < p_heard)
             ci, pj = np.nonzero(heard)
             last_heard[ci, who[pj]] = s
         while ri < len(reports) and reports[ri] == s:
             seen[ri] = last_heard > s - cfg["window"]
             ri += 1
-    res = {"reports": reports, "pids": pids, "seen": seen, "mode": np.array(mode)}
+    res = {"reports": reports, "pids": pids, "seen": seen, "mode": np.array(mode), "noise": np.array(noise)}
     out.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(out, **res)
     return res
 
 
-def readings(obs, sensors, seed=0, dropout=0.05, failures=(), with_sketches=False):
+def readings(obs, sensors, seed=0, dropout=None, failures=(), with_sketches=False):
     """What the twin receives for one placement.
 
     sensors: candidate indices. failures: (sensor position in list, t_from, t_to).
+    dropout: share of messages lost; by default the one of the run's noise level.
     Returns counts (reports x sensors, NaN = no message) and, for option B, the
     estimated overlap for every sensor pair (reports x pairs, NaN = missing).
     """
     rng = np.random.default_rng(seed)
+    if dropout is None:
+        dropout = NOISE[str(obs["noise"])]["loss"]
     seen = obs["seen"][:, sensors, :]
     counts = seen.sum(2).astype(float)
     lost = rng.random(counts.shape) < dropout

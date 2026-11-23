@@ -3,16 +3,62 @@
   "title": "Sensor count message",
   "description": "Published every 5 s on venue/{venue_id}/sensor/{sensor_id}/count. Counts only: no positions or identities.",
   "type": "object",
-  "required": ["ts", "run_id", "venue_id", "sensor_id", "zone_id", "count", "mode", "seq"],
+  "required": [
+    "ts",
+    "run_id",
+    "venue_id",
+    "sensor_id",
+    "zone_id",
+    "count",
+    "mode",
+    "seq"
+  ],
   "additionalProperties": false,
   "properties": {
-    "ts":        { "type": "number", "description": "Simulation time in seconds since run start" },
-    "run_id":    { "type": "string" },
-    "venue_id":  { "type": "string" },
-    "sensor_id": { "type": "string", "pattern": "^S[0-9]{2}$" },
-    "zone_id":   { "type": "string", "pattern": "^Z[0-9]{2}$", "description": "Zone the sensor covers (from the venue file)" },
-    "count":     { "type": "integer", "minimum": 0, "description": "Noisy number of detected devices or tags" },
-    "mode":      { "enum": ["personal_device", "ble_tag"] },
-    "seq":       { "type": "integer", "minimum": 0, "description": "Increases by 1 per message from this sensor; used to detect gaps and duplicates" }
+    "ts": {
+      "type": "number",
+      "description": "Simulation time in seconds since run start"
+    },
+    "sent_at": {
+      "type": "number",
+      "description": "Wall-clock time the message was sent (Unix s), for latency only"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "venue_id": {
+      "type": "string"
+    },
+    "sensor_id": {
+      "type": "string",
+      "pattern": "^C[0-9]{2}$",
+      "description": "Mounting spot id from the venue file (sensor_candidates)"
+    },
+    "zone_id": {
+      "type": "string",
+      "pattern": "^Z[0-9]{2}$",
+      "description": "Zone the sensor covers (from the venue file)"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Noisy number of detected devices or tags"
+    },
+    "mode": {
+      "enum": [
+        "personal_device",
+        "ble_tag"
+      ]
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Report number since the event started (same for all sensors); gaps = lost messages"
+    },
+    "sketch": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Option B: the sensor's 16 x 128-bit linear-counting sketch of salted device hashes, bit-packed and base64 encoded. No IDs."
+    }
   }
 }

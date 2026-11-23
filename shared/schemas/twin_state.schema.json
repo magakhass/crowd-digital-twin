@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Twin state message",
+  "description": "Published on twin/{venue_id}/state after every report.",
+  "type": "object",
+  "required": [
+    "ts",
+    "seq",
+    "sensors_in",
+    "last_sent_at",
+    "compute_ms",
+    "published_at",
+    "zones",
+    "blind"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ts": {
+      "type": "number",
+      "description": "Event time of the report, s"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sensors_in": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^C[0-9]{2}$"
+      },
+      "description": "Sensors whose message made it into this report"
+    },
+    "last_sent_at": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "sent_at of the last sensor message used (null: none came in)"
+    },
+    "compute_ms": {
+      "type": "number",
+      "description": "Time the twin took for this report"
+    },
+    "published_at": {
+      "type": "number"
+    },
+    "zones": {
+      "type": "object",
+      "patternProperties": {
+        "^Z[0-9]{2}$": {
+          "type": "object",
+          "required": [
+            "density",
+            "p_red",
+            "p_amber"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "density": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Estimated persons/m2 now"
+            },
+            "p_red": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "P(red within the 120 s horizon)"
+            },
+            "p_amber": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "blind": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^Z[0-9]{2}$"
+      },
+      "description": "Risk zones with no working sensor right now (each also raised a blind alert)"
+    }
+  }
+}

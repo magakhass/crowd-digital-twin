@@ -3,11 +3,24 @@
   "title": "Sensor status message",
   "description": "Retained message on venue/{venue_id}/sensor/{sensor_id}/status. 'offline' is also registered as the sensor's MQTT Last Will.",
   "type": "object",
-  "required": ["sensor_id", "status"],
+  "required": [
+    "sensor_id",
+    "status"
+  ],
   "additionalProperties": false,
   "properties": {
-    "sensor_id": { "type": "string", "pattern": "^S[0-9]{2}$" },
-    "status":    { "enum": ["online", "offline"] },
-    "ts":        { "type": "number" }
+    "sensor_id": {
+      "type": "string",
+      "pattern": "^C[0-9]{2}$"
+    },
+    "status": {
+      "enum": [
+        "online",
+        "offline"
+      ]
+    },
+    "ts": {
+      "type": "number"
+    }
   }
 }
