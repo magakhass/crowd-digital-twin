@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crowd digital twin: operator view</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #151b23; --line: #263040; --ink: #e6edf3; --dim: #8b98a8;
+    --twin: #4cc3ff; --truth: #e6edf3; --amber: #f5a524; --red: #ef4444; --blind: #b19cff; --ok: #3fb950;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink);
+    font: 13px/1.4 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .num { font-variant-numeric: tabular-nums; }
+  header { display: flex; align-items: center; gap: 18px; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 15px; font-weight: 600; margin: 0; }
+  .badge { font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 3px 8px; border-radius: 4px; }
+  .live { background: #3d1418; color: #ff8a8a; } .rec { background: #1d2a3d; color: var(--twin); }
+  .wait { background: #262c36; color: var(--dim); }
+  .meta { color: var(--dim); display: flex; gap: 16px; flex-wrap: wrap; }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .clock { margin-left: auto; font-size: 22px; font-weight: 600; }
+  .clock small { font-size: 12px; color: var(--dim); font-weight: 400; margin-left: 4px; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; grid-template-rows: minmax(0, 1fr) 230px;
+    gap: 10px; padding: 10px; height: calc(100% - 52px); }
+  body.replay main { height: calc(100% - 52px - 48px); }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; display: flex;
+    flex-direction: column; min-height: 0; }
+  section > h2 { margin: 0; padding: 8px 12px; font-size: 11px; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--dim); display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--line); }
+  section > h2 .right { margin-left: auto; display: flex; gap: 6px; align-items: center; text-transform: none;
+    letter-spacing: 0; font-weight: 400; }
+  .canvas-wrap { position: relative; flex: 1; min-height: 0; }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .seg button { background: transparent; color: var(--dim); border: 1px solid var(--line); padding: 2px 9px;
+    font: inherit; cursor: pointer; }
+  .seg button:first-child { border-radius: 4px 0 0 4px; } .seg button:last-child { border-radius: 0 4px 4px 0; }
+  .seg button.on { background: #22303f; color: var(--ink); }
+  label.chk { color: var(--dim); display: flex; gap: 4px; align-items: center; cursor: pointer; }
+  .side { display: grid; grid-template-rows: minmax(0, 1.25fr) minmax(0, 1fr); gap: 10px; min-height: 0; }
+  .scroll { overflow-y: auto; flex: 1; }
+  .risk-row { display: grid; grid-template-columns: 74px 1fr 44px; gap: 8px; align-items: center;
+    padding: 5px 12px; cursor: pointer; }
+  .risk-row:hover, .risk-row.sel { background: #1b2430; }
+  .risk-row .z { font-weight: 600; } .risk-row .z small { display: block; color: var(--dim); font-weight: 400;
+    font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bars { position: relative; height: 18px; }
+  .bar { position: absolute; left: 0; height: 7px; border-radius: 2px; transition: width .3s; }
+  .bar.a { top: 1px; background: var(--amber); opacity: .85; } .bar.r { top: 10px; background: var(--red); }
+  .tau { position: absolute; top: -2px; bottom: -2px; width: 1px; background: var(--dim); }
+  .risk-row .d { text-align: right; color: var(--dim); }
+  .alert { display: grid; grid-template-columns: 52px 54px 1fr; gap: 6px; padding: 5px 12px; align-items: center;
+    border-bottom: 1px solid #1c2430; }
+  .alert .t { color: var(--dim); }
+  .chip { font-size: 10px; font-weight: 700; letter-spacing: .05em; padding: 2px 0; border-radius: 3px;
+    text-align: center; color: #0d1117; }
+  .chip.red { background: var(--red); } .chip.amber { background: var(--amber); } .chip.blind { background: var(--blind); }
+  .empty { color: var(--dim); padding: 12px; }
+  .bottom { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 10px; grid-column: 1 / 3; min-height: 0; }
+  .sensor { display: grid; grid-template-columns: 14px 40px 1fr 60px; gap: 6px; padding: 4px 12px; align-items: center; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+  .dot.off { background: #4a5260; }
+  .sensor .c { text-align: right; } .sensor .zn { color: var(--dim); }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; padding: 8px 12px; border-top: 1px solid var(--line); }
+  .stats div { color: var(--dim); } .stats b { color: var(--ink); font-weight: 600; float: right; }
+  .legend { display: flex; gap: 12px; color: var(--dim); font-size: 11px; }
+  .legend i { display: inline-block; width: 14px; height: 2px; vertical-align: middle; margin-right: 4px; }
+  #replay { display: none; position: fixed; left: 0; right: 0; bottom: 0; height: 48px; padding: 0 16px;
+    border-top: 1px solid var(--line); background: var(--panel); align-items: center; gap: 12px; }
+  body.replay #replay { display: flex; }
+  #replay button { background: #22303f; color: var(--ink); border: 1px solid var(--line); border-radius: 4px;
+    padding: 4px 12px; font: inherit; cursor: pointer; }
+  #replay input[type=range] { flex: 1; accent-color: var(--twin); }
+  #replay select { background: #22303f; color: var(--ink); border: 1px solid var(--line); border-radius: 4px; font: inherit; }
+</style>
+</head>
+<body>
+<header>
+  <span id="mode" class="badge wait">WAITING</span>
+  <h1 id="title">Crowd digital twin</h1>
+  <div class="meta">
+    <span>Run <b id="run">-</b></span><span>Phase <b id="phase">-</b></span>
+    <span>Sensors <b id="nsens">-</b></span><span>Alert cut-off &tau; <b id="tau">-</b></span>
+  </div>
+  <div class="clock num" id="clock">t = 0<small>s</small></div>
+</header>
+<main>
+  <section>
+    <h2>Venue <span class="right">
+      <span class="seg" id="view"><button data-v="twin" class="on">Twin estimate</button><button data-v="truth">True density</button></span>
+      <label class="chk"><input type="checkbox" id="crowd" checked> simulated crowd</label>
+      <label class="chk"><input type="checkbox" id="ranges" checked> sensor range</label>
+    </span></h2>
+    <div class="canvas-wrap"><canvas id="map"></canvas></div>
+  </section>
+  <div class="side">
+    <section><h2>Risk in the next 2 minutes <span class="right legend"><span><i style="background:var(--amber)"></i>amber</span><span><i style="background:var(--red)"></i>red</span></span></h2>
+      <div class="scroll" id="risk"></div></section>
+    <section><h2>Alerts <span class="right" id="nalerts"></span></h2><div class="scroll" id="alerts"><div class="empty">No alerts yet</div></div></section>
+  </div>
+  <div class="bottom">
+    <section><h2><span id="tl-title">Zone</span> <span class="right legend">
+      <span><i style="background:var(--truth)"></i>true density</span><span><i style="background:var(--twin)"></i>twin estimate</span>
+      <span><i style="background:var(--red);opacity:.35;height:8px"></i>P(red within 2 min)</span></span></h2>
+      <div class="canvas-wrap"><canvas id="tl"></canvas></div></section>
+    <section><h2>Sensors (count-only)</h2><div class="scroll" id="sensors"></div>
+      <div class="stats num">
+        <div>Reports <b id="s-rep">0</b></div><div>Latency now <b id="s-lat">-</b></div>
+        <div>Twin compute <b id="s-comp">-</b></div><div>Latency median <b id="s-med">-</b></div>
+      </div></section>
+  </div>
+</main>
+<div id="replay">
+  <button id="play">Pause</button>
+  <select id="speed"><option value="1">1&times;</option><option value="2">2&times;</option><option value="4">4&times;</option></select>
+  <input type="range" id="seek" min="0" max="1000" value="0">
+  <span class="num" id="rtime" style="color:var(--dim)"></span>
+</div>
+<script>
+const VENUE = /*VENUE*/null;
+const RECORDING = /*RECORDING*/null;
+const NAMES = Object.fromEntries(VENUE.zones.map(z => [z.id, z.name]));
+const CAND = Object.fromEntries(VENUE.candidates.map(c => [c.id, c]));
+let S;  // dashboard state, rebuilt from the message stream
+function fresh() {
+  return { t: 0, run: null, phase: null, tau: null, sensors: {}, installed: [], twin: {}, truth: {}, pred: {},
+           xy: [], series: {}, alerts: [], blind: new Set(), reports: 0, lat: [], comp: [], latNow: null };
+}
+S = fresh();
+let sel = VENUE.risk_zones[0] || VENUE.zones[0].id, view = "twin", picked = false;  // picked: the user chose a zone
+
+// ---- applying one message ----
+function apply(m) {
+  const tp = m.topic, p = m.p;
+  if (tp.startsWith("sim/")) {
+    S.run = tp.split("/")[1] + (p.failure_test ? " (sensor failure test)" : ""); S.truth = p.zones; S.xy = p.xy; S.t = Math.max(S.t, p.ts);
+    for (const [z, d] of Object.entries(p.zones)) point(z, p.ts).truth = d;
+  } else if (tp.endsWith("/state")) {
+    S.reports++; S.t = Math.max(S.t, p.ts);
+    for (const [z, v] of Object.entries(p.zones)) {
+      S.twin[z] = v.density; S.pred[z] = v;
+      const q = point(z, p.ts); q.twin = v.density; q.pr = v.p_red; q.pa = v.p_amber;
+    }
+    if (p.blind) S.blind = new Set(p.blind);  // risk zones with no working sensor right now
+    if (p._e2e_ms != null) { S.lat.push(p._e2e_ms); S.latNow = p._e2e_ms; }
+    S.comp.push(p.compute_ms);
+  } else if (tp.endsWith("/alerts")) {
+    S.alerts.unshift(p);
+  } else if (tp.startsWith("twin/") && tp.endsWith("/status")) {
+    if (p.status === "online") { S.installed = p.sensors || []; S.tau = p.tau; S.phase = p.phase;
+      const sp = VENUE.entrance?.spawn, cx = sp && (sp.x_min + sp.x_max) / 2, cy = sp && (sp.y_min + sp.y_max) / 2;
+      const entry = sp && VENUE.zones.find(q => cx >= q.x_min && cx < q.x_max && cy >= q.y_min && cy < q.y_max)?.id;
+      if (!picked && entry) {  // start on the entrance zone for arrivals, on a risk zone away from it when leaving
+        sel = p.phase === "ingress" ? entry : (VENUE.risk_zones.find(z => z !== entry) || sel); } }
+  } else if (tp.includes("/sensor/")) {
+    const id = tp.split("/")[3], s = S.sensors[id] || (S.sensors[id] = { status: "online", count: null, zone: null });
+    if (tp.endsWith("/status")) s.status = p.status;
+    else { s.count = p.count; s.zone = p.zone_id; s.status = "online"; }
+  }
+}
+function point(z, t) {
+  const a = S.series[z] || (S.series[z] = []);
+  if (!a.length || a[a.length - 1].t !== t) a.push({ t });
+  return a[a.length - 1];
+}
+
+// ---- map ----
+const map = document.getElementById("map"), mctx = map.getContext("2d");
+const B = (() => { let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
+  for (const z of VENUE.zones) { x0 = Math.min(x0, z.x_min); x1 = Math.max(x1, z.x_max); y0 = Math.min(y0, z.y_min); y1 = Math.max(y1, z.y_max); }
+  return { x0: x0 - 3, x1: x1 + 3, y0: y0 - 3, y1: y1 + 3 }; })();
+let T = null;
+function fit(cv) {
+  const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  cv.width = r.width * dpr; cv.height = r.height * dpr;
+  const c = cv.getContext("2d"); c.setTransform(dpr, 0, 0, dpr, 0, 0); return [r.width, r.height];
+}
+function lerp(a, b, f) { return a.map((v, i) => Math.round(v + (b[i] - v) * f)); }
+function fillFor(d, z) {
+  if (d == null) return "rgba(38,48,64,0.35)";
+  const f = Math.max(0, Math.min(1, d / z.red_persons_m2)), fa = z.amber_persons_m2 / z.red_persons_m2;
+  const calm = [32, 64, 92], warm = [205, 140, 30], hot = [215, 50, 50];
+  const c = f < fa ? lerp(calm, warm, Math.pow(f / fa, 2)) : lerp(warm, hot, (f - fa) / (1 - fa));  // stays calm until near amber
+  return `rgba(${c[0]},${c[1]},${c[2]},${0.35 + 0.55 * f})`;
+}
+function drawMap() {
+  const [W, H] = fit(map), c = mctx;
+  const s = Math.min(W / (B.x1 - B.x0), H / (B.y1 - B.y0));
+  const ox = (W - s * (B.x1 - B.x0)) / 2, oy = (H - s * (B.y1 - B.y0)) / 2;
+  const X = x => ox + (x - B.x0) * s, Y = y => H - oy - (y - B.y0) * s;
+  T = { X, Y, s };
+  c.clearRect(0, 0, W, H);
+  const dens = view === "twin" ? S.twin : S.truth;
+  for (const z of VENUE.zones) {
+    const x = X(z.x_min), y = Y(z.y_max), w = (z.x_max - z.x_min) * s, h = (z.y_max - z.y_min) * s;
+    c.fillStyle = fillFor(dens[z.id], z); c.fillRect(x, y, w, h);
+    const pr = S.pred[z.id], tau = S.tau ?? 0.5;
+    let edge = "#3a4656", lw = 1;
+    if (pr && pr.p_red >= tau) { edge = "#ef4444"; lw = 3; } else if (pr && pr.p_amber >= tau) { edge = "#f5a524"; lw = 2.5; }
+    if (z.id === sel) { c.setLineDash([]); }
+    c.strokeStyle = edge; c.lineWidth = lw; c.strokeRect(x + lw / 2, y + lw / 2, w - lw, h - lw);
+    if (S.blind.has(z.id)) {  // lost its last sensor: hatched
+      c.save(); c.beginPath(); c.rect(x, y, w, h); c.clip(); c.strokeStyle = "rgba(177,156,255,.45)"; c.lineWidth = 1;
+      for (let k = -h; k < w; k += 8) { c.beginPath(); c.moveTo(x + k, y + h); c.lineTo(x + k + h, y); c.stroke(); }
+      c.restore();
+    }
+    if (z.id === sel) { c.strokeStyle = "#e6edf3"; c.lineWidth = 1; c.setLineDash([4, 3]); c.strokeRect(x - 3, y - 3, w + 6, h + 6); c.setLineDash([]); }
+  }
+  if (document.getElementById("crowd").checked && S.xy.length) {
+    c.fillStyle = "rgba(230,237,243,.55)";
+    const r = Math.max(1, s * 0.18);
+    for (const [px, py] of S.xy) { c.beginPath(); c.arc(X(px / 10), Y(py / 10), r, 0, 6.283); c.fill(); }
+  }
+  for (const id of S.installed) {
+    const cd = CAND[id]; if (!cd) continue;
+    const on = (S.sensors[id]?.status ?? "online") === "online", x = X(cd.x), y = Y(cd.y);
+    if (document.getElementById("ranges").checked) {
+      c.beginPath(); c.arc(x, y, VENUE.range_m * s, 0, 6.283); c.setLineDash([3, 4]);
+      c.strokeStyle = on ? "rgba(76,195,255,.35)" : "rgba(120,128,140,.25)"; c.lineWidth = 1; c.stroke(); c.setLineDash([]);
+    }
+    c.fillStyle = on ? "#4cc3ff" : "#4a5260"; c.fillRect(x - 5, y - 5, 10, 10);
+    if (!on) { c.strokeStyle = "#ff8a8a"; c.lineWidth = 2; c.beginPath(); c.moveTo(x - 6, y - 6); c.lineTo(x + 6, y + 6);
+      c.moveTo(x + 6, y - 6); c.lineTo(x - 6, y + 6); c.stroke(); }
+    c.fillStyle = "#8b98a8"; c.font = "10px Segoe UI, sans-serif"; c.fillText(id, x + 7, y - 6);
+  }
+  for (const z of VENUE.zones) {
+    const x = X(z.x_min), y = Y(z.y_max), h = (z.y_max - z.y_min) * s;
+    const d = dens[z.id], big = h > 34 && (z.x_max - z.x_min) * s > 46;
+    const label = (txt, lx, ly, font, col) => {  // dark halo so labels stay readable over the crowd
+      c.font = font; c.lineWidth = 3; c.strokeStyle = "rgba(13,17,23,.85)"; c.strokeText(txt, lx, ly);
+      c.fillStyle = col; c.fillText(txt, lx, ly); };
+    label(z.id, x + 5, y + 14, `600 ${big ? 12 : 10}px Segoe UI, sans-serif`, "#e6edf3");
+    if (d != null && big) label(`${d.toFixed(1)} p/m²`, x + 5, y + 28, "11px Segoe UI, sans-serif", "#c9d4df");
+  }
+}
+map.addEventListener("click", e => {
+  if (!T) return; const r = map.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  for (const z of VENUE.zones) if (mx >= T.X(z.x_min) && mx <= T.X(z.x_max) && my >= T.Y(z.y_max) && my <= T.Y(z.y_min)) { sel = z.id; picked = true; draw(); }
+});
+document.querySelectorAll("#view button").forEach(b => b.onclick = () => {
+  view = b.dataset.v; document.querySelectorAll("#view button").forEach(x => x.classList.toggle("on", x === b)); draw(); });
+["crowd", "ranges"].forEach(id => document.getElementById(id).onchange = draw);
+
+// ---- timeline of the selected zone ----
+const tl = document.getElementById("tl"), tctx = tl.getContext("2d");
+function drawTimeline() {
+  const [W, H] = fit(tl), c = tctx, z = VENUE.zones.find(q => q.id === sel), a = S.series[sel] || [];
+  document.getElementById("tl-title").textContent = `${sel} ${NAMES[sel] || ""}`;
+  c.clearRect(0, 0, W, H);
+  const L = 40, R = 36, Tp = 10, Bt = 22, w = W - L - R, h = H - Tp - Bt;
+  const tmax = Math.max(120, S.t * 1.05), ymax = Math.max(z.red_persons_m2 * 1.2, ...a.map(p => Math.max(p.truth || 0, p.twin || 0)));
+  const X = t => L + t / tmax * w, Y = d => Tp + h - d / ymax * h, P = q => Tp + h - q * h;
+  c.strokeStyle = "#263040"; c.fillStyle = "#8b98a8"; c.font = "10px Segoe UI, sans-serif"; c.lineWidth = 1;
+  for (let d = 0; d <= ymax; d += 1) { c.beginPath(); c.moveTo(L, Y(d)); c.lineTo(L + w, Y(d)); c.stroke(); c.fillText(d.toFixed(0), L - 14, Y(d) + 3); }
+  const step = tmax > 600 ? 120 : 60;
+  for (let t = 0; t <= tmax; t += step) c.fillText(`${t}s`, X(t) - 8, H - 6);
+  c.fillText("p/m²", 4, Tp + 8); c.fillText("P", W - 14, Tp + 8);
+  c.fillStyle = "rgba(239,68,68,.22)"; c.beginPath(); c.moveTo(X(a[0]?.t || 0), P(0));
+  for (const p of a) if (p.pr != null) c.lineTo(X(p.t), P(p.pr));
+  c.lineTo(X(a.length ? a[a.length - 1].t : 0), P(0)); c.fill();
+  if (S.tau != null) { c.setLineDash([2, 3]); c.strokeStyle = "rgba(239,68,68,.6)"; c.beginPath(); c.moveTo(L, P(S.tau)); c.lineTo(L + w, P(S.tau)); c.stroke();
+    c.fillStyle = "#ef4444"; c.fillText(`τ ${S.tau}`, L + w + 4, P(S.tau) + 3); }
+  for (const [lvl, col] of [["amber_persons_m2", "#f5a524"], ["red_persons_m2", "#ef4444"]]) {
+    c.setLineDash([6, 4]); c.strokeStyle = col; c.beginPath(); c.moveTo(L, Y(z[lvl])); c.lineTo(L + w, Y(z[lvl])); c.stroke(); }
+  c.setLineDash([]);
+  for (const [k, col, lw] of [["truth", "#e6edf3", 1.6], ["twin", "#4cc3ff", 2]]) {
+    c.strokeStyle = col; c.lineWidth = lw; c.beginPath(); let on = false;
+    for (const p of a) { if (p[k] == null) continue; on ? c.lineTo(X(p.t), Y(p[k])) : c.moveTo(X(p.t), Y(p[k])); on = true; }
+    c.stroke();
+  }
+  let row = 0, lastX = -1e9;
+  for (const al of [...S.alerts].reverse()) if (al.zone_id === sel) {
+    const col = { red: "#ef4444", amber: "#f5a524", blind: "#b19cff" }[al.level], x = X(al.ts);
+    row = x - lastX < 46 ? row + 1 : 0; lastX = x;  // stagger labels of alerts close together
+    c.strokeStyle = col; c.lineWidth = 1.5; c.beginPath(); c.moveTo(x, Tp); c.lineTo(x, Tp + h); c.stroke();
+    c.fillStyle = col; c.font = "600 10px Segoe UI, sans-serif"; c.fillText(al.level.toUpperCase(), x + 3, Tp + 10 + 12 * row);
+  }
+}
+
+// ---- side panels ----
+function panels() {
+  const tau = S.tau ?? 0.5, order = [...VENUE.risk_zones, ...VENUE.zones.map(z => z.id).filter(z => !VENUE.risk_zones.includes(z))];
+  document.getElementById("risk").innerHTML = order.map(z => {
+    const p = S.pred[z] || { p_red: 0, p_amber: 0 }, d = S.twin[z];
+    return `<div class="risk-row ${z === sel ? "sel" : ""}" data-z="${z}"><div class="z">${z}<small>${NAMES[z] || ""}</small></div>
+      <div class="bars"><div class="bar a" style="width:${100 * p.p_amber}%"></div><div class="bar r" style="width:${100 * p.p_red}%"></div>
+      <div class="tau" style="left:${100 * tau}%"></div></div><div class="d num">${d == null ? "-" : d.toFixed(1)}</div></div>`;
+  }).join("");
+  document.querySelectorAll(".risk-row").forEach(r => r.onclick = () => { sel = r.dataset.z; picked = true; draw(); });
+  document.getElementById("alerts").innerHTML = S.alerts.length ? S.alerts.map(a => `<div class="alert"><span class="t num">t=${Math.round(a.ts)}s</span>
+    <span class="chip ${a.level}">${a.level.toUpperCase()}</span><span>${a.zone_id} ${NAMES[a.zone_id] || ""}${a.level === "blind"
+      ? " &mdash; no working sensor left" : ` &mdash; P=${a.p}`}</span></div>`).join("") : '<div class="empty">No alerts yet</div>';
+  document.getElementById("nalerts").textContent = S.alerts.length ? `${S.alerts.length}` : "";
+  document.getElementById("sensors").innerHTML = S.installed.map(id => { const s = S.sensors[id] || {};
+    return `<div class="sensor num"><span class="dot ${s.status === "offline" ? "off" : ""}"></span><b>${id}</b>
+      <span class="zn">${s.zone || ""} ${s.status === "offline" ? "&middot; offline" : ""}</span><span class="c">${s.status === "offline" ? "-" : (s.count ?? "-")}</span></div>`; }).join("")
+    || '<div class="empty">Waiting for the twin</div>';
+  const med = a => { if (!a.length) return null; const b = [...a].sort((x, y) => x - y); return b[Math.floor(b.length / 2)]; };
+  document.getElementById("s-rep").textContent = S.reports;
+  document.getElementById("s-lat").textContent = S.latNow == null ? "-" : `${S.latNow.toFixed(0)} ms`;
+  document.getElementById("s-med").textContent = med(S.lat) == null ? "-" : `${med(S.lat).toFixed(0)} ms`;
+  document.getElementById("s-comp").textContent = med(S.comp) == null ? "-" : `${med(S.comp).toFixed(0)} ms`;
+  document.getElementById("clock").innerHTML = `t = ${Math.round(S.t)}<small>s</small>`;
+  document.getElementById("run").textContent = S.run || "-";
+  document.getElementById("phase").textContent = S.phase || "-";
+  document.getElementById("tau").textContent = S.tau ?? "-";
+  document.getElementById("nsens").textContent = S.installed.length ? `${S.installed.length} (${S.installed.join(", ")})` : "-";
+}
+let pending = false;
+function draw() { if (pending) return; pending = true; requestAnimationFrame(() => { pending = false; drawMap(); drawTimeline(); panels(); }); }
+window.addEventListener("resize", draw);
+document.getElementById("title").textContent = `Crowd digital twin: ${VENUE.id.replaceAll("_", " ")}`;
+
+// ---- live (server-sent events) or recording playback ----
+const badge = document.getElementById("mode");
+if (!RECORDING) {
+  const es = new EventSource("/events");
+  es.onopen = () => { badge.className = "badge live"; badge.textContent = "LIVE"; };
+  es.onerror = () => { badge.className = "badge wait"; badge.textContent = "RECONNECTING"; };
+  es.onmessage = e => { const m = JSON.parse(e.data); if (m.reset) S = fresh(); else apply(m); draw(); };
+} else {
+  document.body.classList.add("replay"); badge.className = "badge rec"; badge.textContent = "RECORDING";
+  const msgs = RECORDING.msgs, end = msgs.length ? msgs[msgs.length - 1].w : 0;
+  let clock = 0, i = 0, playing = true, last = performance.now();
+  const seek = document.getElementById("seek"), play = document.getElementById("play"), speed = document.getElementById("speed");
+  function to(t) { if (t < clock) { S = fresh(); i = 0; } clock = t; while (i < msgs.length && msgs[i].w <= clock) apply(msgs[i++]); draw(); }
+  function tick(now) {
+    if (playing) { to(Math.min(end, clock + (now - last) / 1000 * +speed.value)); if (clock >= end) { playing = false; play.textContent = "Play"; } }
+    last = now; seek.value = end ? 1000 * clock / end : 0;
+    document.getElementById("rtime").textContent = `${clock.toFixed(0)} / ${end.toFixed(0)} s`;
+    requestAnimationFrame(tick);
+  }
+  play.onclick = () => { if (clock >= end) to(0); playing = !playing; play.textContent = playing ? "Pause" : "Play"; };
+  seek.oninput = () => to(end * seek.value / 1000);
+  requestAnimationFrame(tick);
+}
+draw();
+</script>
+</body>
+</html>

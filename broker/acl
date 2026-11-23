@@ -2,6 +2,7 @@
 user sensor_emulator
 topic read sim/#
 topic write venue/#
+topic read twin/+/status
 
 user twin
 topic read venue/#
@@ -14,3 +15,4 @@ topic read twin/#
 user evaluator
 topic read sim/#
 topic read twin/#
+topic read venue/#
