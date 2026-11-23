@@ -15,7 +15,9 @@ from evaluation.truth import truth
 from sensors import emulator
 from sim.scenarios import CALIBRATION_SEEDS
 
-CAL_RUNS = [f"{s}-s{k:02d}" for s in ("normal", "gradual", "surge") for k in CALIBRATION_SEEDS]
+EGRESS_CAL = [f"{s}-s{k:02d}" for s in ("normal", "gradual", "surge") for k in CALIBRATION_SEEDS]
+INGRESS_CAL = [f"ingress-s{k:02d}" for k in CALIBRATION_SEEDS]
+CAL_RUNS = EGRESS_CAL + INGRESS_CAL  # the sensors serve the whole event, so both phases
 
 
 def features(occ, inflow, t, window):
@@ -24,15 +26,15 @@ def features(occ, inflow, t, window):
 
 
 @lru_cache(maxsize=None)
-def calibration_set(mode):
-    """Features, single-sensor counts and pair overlaps from all calibration runs."""
+def calibration_set(mode, noise="medium"):
+    """Features, single-sensor counts and pair overlaps from all calibration runs, at one noise level."""
     window = emulator.MODES[mode]["window"]
     X, Y, P = [], [], []
     n_c = len(emulator.CANDIDATES)
     pairs = [(i, j) for i in range(n_c) for j in range(i + 1, n_c)]
     for run in CAL_RUNS:
         occ, inflow = truth(run)
-        obs = emulator.observe(run, mode)
+        obs = emulator.observe(run, mode, noise)
         r = emulator.readings(obs, list(range(n_c)), dropout=0.0, with_sketches=True)
         for i, t in enumerate(obs["reports"]):
             if t >= len(occ):
@@ -44,8 +46,8 @@ def calibration_set(mode):
 
 
 @lru_cache(maxsize=None)
-def fitted(mode):
-    X, Y, P, pairs = calibration_set(mode)
+def fitted(mode, noise="medium"):
+    X, Y, P, pairs = calibration_set(mode, noise)
     coef, var = [], []
     for target in np.hstack([Y, P]).T:
         c, _ = nnls(X, target)
@@ -57,8 +59,8 @@ def fitted(mode):
 class ObservationModel:
     """Channels for one placement: one per sensor, plus one per sensor pair under option B."""
 
-    def __init__(self, mode, sensors, sketches=False):
-        coef, var, pairs = fitted(mode)
+    def __init__(self, mode, sensors, sketches=False, noise="medium"):
+        coef, var, pairs = fitted(mode, noise)
         n_c = len(emulator.CANDIDATES)
         rows = list(sensors)
         self.pairs = []
@@ -90,6 +92,7 @@ class FullObservation:
     def __init__(self, nz):
         self.nz, self.window = nz, 1
         self.var = np.full(nz, 1.0)
+
 
     def __call__(self, occ_hist, in_hist):
         return occ_hist[:, -1]

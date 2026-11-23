@@ -11,9 +11,12 @@ import numpy as np
 import pandas as pd
 import pedpy
 
+from shared.venue import data_dir
+from sim.scenarios import test_seeds
 
-DATA = Path(__file__).resolve().parents[1] / "data"
-RUNS = [f"{s}-s{k:02d}" for s in ("gradual", "surge") for k in range(3, 9)]
+
+DATA = data_dir()
+RUNS = [f"{s}-s{k:02d}" for s in ("gradual", "surge") for k in test_seeds(s)]
 
 
 def check(run_id):

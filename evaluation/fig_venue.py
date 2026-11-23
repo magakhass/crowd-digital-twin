@@ -8,9 +8,9 @@ from matplotlib.patches import Circle, Rectangle
 
 from experiments.placement import place
 from sensors.emulator import CAND_IDS, CANDIDATES, RANGE
-from shared.venue import Venue
+from shared.venue import Venue, data_dir
 
-OUT = Path(__file__).resolve().parents[1] / "data" / "results"
+OUT = data_dir() / "results"
 
 
 def main(strategy="greedy_mi", budget=4, mode="phones"):
