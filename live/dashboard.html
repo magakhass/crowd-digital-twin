@@ -126,7 +126,8 @@ const CAND = Object.fromEntries(VENUE.candidates.map(c => [c.id, c]));
 let S;  // dashboard state, rebuilt from the message stream
 function fresh() {
   return { t: 0, run: null, phase: null, tau: null, sensors: {}, installed: [], twin: {}, truth: {}, pred: {},
-           xy: [], series: {}, alerts: [], blind: new Set(), reports: 0, lat: [], comp: [], latNow: null };
+           xy: [], prev: null, cur: null, wPrev: 0, wCur: 0,
+           series: {}, alerts: [], blind: new Set(), reports: 0, lat: [], comp: [], latNow: null };
 }
 S = fresh();
 let sel = VENUE.risk_zones[0] || VENUE.zones[0].id, view = "twin", picked = false;  // picked: the user chose a zone
@@ -136,6 +137,10 @@ function apply(m) {
   const tp = m.topic, p = m.p;
   if (tp.startsWith("sim/")) {
     S.run = tp.split("/")[1] + (p.failure_test ? " (sensor failure test)" : ""); S.truth = p.zones; S.xy = p.xy; S.t = Math.max(S.t, p.ts);
+    if (p.id) {  // positions by person, so the crowd can glide from one second to the next
+      S.prev = S.cur; S.wPrev = S.wCur; S.wCur = m.w;
+      S.cur = new Map(p.id.map((id, k) => [id, p.xy[k]]));
+    }
     for (const [z, d] of Object.entries(p.zones)) point(z, p.ts).truth = d;
   } else if (tp.endsWith("/state")) {
     S.reports++; S.t = Math.max(S.t, p.ts);
@@ -160,10 +165,31 @@ function apply(m) {
     else { s.count = p.count; s.zone = p.zone_id; s.status = "online"; }
   }
 }
-function point(z, t) {
+function point(z, t) {  // truth comes every second, the twin every 5 s and a little later: keep the series in time order
   const a = S.series[z] || (S.series[z] = []);
-  if (!a.length || a[a.length - 1].t !== t) a.push({ t });
-  return a[a.length - 1];
+  let k = a.length - 1;
+  while (k >= 0 && a[k].t > t) k--;
+  if (k >= 0 && a[k].t === t) return a[k];
+  a.splice(k + 1, 0, { t });
+  return a[k + 1];
+}
+
+// ---- smooth crowd: one second behind, moving each person from the last frame to the newest ----
+let clock = 0;  // replay clock (seconds of the recording)
+let liveW = 0, livePerf = 0;  // live: message time and when it arrived, to run the clock between messages
+function nowW() { return RECORDING ? clock : liveW + (performance.now() - livePerf) / 1000; }
+function glide() {
+  if (!S.cur || !S.prev || S.wCur <= S.wPrev) return 1;
+  return Math.max(0, Math.min(1, (nowW() - S.wCur) / (S.wCur - S.wPrev)));
+}
+function crowdNow() {
+  if (!S.cur || !S.prev) return S.xy;
+  const f = glide(), out = [];
+  for (const [id, b] of S.cur) {
+    const a = S.prev.get(id) || b;
+    out.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]);
+  }
+  return out;
 }
 
 // ---- map ----
@@ -211,7 +237,7 @@ function drawMap() {
   if (document.getElementById("crowd").checked && S.xy.length) {
     c.fillStyle = "rgba(230,237,243,.55)";
     const r = Math.max(1, s * 0.18);
-    for (const [px, py] of S.xy) { c.beginPath(); c.arc(X(px / 10), Y(py / 10), r, 0, 6.283); c.fill(); }
+    for (const [px, py] of crowdNow()) { c.beginPath(); c.arc(X(px / 10), Y(py / 10), r, 0, 6.283); c.fill(); }
   }
   for (const id of S.installed) {
     const cd = CAND[id]; if (!cd) continue;
@@ -319,11 +345,16 @@ if (!RECORDING) {
   const es = new EventSource("/events");
   es.onopen = () => { badge.className = "badge live"; badge.textContent = "LIVE"; };
   es.onerror = () => { badge.className = "badge wait"; badge.textContent = "RECONNECTING"; };
-  es.onmessage = e => { const m = JSON.parse(e.data); if (m.reset) S = fresh(); else apply(m); draw(); };
+  es.onmessage = e => { const m = JSON.parse(e.data); if (m.reset) S = fresh(); else { if (m.w != null) { liveW = m.w; livePerf = performance.now(); } apply(m); } draw(); };
+  (function anim() {  // redraw the map between messages while the crowd is moving
+    if (S.cur && S.prev && document.getElementById("crowd").checked && glide() < 1) drawMap();
+    requestAnimationFrame(anim);
+  })();
 } else {
   document.body.classList.add("replay"); badge.className = "badge rec"; badge.textContent = "RECORDING";
   const msgs = RECORDING.msgs, end = msgs.length ? msgs[msgs.length - 1].w : 0;
-  let clock = 0, i = 0, playing = true, last = performance.now();
+  let i = 0, playing = true, last = performance.now();
+  clock = 0;
   const seek = document.getElementById("seek"), play = document.getElementById("play"), speed = document.getElementById("speed");
   function to(t) { if (t < clock) { S = fresh(); i = 0; } clock = t; while (i < msgs.length && msgs[i].w <= clock) apply(msgs[i++]); draw(); }
   function tick(now) {

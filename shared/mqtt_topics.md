@@ -2,7 +2,7 @@
 
 | Topic | Publisher | Readers | Content |
 | --- | --- | --- | --- |
-| `sim/{run}/truth` | simulator (the live publisher, as the `simulator` user) | evaluator / dashboard only | True zone densities and crowd positions (decimetres) per report; restricted: the twin can't read it |
+| `sim/{run}/truth` | simulator (the live publisher, as the `simulator` user) | evaluator / dashboard only | True zone densities and crowd positions (person id, decimetres) every second; restricted: the twin can't read it |
 | `venue/{venue}/sensor/{sensor}/count` | each sensor | twin | Count message, every 5 s (`schemas/sensor_count.schema.json`); option B adds `sketch` |
 | `venue/{venue}/sensor/{sensor}/status` | each sensor (retained; `offline` is its Last Will) | twin | online / offline (`schemas/sensor_status.schema.json`) |
 | `venue/{venue}/event` | event schedule | twin | `{"status": "ended", "ts": ...}` when the event is over |

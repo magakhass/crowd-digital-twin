@@ -6,8 +6,8 @@ with --sketches it adds its linear-counting sketch (option B). --fail switches o
 sensors watching the risk zones 90 s before the first red event, as in the failure test,
 by dropping their connection so the broker sends their Last Will.
 
-For the dashboard (evaluator view) it also publishes the true zone densities and crowd positions on
-the restricted sim/{run}/truth topic as the simulator; the broker's ACL keeps the twin from reading it.
+For the dashboard (evaluator view) it also publishes the true zone densities and crowd positions every
+second on the restricted sim/{run}/truth topic as the simulator; the broker's ACL keeps the twin from reading it.
 
   python -m live.publisher --run gradual-s04 --mode tags --placement bottleneck --budget 4 --speed 10
 """
@@ -74,22 +74,30 @@ def main():
     dead = [False] * len(ids)
 
     ender = connect(args, "event-schedule")
-    # ground truth for the dashboard only: zone densities and positions (decimetres) at each report
+    # ground truth for the dashboard only: zone densities and positions (person id, decimetres) every second;
+    # the sensors still report every 5 s, so the twin sees exactly what it saw before
     occ, _ = truth(args.run)
+    secs = range(0, int(rd["t"][-1]) + 1)
     traj = emulator.load_seconds(args.run)
-    traj = traj[np.isin(traj[:, 1], rd["t"])]
-    at = {int(t): traj[traj[:, 1] == t][:, 2:4] for t in rd["t"]}
+    at = {int(t): g[:, [0, 2, 3]] for t, g in ((t, traj[traj[:, 1] == t]) for t in secs)}  # id, x, y
+    report_at = {int(t): i for i, t in enumerate(rd["t"])}
     sim = connect(args, "simulator", user=args.sim_user, password=args.sim_password)
     epoch, pos = emulator.MODES[args.mode]["epoch"], None
     start = time.time()
-    for i, t in enumerate(rd["t"]):
-        time.sleep(max(0.0, start + t / args.speed - time.time()))  # keep event time
+    for sec in secs:
+        time.sleep(max(0.0, start + sec / args.speed - time.time()))  # keep event time
+        ti = min(sec, len(occ) - 1)
+        send(sim, f"sim/{args.run}/truth", {"ts": float(sec), "venue_id": venue.id, "failure_test": bool(fail),
+                                             "zones": {z: round(float(occ[ti, j] / venue.area[j]), 3)
+                                                       for j, z in enumerate(venue.zone_ids)},
+                                             "id": at.get(sec, np.zeros((0, 3)))[:, 0].astype(int).tolist(),
+                                             "xy": np.round(at.get(sec, np.zeros((0, 3)))[:, 1:] * 10).astype(int).tolist()})
+        if sec not in report_at:
+            continue
+        i = report_at[sec]
+        t = rd["t"][i]
         if args.sketches and (pos is None or int(t // epoch) != pos[0]):
             pos = (int(t // epoch), sketch.hash_positions(obs["pids"], salt=f"epoch{int(t // epoch)}"))
-        ti = min(int(t), len(occ) - 1)
-        send(sim, f"sim/{args.run}/truth", {"ts": float(t), "venue_id": venue.id, "failure_test": bool(fail), "zones": {z: round(float(occ[ti, j] / venue.area[j]), 3)
-                                                                       for j, z in enumerate(venue.zone_ids)},
-                                             "xy": np.round(at.get(int(t), np.zeros((0, 2))) * 10).astype(int).tolist()})
         for k, (c, s) in enumerate(zip(clients, ids)):
             if dead[k]:
                 continue

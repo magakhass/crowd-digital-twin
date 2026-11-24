@@ -66,6 +66,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--http-port", type=int, default=8050)
     ap.add_argument("--no-browser", action="store_true")
+    ap.add_argument("--bind", default="127.0.0.1", help="0.0.0.0 inside Docker so the host browser can reach it")
     broker_args(ap)
     args = ap.parse_args()
     venue = Venue()
@@ -98,9 +99,11 @@ def main():
                 return
         session.add(m.topic, payload, m.retain)
 
-    c = connect(args, "dashboard")
+    topics = [(f"venue/{venue.id}/#", 1), (f"twin/{venue.id}/#", 1), ("sim/+/truth", 0)]
+    c = connect(args, f"dashboard-{venue.id}")  # one id per venue: two dashboards with one id keep kicking each other off
     c.on_message = on_message
-    c.subscribe([(f"venue/{venue.id}/#", 1), (f"twin/{venue.id}/#", 1), ("sim/+/truth", 0)])
+    c.on_connect = lambda c, u, f, rc, p: c.subscribe(topics)  # subscribe again after a reconnect
+    c.subscribe(topics)
 
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *a):
@@ -138,7 +141,7 @@ def main():
                 self.end_headers()
                 self.wfile.write(body)
 
-    server = ThreadingHTTPServer(("127.0.0.1", args.http_port), Handler)
+    server = ThreadingHTTPServer((args.bind, args.http_port), Handler)
     server.daemon_threads = True
     url = f"http://localhost:{args.http_port}"
     print(f"dashboard on {url} ({venue.id}); Ctrl+C to stop", flush=True)

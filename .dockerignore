@@ -1,0 +1,12 @@
+# keep the image small: ./data is mounted at run time, only the small results go into the image
+.git
+.venv
+venv
+**/__pycache__
+.pytest_cache
+data/*
+!data/results
+!data/README.md
+data/results/*.zip
+docs/archive
+*.zip

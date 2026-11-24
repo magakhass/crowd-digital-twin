@@ -1,0 +1,84 @@
+# Live mode in containers: Mosquitto with the topic rules (broker/acl), two dashboards, and the demo.
+#   docker compose up -d broker dashboard        then open http://localhost:8050
+#   docker compose run --rm demo --run gradual-s04
+# Passwords are only for this local demo; set MQTT_PASSWORD to change them.
+
+x-app: &app
+  build: .
+  image: crowdtwin
+  platform: linux/amd64
+  volumes:
+    - ./data:/app/data   # results, recordings and simulated runs stay on the host
+  depends_on:
+    broker:
+      condition: service_healthy   # starts the broker if needed and waits until it accepts logins
+
+services:
+  broker:
+    image: eclipse-mosquitto:2
+    ports:
+      - "127.0.0.1:1883:1883"   # this computer only
+    volumes:
+      - ./broker/acl:/broker/acl:ro
+    environment:
+      PW: ${MQTT_PASSWORD:-crowdtwin}
+    restart: unless-stopped
+    healthcheck:   # healthy once a component user can log in
+      test: ["CMD-SHELL", "mosquitto_pub -h localhost -u evaluator -P \"$$PW\" -t healthcheck -m ok"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+    # one user per component, the ACL from the repo, then the broker (no anonymous clients)
+    command:
+      - sh
+      - -c
+      - |
+        set -e
+        tr -d '\r' < /broker/acl > /mosquitto/config/acl
+        mosquitto_passwd -c -b /mosquitto/config/passwd sensor_emulator "$$PW"
+        for u in twin simulator evaluator; do mosquitto_passwd -b /mosquitto/config/passwd "$$u" "$$PW"; done
+        printf 'listener 1883 0.0.0.0\nallow_anonymous false\npassword_file /mosquitto/config/passwd\nacl_file /mosquitto/config/acl\nset_tcp_nodelay true\n' > /mosquitto/config/docker.conf
+        chown mosquitto:mosquitto /mosquitto/config/passwd /mosquitto/config/acl
+        chmod 0700 /mosquitto/config/passwd /mosquitto/config/acl
+        exec mosquitto -c /mosquitto/config/docker.conf
+
+  dashboard:
+    <<: *app
+    restart: on-failure   # the broker may take a second to accept logins
+    ports:
+      - "127.0.0.1:8050:8050"
+    command: ["python", "-m", "live.dashboard", "--host", "broker", "--bind", "0.0.0.0", "--no-browser",
+              "--user", "evaluator", "--password", "${MQTT_PASSWORD:-crowdtwin}"]
+
+  dashboard-v2:   # venue 2 (festival hall) on http://localhost:8051
+    <<: *app
+    restart: on-failure   # the broker may take a second to accept logins
+    environment:
+      CROWDTWIN_VENUE: festival_hall_v2
+    ports:
+      - "127.0.0.1:8051:8050"
+    command: ["python", "-m", "live.dashboard", "--host", "broker", "--bind", "0.0.0.0", "--no-browser",
+              "--user", "evaluator", "--password", "${MQTT_PASSWORD:-crowdtwin}"]
+
+  demo:           # docker compose run --rm demo --run <run> [live.demo options]
+    <<: *app
+    profiles: ["tools"]
+    entrypoint: ["python", "-m", "live.demo", "--host", "broker", "--password", "${MQTT_PASSWORD:-crowdtwin}"]
+
+  demo-v2:        # same for venue 2
+    <<: *app
+    profiles: ["tools"]
+    environment:
+      CROWDTWIN_VENUE: festival_hall_v2
+    entrypoint: ["python", "-m", "live.demo", "--host", "broker", "--password", "${MQTT_PASSWORD:-crowdtwin}"]
+
+  acl-check:      # docker compose run --rm acl-check
+    <<: *app
+    profiles: ["tools"]
+    command: ["python", "-m", "live.check_acl", "--host", "broker", "--password", "${MQTT_PASSWORD:-crowdtwin}"]
+
+  tests:          # docker compose run --rm tests
+    <<: *app
+    profiles: ["tools"]
+    depends_on: {}
+    command: ["python", "-m", "pytest", "-q", "tests"]

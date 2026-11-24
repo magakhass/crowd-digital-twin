@@ -28,13 +28,51 @@ The crowd is simulated in JuPedSim; the sensors, twin and evaluation are in Pyth
 | `twin/` | `model.py` (flow model, EnKF, forecast), `observation.py` (learned observation model), `run_twin.py` (twin and baselines), `params.py` (frozen settings) |
 | `experiments/` | `calibrate.py`, `placement.py` (incl. greedy mutual information, Liebig et al., 2013), `run_experiments.py` |
 | `evaluation/` | `truth.py`, `metrics.py`, `realism.py` (PedPy), `report.py` (tables, figures), `fig_venue.py`, `verify_layout.py` |
-| `live/` | Live mode over MQTT: `publisher.py` (sensors), `twin_service.py`, `logger.py` (latency), `demo.py` (all three) |
+| `live/` | Live mode over MQTT: `publisher.py` (sensors), `twin_service.py`, `logger.py` (latency), `demo.py` (all three), `dashboard.py`, `record.py`, `check_acl.py` (firewall test), `broker.py` (Python fallback broker) |
 | `broker/` | Mosquitto configuration and topic access rules (live mode) |
 | `tests/` | Tests |
 | `data/` | Generated data (not committed) and paper results (committed); see `data/README.md` |
 | `docs/` | Architecture, decisions, evidence log, archived Unity prototype |
 
-## Setup
+## Quick start with Docker (live demo, firewall check, tests)
+
+Needs Docker Desktop (Windows, macOS) or Docker Engine (Linux); nothing else, not even Python.
+From the repository root:
+
+    docker compose build                                   # once, a few minutes
+    docker compose up -d broker dashboard dashboard-v2     # Mosquitto + the two operator dashboards
+
+Open http://localhost:8050 (venue 1, concert venue) or http://localhost:8051 (venue 2, festival hall), then
+run an event against it:
+
+    docker compose run --rm demo --run gradual-s04                                  # venue 1, BLE tags, 4 sensors
+    docker compose run --rm demo --run surge-s05 --mode phones --sketches --fail    # option B + sensor failure test
+    docker compose run --rm demo-v2 --run ingress-s04                               # venue 2, arrivals
+    docker compose run --rm acl-check                                               # information firewall test
+    docker compose run --rm tests                                                   # unit tests
+    docker compose down                                                             # stop everything
+
+`demo` takes the same options as `python -m live.demo` (`--help`); `--speed 1` plays the event in real time.
+
+- **Broker with the information firewall.** The broker is Eclipse Mosquitto with the topic rules in
+  `broker/acl`, and every component logs in as its own user (`sensor_emulator`, `twin`, `simulator`,
+  `evaluator`), so the twin cannot read the ground-truth topic `sim/#`. `acl-check` proves it: the twin
+  gets sensor counts but no truth, the evaluator gets both, a sensor cannot forge truth, and clients
+  without a login are refused. The default password `crowdtwin` is only for this local demo; set the
+  `MQTT_PASSWORD` environment variable before `docker compose up` to change it.
+- **Data.** `./data` is mounted into the containers, so recordings (`data/results/dashboard_{run}.html`) and
+  latency logs (`data/results/live_latency.csv`) end up on the host. Trajectories are not in the repository
+  (2+ GB); if a run is missing, `demo` first simulates it with JuPedSim (about 2.5 minutes per run). The
+  simulation is deterministic on a given platform: the same run and seed give a byte-identical trajectory
+  file. Runs made on Windows and on Linux (the container) can differ slightly in floating point.
+- **Apple silicon.** JuPedSim only publishes x86-64 Linux wheels, so the image is `linux/amd64` and runs
+  under emulation on M-series Macs (slower, same results).
+- **Ports.** 1883 (MQTT), 8050 and 8051 (dashboards), open to this computer only. Stop any local Mosquitto or `python -m live.broker` first.
+- The full experiment pipeline below can also run in the container
+  (`docker compose run --rm --entrypoint python demo -m sim.run_all`), but it takes hours on a desktop;
+  we ran it natively.
+
+## Setup (without Docker)
 
     python -m venv .venv && source .venv/bin/activate
     pip install -r requirements.txt
@@ -98,7 +136,7 @@ its own MQTT client (retained status, Last Will); the twin service subscribes to
 topics, runs one report at a time on the event clock and publishes state and alerts; a logger
 records the end-to-end latency. Topics and message formats: `shared/mqtt_topics.md`.
 
-Start a broker first (`broker/README.md`; if Windows blocks Mosquitto, `python -m live.broker`), then in a second terminal:
+With Docker, see the quick start above. Without it, start a broker first (`broker/README.md`; if Windows blocks Mosquitto, `python -m live.broker`), then in a second terminal:
 
     python -m live.demo --run gradual-s04 --mode tags --placement bottleneck --budget 4 --speed 10
     python -m live.demo --run surge-s05 --mode phones --sketches --fail --speed 10   # option B + failure test
@@ -123,3 +161,4 @@ be started on their own (`live.twin_service`, `live.publisher`, `live.logger`, e
 
     python evaluation/verify_layout.py
     python -m pytest -q tests
+    python -m live.check_acl --password <password>   # against a Mosquitto broker running broker/acl

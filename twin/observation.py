@@ -6,6 +6,8 @@ factor against a reference count. This absorbs the detection rate, the coverage 
 each zone and the window effect (people passing count too). The twin never reads
 the emulator settings.
 """
+import os
+import sys
 from functools import lru_cache
 
 import numpy as np
@@ -13,6 +15,7 @@ from scipy.optimize import nnls
 
 from evaluation.truth import truth
 from sensors import emulator
+from shared.venue import data_dir
 from sim.scenarios import CALIBRATION_SEEDS
 
 EGRESS_CAL = [f"{s}-s{k:02d}" for s in ("normal", "gradual", "surge") for k in CALIBRATION_SEEDS]
@@ -45,15 +48,28 @@ def calibration_set(mode, noise="medium"):
     return np.array(X), np.array(Y), np.array(P), pairs
 
 
+def saved_fit(mode, noise):
+    return data_dir() / "results" / "observation" / f"{mode}_{noise}.npz"
+
+
 @lru_cache(maxsize=None)
 def fitted(mode, noise="medium"):
+    f = saved_fit(mode, noise)
+    if f.exists():  # saved with the results, so the twin runs without the calibration trajectories
+        z = np.load(f)
+        return z["coef"], z["var"], [tuple(int(v) for v in p) for p in z["pairs"]]
     X, Y, P, pairs = calibration_set(mode, noise)
     coef, var = [], []
     for target in np.hstack([Y, P]).T:
         c, _ = nnls(X, target)
         coef.append(c)
         var.append(max(2.0, float(np.mean((X @ c - target) ** 2))))
-    return np.array(coef), np.array(var), pairs
+    coef, var = np.array(coef), np.array(var)
+    f.parent.mkdir(parents=True, exist_ok=True)
+    tmp = f.with_name(f"{f.stem}.{os.getpid()}.tmp.npz")  # parallel workers: write then rename
+    np.savez(tmp, coef=coef, var=var, pairs=np.array(pairs))
+    os.replace(tmp, f)
+    return coef, var, pairs
 
 
 class ObservationModel:
@@ -96,3 +112,10 @@ class FullObservation:
 
     def __call__(self, occ_hist, in_hist):
         return occ_hist[:, -1]
+
+
+if __name__ == "__main__":  # save the fits for the active venue: python -m twin.observation [noise ...]
+    for noise in sys.argv[1:] or emulator.NOISE_LEVELS:
+        for mode in emulator.MODES:
+            fitted(mode, noise)
+            print("saved", saved_fit(mode, noise))

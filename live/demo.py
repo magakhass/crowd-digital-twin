@@ -10,6 +10,7 @@ import time
 
 from experiments.placement import place
 from sensors import emulator
+from shared.venue import data_dir
 from sim.scenarios import SCENARIOS
 
 
@@ -28,26 +29,47 @@ def main():
     ap.add_argument("--port", default="1883")
     ap.add_argument("--out", default="data/results/live_latency.csv")
     ap.add_argument("--dashboard", action="store_true", help="also open the live dashboard (live/dashboard.py)")
+    ap.add_argument("--password", default=None,
+                    help="broker with the ACL (broker/mosquitto.conf, Docker): each part logs in as its own user")
     args = ap.parse_args()
     if args.seed is None:  # same sensor noise and ensemble as the experiment row for this run
         args.seed = int(args.run[-2:])
+
+    traj = data_dir() / "trajectories" / f"{args.run}.csv"
+    if not traj.exists():  # fresh clone or container: simulate this run first (same seed, same crowd)
+        name, seed = args.run.rsplit("-s", 1)
+        print(f"no trajectories for {args.run}, simulating it first (a few minutes)", flush=True)
+        subprocess.run([sys.executable, "-m", "sim.run_sim", name, str(int(seed))], check=True)
 
     ids = [emulator.CAND_IDS[c] for c in place(args.placement, args.budget, args.mode, args.seed, args.noise)]
     phase = SCENARIOS[args.run.rsplit("-", 1)[0]].get("movement", "egress")  # the event schedule
     broker = ["--host", args.host, "--port", args.port]
     opt = ["--sketches"] if args.sketches else []
+
+    def login(user):  # ACL users from broker/acl; nothing to add on the open test broker
+        return ["--user", user, "--password", args.password] if args.password else []
+
     py = [sys.executable, "-m"]
     dash = None
     if args.dashboard:  # the dashboard has to be listening before the run starts
-        dash = subprocess.Popen(py + ["live.dashboard"] + broker)
+        dash = subprocess.Popen(py + ["live.dashboard"] + broker + login("evaluator"))
         time.sleep(2)
-    logger = subprocess.Popen(py + ["live.logger", "--out", args.out] + broker)
+    logger = subprocess.Popen(py + ["live.logger", "--out", args.out] + broker + login("evaluator"))
     twin = subprocess.Popen(py + ["live.twin_service", "--sensors", ",".join(ids), "--mode", args.mode, "--noise",
                                   args.noise, "--phase", phase, "--seed", str(args.seed), "--speed", str(args.speed)]
-                            + opt + broker)
-    pub = subprocess.run(py + ["live.publisher", "--run", args.run, "--mode", args.mode, "--noise", args.noise,
-                               "--placement", args.placement, "--budget", str(args.budget), "--speed", str(args.speed),
-                               "--seed", str(args.seed)] + opt + (["--fail"] if args.fail else []) + broker)
+                            + opt + broker + login("twin"))
+    sim = ["--sim-user", "simulator", "--sim-password", args.password] if args.password else []
+    pub = subprocess.Popen(py + ["live.publisher", "--run", args.run, "--mode", args.mode, "--noise", args.noise,
+                                 "--placement", args.placement, "--budget", str(args.budget), "--speed", str(args.speed),
+                                 "--seed", str(args.seed)] + opt + (["--fail"] if args.fail else []) + broker
+                           + login("sensor_emulator") + sim)
+    while pub.poll() is None:
+        if twin.poll() not in (None, 0):  # twin crashed: don't leave the sensors waiting for it
+            pub.terminate()
+            logger.terminate()
+            print("twin stopped with an error (see above)", flush=True)
+            return 1
+        time.sleep(0.5)
     twin.wait()
     logger.wait()
     if dash:

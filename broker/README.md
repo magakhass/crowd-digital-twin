@@ -10,7 +10,8 @@ Use the Python broker instead; it runs inside the project's virtual environment:
     python -m live.broker          # leave this terminal open, run the demo in a second one
 
 No passwords or topic rules (local testing only). Live alerts and latency are the same as with
-Mosquitto on our test runs. For the ACL demo you still need Mosquitto (e.g. on another machine).
+Mosquitto on our test runs. For the ACL demo, use Docker: `docker compose up -d broker` runs Mosquitto
+with `broker/acl` and a password per component (see the main README).
 
 ## Install (Windows)
 
