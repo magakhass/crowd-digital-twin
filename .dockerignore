@@ -1,4 +1,4 @@
-# keep the image small: ./data is mounted at run time, only the small results go into the image
+# keep the image small: only the paper results go in, not the simulation data
 .git
 .venv
 venv
@@ -7,6 +7,11 @@ venv
 data/*
 !data/results
 !data/README.md
+!data/venues
+data/venues/*/trajectories
+data/venues/*/truth
+data/venues/*/sensors
+data/venues/*/replays
 data/results/*.zip
 docs/archive
 *.zip
